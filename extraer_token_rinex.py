@@ -8,19 +8,18 @@ def extraer_token_para_descarga_rinex(antenas, token_principal,fecha):
     # Lista para almacenar las asociaciones de descarga para cada antena y archivo RINEX
     longitud = len(antenas)
     
+    if token_principal:
+        print('si hay token')
+    
     for i in range(longitud):
         orden = i + 1
         # datos de la antena extraidos del diccioanrio
         nombre_antena = antenas[i]['NAME'] #Extraemos el nombre de la antena
-        distancia = antenas[i]['Distancia'] #Extraemos la distancia de la antena
-        administrador = antenas[i]['Administrador']
-        nombre_distancia = f"{orden}-{nombre_antena}-{distancia}" # Crea la variable en el formato "NOMBRE-DISTANCIA"
-        print(fecha)
-        print(administrador)
-        
+        distancia = round(antenas[i]['Distancia'],1) #Extraemos la distancia de la antena
+        administrador = antenas[i]['ADMINISTRADOR']
+        nombre_distancia = f"{orden}-{nombre_antena}-{distancia}" # Crea la variable en el formato "NOMBRE-DISTANCIA"  
         longitud_rinex_data_antena = 0      
         longitud_rinex_data_antena = len(antenas[i]['rinex_data'])
-        print(longitud_rinex_data_antena)
         for s in range(longitud_rinex_data_antena):
             
             # Extrae el nombre del archivo Rinex y el ID del archivo RINEX

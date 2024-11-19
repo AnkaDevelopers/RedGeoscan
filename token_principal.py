@@ -79,6 +79,5 @@ def rpa_igac():
             break
     else:
         print("No se encontró la solicitud `getAccountInfo` después de recargar la página.")
-
     driver.quit()
 

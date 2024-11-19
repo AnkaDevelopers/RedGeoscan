@@ -1,15 +1,14 @@
 from extraer_token_rinex import extraer_token_para_descarga_rinex
 from agrupar_rinex_x_antena import crear_lista_antenas_x_rinex
+from crear_lista_antenas import insertar_datos_antenas
 from consumo_servicios import servicio_administrador_antenas
 from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
 from token_principal import rpa_igac
 from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
-from tkinter import messagebox, ttk
+from tkinter import ttk
 import tkinter as tk 
-import config  
-import time
 
 
 #***************************************************************************************************************
@@ -28,44 +27,8 @@ paso_actual = 0
 #***************************************************************************************************************
 # funcion para imprimir variables y debugear
 def imprimir():
-    #print('antenas igac', 'antenas totales',len(antenas_igac))
     for antenas in antenas_con_rinex:
         print(antenas)
-    #print('antenas con rinex', 'antenas totales',len(antenas_con_rinex))
-    #for antenas in antenas_con_rinex:
-    #    print(antenas)
-    #print('token:')
-    #print(datos_con_token)
-    #print(progreso_barra)
-    #print('Coordenada Base: ',coordenada_media_base)
-    #print('Datos KML: ')
-    #print(datos_kml.head(10))
-    #print('antenas no igac')
-    #for antenas in antenas_not_igac:
-    #    print(antenas)
-    #print(int(len(antenas_igac)) + int(len(antenas_not_igac)))
-
-#***************************************************************************************************************
-#funcion para extraer de la base de antenas ordenadas el nombre la distancia y el administrador de la antena
-def extraer_nombres_antenas(datos_antenas):
-    # Crear una lista para almacenar los resultados
-    resultado = []
-    
-    # Recorrer cada antena en los datos
-    for antena in datos_antenas:
-        # Extraer el nombre y la distancia de cada antena
-        nombre = antena.get('NAME')
-        distancia = antena.get('Distancia')
-        administrador = antena.get('ADMINISTRADOR')
-        
-        
-        # Convertir la distancia a un entero y añadir ' km'
-        distancia_formateada = f"{int(distancia)} km"
-        
-        # Agregar el resultado a la lista
-        resultado.append({'NAME': nombre, 'Distancia': distancia_formateada, 'Administrador': administrador})
-    
-    return resultado
 
 #***************************************************************************************************************
 # Barra de progreso: incrementa cada vez que se llama
@@ -83,10 +46,19 @@ def barra_de_progreso():
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
-    respuesta = extraer_token_para_descarga_rinex(antenas_con_rinex, token_principal, fecha)
+    global barra_visible
     barra_de_progreso()
-    print('descargas finalizadas')
-
+    if not token_principal:
+        consumir_servicio_token_principal()
+    else:    
+        extraer_token_para_descarga_rinex(antenas_con_rinex, token_principal, fecha)
+        barra_de_progreso()
+        print('descargas finalizadas')
+        insertar_datos_antenas(tabla_antenas, antenas_con_rinex)
+        barra_de_progreso()
+        barra_progreso.pack_forget()
+        barra_visible = False
+        ventana.update_idletasks()  # Actualiza la interfaz
         
 # ***************************************************************************************************************
 # Función consumir servicio filtro de antenas para verificar si contiene rinex según fecha
@@ -111,7 +83,7 @@ def consumir_servicio_token_principal():
 def consumir_servicio_segun_fecha():
     barra_de_progreso()
     global antenas_con_rinex
-    nombre_antenas = extraer_nombres_antenas(antenas_con_administrador)
+    nombre_antenas = antenas_con_administrador
     antenas_con_rinex = crear_lista_antenas_x_rinex(fecha,fecha,nombre_antenas)
     barra_de_progreso()
     consumir_servicio_token_principal()
@@ -174,7 +146,7 @@ tabla_antenas.column("Latitud", width=150)      # Ajuste para latitud
 tabla_antenas.column("Longitud", width=150)     # Ajuste para longitud
 tabla_antenas.column("Distancia", width=100)  
 
-tabla_antenas.pack(pady=5, padx=5, fill="x")
+tabla_antenas.pack(pady=5, padx=5, fill="both")
 
 #***************************************************************************************************************
 # Tabla de coordenada media base

@@ -151,6 +151,7 @@ def consumir_servicio_descarga(id_rinex, token):
         data = response.json()
         token_rinex = data.get('token', None)
         print('exito')
+        print(token_rinex)
         return token_rinex
     except requests.exceptions.RequestException as e:
         print("Error en la solicitud:", e)
