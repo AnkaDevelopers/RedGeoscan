@@ -20,7 +20,7 @@ def crear_lista_antenas_x_rinex(fecha_inicial, fecha_final, datos_antenas):
             datos['rinex_data'] = rinex_data
             # Agregar la antena con datos RINEX a la lista final
             antenas_con_rinex.append(datos)
-            if len(antenas_con_rinex) == 2:
+            if len(antenas_con_rinex) == 8:
                 print('Procesamiento completado.')
                 return antenas_con_rinex
         else:
