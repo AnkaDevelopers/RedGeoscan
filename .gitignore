@@ -1,3 +1,7 @@
-*.exe
-*.pkg
+# Ignorar carpetas generadas automáticamente
+__pycache__/
+build/
+dist/
+
+# Ignorar archivos de configuración generados por PyInstaller
 *.spec

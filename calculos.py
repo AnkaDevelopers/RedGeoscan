@@ -58,3 +58,9 @@ def calcular_antenas_mas_cercanas(punto_central, datos_kml):
     # Ordenar las antenas por distancia
     datos_ordenados = datos_kml.sort_values(by='Distancia')
     return datos_ordenados
+
+#********************************************************************************************
+#Convierte una fecha en formato 'dd/mm/yyyy' a 'ddmmyy'.
+def formatear_fecha(fecha):
+    fecha_obj = datetime.strptime(fecha, '%d/%m/%Y')
+    return fecha_obj.strftime('%d%m%y')

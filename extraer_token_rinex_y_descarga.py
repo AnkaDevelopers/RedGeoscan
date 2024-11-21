@@ -7,7 +7,8 @@ def extraer_token_para_descarga_rinex(antenas, token_principal,fecha,callback_pr
     global ruta_carpeta
     # Lista para almacenar las asociaciones de descarga para cada antena y archivo RINEX
     longitud = len(antenas)
-    
+    if callback_progreso:
+            callback_progreso()
     if token_principal:
         print('si hay token')
     
@@ -21,7 +22,7 @@ def extraer_token_para_descarga_rinex(antenas, token_principal,fecha,callback_pr
         nombre_antena = antenas[i]['NAME'] #Extraemos el nombre de la antena
         distancia = round(antenas[i]['Distancia'],1) #Extraemos la distancia de la antena
         administrador = antenas[i]['ADMINISTRADOR']
-        nombre_distancia = f"{orden}-{nombre_antena}-{distancia}" # Crea la variable en el formato "NOMBRE-DISTANCIA"  
+        nombre_distancia = f"{orden}-{nombre_antena}-{distancia}-km" # Crea la variable en el formato "NOMBRE-DISTANCIA"  
         longitud_rinex_data_antena = 0      
         longitud_rinex_data_antena = len(antenas[i]['rinex_data'])
         
@@ -45,5 +46,6 @@ def extraer_token_para_descarga_rinex(antenas, token_principal,fecha,callback_pr
                 continue
         # Llama al callback de progreso si está definido
         if callback_progreso:
+            callback_progreso()
             callback_progreso()
     return ruta_carpeta
