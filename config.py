@@ -27,3 +27,10 @@ antenas_igac = (
 
 # Ruta base para descargas
 ruta_descargas = r"C:\Users\camil-code\Desktop"
+
+
+# Ruta del RtkLib
+ruta_rtk = r"C:\RTKLIB_v2.4.3_B33"
+
+# Nombre del archivo ejecutable
+nombre_exe = "rtkpost_win64.exe"

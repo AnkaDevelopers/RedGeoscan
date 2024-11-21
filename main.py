@@ -2,6 +2,7 @@ from extraer_token_rinex_y_descarga import extraer_token_para_descarga_rinex
 from agrupar_rinex_x_antena import crear_lista_antenas_x_rinex
 from consumo_servicios import servicio_administrador_antenas
 from crear_lista_antenas import insertar_datos_antenas
+from seleccion_de_proyecto import seleccionar_carpeta
 from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
 from token_principal import rpa_igac
@@ -13,6 +14,7 @@ import threading
 
 #***************************************************************************************************************
 # Variables globales y sus valores iniciales
+ruta_proyecto = None
 coordenada_media_base = None
 datos_kml = None
 antenas_con_administrador = None
@@ -23,12 +25,13 @@ antenas_con_rinex = None
 token_principal = None
 progreso_barra = 10
 paso_actual = 0  
-ruta_proyecto = None
+ruta_descarga = None
+
 
 #***************************************************************************************************************
 # Función para limpiar las variables globales
 def limpiar():
-    global coordenada_media_base, datos_kml, antenas_con_administrador, barra_visible, fecha_mas_un_dia, fecha, antenas_con_rinex, token_principal, progreso_barra, paso_actual, ruta_proyecto
+    global coordenada_media_base, datos_kml, antenas_con_administrador, barra_visible, fecha_mas_un_dia, fecha, antenas_con_rinex, token_principal, progreso_barra, paso_actual, ruta_descarga
     
     # Restablecer las variables a sus valores iniciales
     coordenada_media_base = None
@@ -41,7 +44,8 @@ def limpiar():
     token_principal = None
     progreso_barra = 10
     paso_actual = 0
-    ruta_proyecto = None
+    ruta_descarga = None
+
 
     print("Variables globales restablecidas a sus valores iniciales.")
 #***************************************************************************************************************
@@ -77,7 +81,7 @@ def barra_de_progreso():
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
-    global ruta_proyecto
+    global ruta_descarga
     if not token_principal:
         print("segundo intento de descarga del token  principal")
         consumir_servicio_token_principal()
@@ -128,6 +132,12 @@ def calcular_antenas():
     print("organizacion de las antenas desde la mas cercana")
     consumir_servicio_andimistrador_antenas()
 
+#***************************************************************************************************************
+# cargar archivo kml antenas base del IGAC
+def selec_proyecto():
+    global ruta_proyecto
+    ruta_proyecto = seleccionar_carpeta()
+    print("Ruta de los archivos rinex", ruta_proyecto)
 #***************************************************************************************************************
 # cargar archivo kml antenas base del IGAC
 def cargar_archivo_kml():
@@ -199,11 +209,14 @@ tabla_coordenada_media.pack(pady=5, padx=5, fill="both")
 # Frame para los botones de cargar archivos
 frame_botones = tk.Frame(ventana)
 frame_botones.pack(pady=10)
-# Botón para cargar archivo POS
-boton_cargar_pos = tk.Button(frame_botones, text="Cargar archivo POS", command=calcular_antenas)
+# Botón para cargar proyecto
+boton_cargar_pos = tk.Button(frame_botones, text="Seleccionar Proyecto 🌍", command=selec_proyecto)
 boton_cargar_pos.pack(side=tk.LEFT, padx=10)
 # Botón para cargar archivo POS
-boton_cargar_pos = tk.Button(frame_botones, text="imprimir variable", command=imprimir)
+boton_cargar_pos = tk.Button(frame_botones, text="Cargar archivo POS 📡", command=calcular_antenas)
+boton_cargar_pos.pack(side=tk.LEFT, padx=10)
+# Botón para imprimir variables solo para depuración
+boton_cargar_pos = tk.Button(frame_botones, text="imprimir variable 🔧", command=imprimir)
 boton_cargar_pos.pack(side=tk.LEFT, padx=10)
 # Barra de progreso en modo "determinate", inicialmente no visible
 barra_progreso = ttk.Progressbar(ventana, orient="horizontal", mode="determinate", length=300)

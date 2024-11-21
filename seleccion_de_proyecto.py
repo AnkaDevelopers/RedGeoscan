@@ -18,7 +18,7 @@ def seleccionar_carpeta_por_indice(ruta, indice):
 
         # Imprimir las subcarpetas y sus índices
         print(f"Subcarpetas encontradas en '{ruta}':")
-        # imprimimos esto para debugear
+        # imprimimos esto para depuración
         for i, subcarpeta in enumerate(subcarpetas):
             print(f"{i}: {subcarpeta}")
 
@@ -78,13 +78,10 @@ def seleccionar_carpeta():
         # devolvemos la ruta de la carpeta GPS en donde se enceuntran las rutas del
         # archivo navegado y el observado, una vez capturadas estas rutas sebe de ir el RPA 
         # con el sotfware RTKLIB
-        print("Ruta de los archivos rinex", carpeta_gps)
         return carpeta_gps
         
     else:
         print("No se selecciono ninguna carpeta.")
 
-
-seleccionar_carpeta()
 
 
