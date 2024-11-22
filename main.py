@@ -2,7 +2,7 @@ from extraer_token_rinex_y_descarga import extraer_token_para_descarga_rinex
 from agrupar_rinex_x_antena import crear_lista_antenas_x_rinex
 from consumo_servicios import servicio_administrador_antenas
 from crear_lista_antenas import insertar_datos_antenas
-from seleccion_de_proyecto import seleccionar_carpeta
+from seleccion_de_proyecto import selec_proyect
 from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
 from cargar_kml import cargar_base_kml
@@ -125,28 +125,52 @@ def consumir_servicio_andimistrador_antenas():
 # funcion principal calcular las  antenas mas cercanas
 def calcular_antenas():
     global coordenada_media_base, datos_kml, fecha, fecha_mas_un_dia
+    # Captura de respuestas por parte de la funcion cargar_base_pos
     coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media)
+    # Actualización de mensaje de interfaz
     label_estado_archivo_pos.config(text=mensaje_pos)
+    # Validación de coordenada_media_base
     if not coordenada_media_base:
         return
+    print('*'*20)
+    print('listado de la snatyenas mas cercanas a la coordenada media base')
     datos_kml = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'],coordenada_media_base['longitud']),datos_kml)
-    print("organizacion de las antenas desde la mas cercana")
     consumir_servicio_andimistrador_antenas()
 
 #***************************************************************************************************************
 # cargar archivo kml antenas base del IGAC
-def selec_proyecto():
+def Seleccionar_proyecto():
+    
+    # Variable global para almacenar las rutas del proyecto 
     global rutas_proyecto
-    rutas_proyecto = seleccionar_carpeta()
+    
+    # Ejecucion de función para seleccionar el proyecto
+    rutas_proyecto = selec_proyect()
+    
+    # Validación de información de las rutas  
     if not rutas_proyecto:
         return
+    
+    # Ejecución de RPA programa RTKLIB
     ejecutar_rtk(rutas_proyecto)
+    
 #***************************************************************************************************************
-# cargar archivo kml antenas base del IGAC
+# Cargar archivo KML que contiene la lista de las antenas Geodesicas de la red activa
 def cargar_archivo_kml():
-    print("carga kml exito")
+    
+    # Variable para almacenar los datos del kml
     global datos_kml
+    
+    # Función para cargar archivo kml
     datos_kml,mensaje_kml = cargar_base_kml()
+    
+    # Validamos que el archivo KML contenga datos
+    if datos_kml.empty:
+        return print('*'*50,'\n','Archivo kml esta vacio')
+
+    print('*'*50,'\n','Archivo KML cargado exitosamente')
+    
+    # Actualizamos el mensaje de la interfaz
     label_estado_base_kml.config(text=mensaje_kml)
     
 # *****************************************ESTILOS TKINTER******************************************************
@@ -213,7 +237,7 @@ tabla_coordenada_media.pack(pady=5, padx=5, fill="both")
 frame_botones = tk.Frame(ventana)
 frame_botones.pack(pady=10)
 # Botón para cargar proyecto
-boton_cargar_pos = tk.Button(frame_botones, text="Seleccionar Proyecto 🌍", command=selec_proyecto)
+boton_cargar_pos = tk.Button(frame_botones, text="Seleccionar Proyecto 🌍", command=Seleccionar_proyecto)
 boton_cargar_pos.pack(side=tk.LEFT, padx=10)
 # Botón para cargar archivo POS
 boton_cargar_pos = tk.Button(frame_botones, text="Cargar archivo POS 📡", command=calcular_antenas)

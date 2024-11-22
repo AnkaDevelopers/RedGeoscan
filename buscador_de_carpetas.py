@@ -9,6 +9,9 @@ def validar_ruta(ruta):
 #**************************************************************************************************************************************************
 # Función principal que busca la carpeta 'RED ACTIVA' basada en la estructura de carpetas y la fecha proporcionada.
 def buscar_y_crear_carpeta(origen, fecha):
+    
+    # se declara variable 
+    
 
     # Verificar si el directorio de origen existe
     if not validar_ruta(origen):

@@ -6,11 +6,23 @@ nombre_archivo_kml = "KML.xlsx"
 
 # Mesajes de estado base de antenas kml
 msj_kml = [
-    "La base de antenas se ha cargado correctamente.",
+    "No se encontró el archivo KML en la carpeta del proyecto."
     "La selección de la base de antenas ha sido cancelada.",
+    "La base de antenas se ha cargado correctamente.",
     "La base de antenas se ha cargado en la carpeta del proyecto.",
     "No se pudo guardar la base de antenas."
 ]
+
+# Mensajes de estado funcion de selección de proyecto
+msj_select_proyect = [
+    "Selecciona la carpeta de tu proyecto",
+    "Usuario selecciono la carpeta del proyecto",
+    "La carpeta seleccionada no cumple el estadar",
+    "No se encontro ninguna carpeta en la ruta: ",
+    "No se encontro el archivo con extención: ",
+    "No se selecciono ninguna carpeta."
+]
+
 
 # Mensajes de estado de base archivo pos
 msj_pos = [

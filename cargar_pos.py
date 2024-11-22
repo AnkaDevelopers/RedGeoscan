@@ -1,5 +1,6 @@
 from calculos import decimales_a_gms, fecha_a_semana_gps
 from datetime import datetime, timedelta
+import tkinter.messagebox as messagebox
 from tkinter import filedialog
 import numpy as np
 import config  
@@ -11,6 +12,12 @@ fecha = None
 #********************************************************************************************
 #Funcion para organizar el archivo .pos
 def organizar_pos(datos_pos, tabla_coordenada_media):
+    
+    # Verificar si los parámetros están vacíos
+    if not datos_pos or not tabla_coordenada_media:
+        messagebox.showinfo("Advertencia", "El archivo .pos seleccionado no cumple con los requisitos.")
+        return None  
+    
         # Separar las semanas y las coordenadas
     dias, semanas, latitudes, longitudes, alturas = zip(*datos_pos)
     dia = int(np.mean(dias))
@@ -72,20 +79,27 @@ def procesar_pos(archivo_pos, insertar_datos):
 #********************************************************************************************
 # Función para cargar el archivo .POS
 def cargar_base_pos(insertar_datos):
+    media_pos = None
+    fecha_formateada = None
+    fecha_mas_24_formateada = None
     estado = msj_estado[3]
+    
     # Abre una ventana para seleccionar un archivo .pos
     archivo_pos = filedialog.askopenfilename(
         filetypes=[("Archivos POS", "*.pos")], title="Selecciona un archivo .POS"
     )
+    
     # Si se cierra  la ventana sin seleccionar archivo, se muestra un mensaje de salida de la funcion
     if not archivo_pos:
         estado = msj_estado[1]
-        return archivo_pos, estado
+        return media_pos, estado ,fecha_formateada, fecha_mas_24_formateada
+    
     # Se procesan los satos del archivo.pos
     media_pos = procesar_pos(archivo_pos, insertar_datos)
     if not media_pos:
         estado = msj_estado[1]
-        return archivo_pos, estado
+        return media_pos, estado ,fecha_formateada, fecha_mas_24_formateada
+    
     # los datos estan cargados
     # Convertir la cadena a un objeto datetime, solo con la fecha
     fecha_nueva = datetime.strptime(fecha, "%Y/%m/%d %H:%M:%S.%f")

@@ -1,9 +1,10 @@
-from tkinter import filedialog
 from buscador_de_carpetas import buscar_y_crear_carpeta, buscar_carpeta_en_estructura
-import os
+from tkinter import filedialog
 import tkinter as tk
+import config
+import os
 
-
+mensaje = config.msj_select_proyect
 
 #**********************************************************************************************************
 # Funcion para seleccionar una carpeta por su indice 
@@ -60,59 +61,78 @@ def seleccionar_carpeta_por_indice(ruta, indice):
 
 #**********************************************************************************************************
 # Funcion para seleccioanr y alamacenar la ruta del proyecto
-def seleccionar_carpeta():
+def selec_proyect():
     
-    # La fecha siempre será None
+    # Variable para almacenar las rutas para el RPA del programa RTKLIB
+    rutas_rinex_proyecto = {}
+    
+    # Se establecio esta variable fecha en none para reutilizar otro componente
     fecha = None
+    
     # Crear una ventana oculta de Tkinter
     root = tk.Tk()
+    
     # Ocultar la ventana principal
     root.withdraw()  
+    
     # Abrir la ventana para seleccionar una carpeta
-    ruta_carpeta = filedialog.askdirectory(title="Selecciona la carpeta de tu proyecto")
+    ruta_carpeta = filedialog.askdirectory(title= mensaje[0])
     
     # Comprobar si el usuario seleccionó una carpeta
     if ruta_carpeta:
-        # mensaje de depuracion
-        print(f"Has seleccionado la carpeta: {ruta_carpeta}")
         
-        # Validar la estructura de carpetas
+        # Mensaje de depuración
+        print('*'*50,'\n',mensaje[1],'\n',ruta_carpeta)
+
+        # Ejecución de función para Validar la estructura de carpetas del proyecto
         validacion_estructura = buscar_y_crear_carpeta(ruta_carpeta, fecha) 
+        
+        # Validación mensaje de depuración
         if not validacion_estructura:
-            return print('la carpeta seleccionada no cumple el estadar')
+            print('*'*50,'\n',mensaje[2])
+            return rutas_rinex_proyecto 
                
-        # Seleccionamos la primer subcarpeta de la carpeta rastreos
+        # Ejecución de función para extraer el nombre de las carpetas por indice 0
         carpeta_con_fecha = seleccionar_carpeta_por_indice(validacion_estructura,0)
+        
+        # Validación mensaje de depuración
         if not carpeta_con_fecha:
-            print("No se encontro ninguna carpeta en la ruta: ")
-            return print(validacion_estructura)
+            print('*'*50,'\n',mensaje[3],'\n',validacion_estructura)
+            return rutas_rinex_proyecto 
         
-        # Seleccionamos la carpeta base de la carpeta con fecha      
+        # Ejecución de función para Seleccionar la carpeta base de la carpeta con nombre de fecha      
         carpeta_base = buscar_carpeta_en_estructura(carpeta_con_fecha,'base')
+        
+        # Validación mensaje de depuración
         if not carpeta_base:
-            print("No se encontro la carpeta base en la ruta: ")
-            return print(carpeta_con_fecha)
+            print('*'*50,'\n',mensaje[3],'\n',carpeta_con_fecha)
+            return rutas_rinex_proyecto 
         
-        # Seleccionamos la primera carpeta_gps
+        # Ejecución de función para extraer el nombre de las carpetas por indice 0
         carpeta_gps = seleccionar_carpeta_por_indice(carpeta_base, 0)
-        if not carpeta_gps:
-            print("No se encontro la carpeta base en la ruta: ")
-            print(carpeta_base)
         
-        # Seleccionamos el archivo .obs de nuestra primera carperta GPS
+        # Validación mensaje de depuración
+        if not carpeta_gps:
+            print('*'*50,'\n',mensaje[3],'\n',carpeta_base)
+            return rutas_rinex_proyecto 
+        
+        # Ejecución de función para extraer ruta archivo .OBS
         ruta_obs = select_archivo(carpeta_gps, '.obs')
+        
+        # Validación mensaje de depuración
         if not ruta_obs:
-            print("no se encontro el archivo .OBS")
+            print('*'*50,'\n',mensaje[4],'\n','.obs')
+            return rutas_rinex_proyecto 
             
-        # Seleccionamos ela rchivo .n de nuestra carpeta gps
-        ruta_navegado = select_archivo(carpeta_gps, '.24N')    
+        # Ejecución de función para extraer ruta archivo .24N
+        ruta_navegado = select_archivo(carpeta_gps, '.24N')  
+        
+        # Validación mensaje de depuración
         if not ruta_navegado:
-            print("no se encontro el archivo navegado")
+            print('*'*50,'\n',mensaje[4],'\n','.24n')
+            return rutas_rinex_proyecto 
             
-            
-        print('*'*20)
-        # Diccionario
-        rutas_rinex_proyecto = {}
+        # Creacion de un Diccionario con las rutas para el RPA de RTKLIB
         rutas_rinex_proyecto["ruta_obs"] = ruta_obs
         rutas_rinex_proyecto["ruta_nav"] = ruta_navegado
         rutas_rinex_proyecto["carpeta_gps"] = carpeta_gps
@@ -120,7 +140,8 @@ def seleccionar_carpeta():
         return rutas_rinex_proyecto
         
     else:
-        return print("No se selecciono ninguna carpeta.")
+        print('*'*50,'\n',mensaje[5])
+        return rutas_rinex_proyecto
 
 
 
