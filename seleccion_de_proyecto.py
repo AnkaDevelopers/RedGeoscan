@@ -120,7 +120,7 @@ def seleccionar_carpeta():
         return rutas_rinex_proyecto
         
     else:
-        print("No se selecciono ninguna carpeta.")
+        return print("No se selecciono ninguna carpeta.")
 
 
 

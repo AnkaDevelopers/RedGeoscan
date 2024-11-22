@@ -138,6 +138,8 @@ def calcular_antenas():
 def selec_proyecto():
     global rutas_proyecto
     rutas_proyecto = seleccionar_carpeta()
+    if not rutas_proyecto:
+        return
     ejecutar_rtk(rutas_proyecto)
 #***************************************************************************************************************
 # cargar archivo kml antenas base del IGAC
