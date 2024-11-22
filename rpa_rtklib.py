@@ -11,13 +11,9 @@ nombre_ejecutable = config.nombre_exe
 # Ruta completa del ejecutable
 ruta_ejecutable = os.path.join(ruta_directorio, nombre_ejecutable)
 
-#ruta archivo
-ruta_archivo_obs = r"C:\Users\camil-code\Desktop\agrado-CLIENTE-RPA-RTKLIB\2411_PROYECTO\6. TOPOGRAFIA\RASTREOS\101024\BASE\GPS_N\20241010_115502_BASE.obs"
-ruta_archivo_navegado = r"C:\Users\camil-code\Desktop\agrado-CLIENTE-RPA-RTKLIB\2411_PROYECTO\6. TOPOGRAFIA\RASTREOS\101024\BASE\GPS_N\20241010_115502_BASE.24N"
-ruta_descarga_pos = r"C:\Users\camil-code\Desktop\agrado-CLIENTE-RPA-RTKLIB\2411_PROYECTO\6. TOPOGRAFIA\RASTREOS\101024\BASE\GPS_N"
 #*****************************************************************************************************
 # Función para ejecutar el RTKLIB
-def ejecutar_rtk():
+def ejecutar_rtk(rutas_rtkilb):
     try:
         # Comprueba si el archivo existe
         if not os.path.exists(ruta_ejecutable):
@@ -34,13 +30,13 @@ def ejecutar_rtk():
         pyautogui.press('tab')                  
         pyautogui.press('tab')
         pyautogui.press('tab')
-        pyautogui.write(ruta_archivo_obs)
+        pyautogui.write(rutas_rtkilb['ruta_obs'])
         pyautogui.press('tab')
         pyautogui.press('tab')
-        pyautogui.write(ruta_archivo_navegado)
+        pyautogui.write(rutas_rtkilb['ruta_nav'])
         for i in range(0, 9):
             pyautogui.press('tab')
-        pyautogui.write(ruta_descarga_pos)
+        pyautogui.write(rutas_rtkilb['carpeta_gps'])
         for i in range(0, 8):
             pyautogui.press('tab')
         pyautogui.press('enter')  
@@ -57,5 +53,3 @@ def ejecutar_rtk():
         print(f"Error al ejecutar {nombre_ejecutable}. Verifica los permisos o parámetros.")
     except Exception as e:
         print(f"Se produjo un error al intentar ejecutar el archivo: {e}")
-    
-ejecutar_rtk()

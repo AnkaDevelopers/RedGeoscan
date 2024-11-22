@@ -5,16 +5,17 @@ from crear_lista_antenas import insertar_datos_antenas
 from seleccion_de_proyecto import seleccionar_carpeta
 from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
-from token_principal import rpa_igac
 from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
+from token_principal import rpa_igac
+from rpa_rtklib import ejecutar_rtk
 from tkinter import ttk
 import tkinter as tk 
 import threading
 
 #***************************************************************************************************************
 # Variables globales y sus valores iniciales
-ruta_proyecto = None
+rutas_proyecto = None
 coordenada_media_base = None
 datos_kml = None
 antenas_con_administrador = None
@@ -135,9 +136,9 @@ def calcular_antenas():
 #***************************************************************************************************************
 # cargar archivo kml antenas base del IGAC
 def selec_proyecto():
-    global ruta_proyecto
-    ruta_proyecto = seleccionar_carpeta()
-    print("Ruta de los archivos rinex", ruta_proyecto)
+    global rutas_proyecto
+    rutas_proyecto = seleccionar_carpeta()
+    ejecutar_rtk(rutas_proyecto)
 #***************************************************************************************************************
 # cargar archivo kml antenas base del IGAC
 def cargar_archivo_kml():

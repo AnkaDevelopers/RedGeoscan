@@ -3,6 +3,30 @@ from buscador_de_carpetas import buscar_y_crear_carpeta, buscar_carpeta_en_estru
 import os
 import tkinter as tk
 
+
+
+#**********************************************************************************************************
+# Funcion para seleccionar una carpeta por su indice 
+def select_archivo(ruta, extension):
+    if not os.path.exists(ruta):
+        return print("La ruta no existe")
+    if not os.path.isdir(ruta):
+        return print("la ruta no es un directorio")
+    
+    # listar archivos de la ruta
+    archivos_encontrados = [
+        archivo for archivo in os.listdir(ruta)
+        if archivo.endswith(extension)
+    ]
+    # validamos si encontramos el archivo con la extención ingresada
+    if not archivos_encontrados:
+        return print("no se encontro el archivo con extencion ", extension)
+    
+    # retorna la ruta completa 
+    ruta_archivo = os.path.join(ruta, archivos_encontrados[0])  # Selecciona el primer archivo
+    return ruta_archivo
+
+    
 #**********************************************************************************************************
 # Funcion para seleccionar una carpeta por su indice 
 def seleccionar_carpeta_por_indice(ruta, indice):
@@ -75,10 +99,25 @@ def seleccionar_carpeta():
             print("No se encontro la carpeta base en la ruta: ")
             print(carpeta_base)
         
-        # devolvemos la ruta de la carpeta GPS en donde se enceuntran las rutas del
-        # archivo navegado y el observado, una vez capturadas estas rutas sebe de ir el RPA 
-        # con el sotfware RTKLIB
-        return carpeta_gps
+        # Seleccionamos el archivo .obs de nuestra primera carperta GPS
+        ruta_obs = select_archivo(carpeta_gps, '.obs')
+        if not ruta_obs:
+            print("no se encontro el archivo .OBS")
+            
+        # Seleccionamos ela rchivo .n de nuestra carpeta gps
+        ruta_navegado = select_archivo(carpeta_gps, '.24N')    
+        if not ruta_navegado:
+            print("no se encontro el archivo navegado")
+            
+            
+        print('*'*20)
+        # Diccionario
+        rutas_rinex_proyecto = {}
+        rutas_rinex_proyecto["ruta_obs"] = ruta_obs
+        rutas_rinex_proyecto["ruta_nav"] = ruta_navegado
+        rutas_rinex_proyecto["carpeta_gps"] = carpeta_gps
+        
+        return rutas_rinex_proyecto
         
     else:
         print("No se selecciono ninguna carpeta.")
