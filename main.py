@@ -8,14 +8,16 @@ from calculos import calcular_antenas_mas_cercanas
 from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
 from token_principal import rpa_igac
-from rpa_rtklib import ejecutar_rtk
 from tkinter import ttk
 import tkinter as tk 
 import threading
+import time
+import os
 
 #***************************************************************************************************************
 # Variables globales y sus valores iniciales
-rutas_proyecto = None
+ruta_carpeta_gps= None
+ruta_carpeta_proyecto = None
 coordenada_media_base = None
 datos_kml = None
 antenas_con_administrador = None
@@ -46,16 +48,13 @@ def limpiar():
     progreso_barra = 10
     paso_actual = 0
     ruta_descarga = None
-
-
     print("Variables globales restablecidas a sus valores iniciales.")
+    
 #***************************************************************************************************************
-
 # Ejecuta funcion en un segundo hilo
 def iniciar_consumir_servicio_token_principal():
     hilo = threading.Thread(target=consumir_servicio_token_principal)
     hilo.start()
-
 #***************************************************************************************************************
 # funcion para imprimir variables y debugear
 def imprimir():
@@ -106,6 +105,10 @@ def consumir_servicio_segun_fecha():
     global antenas_con_rinex
     nombre_antenas = antenas_con_administrador
     antenas_con_rinex = crear_lista_antenas_x_rinex(fecha,fecha,nombre_antenas)
+    if not antenas_con_rinex:
+        return print('*'*150,'\n','No hay rinex de ninguna antena')
+
+    print('+'*100,antenas_con_rinex)
     print("validadacion de las atenas para saber cuales cuentan con rinex")
     iniciar_consumir_servicio_token_principal()
 
@@ -124,17 +127,19 @@ def consumir_servicio_andimistrador_antenas():
 #***************************************************************************************************************
 # funcion principal calcular las  antenas mas cercanas
 def calcular_antenas():
-    global coordenada_media_base, datos_kml, fecha, fecha_mas_un_dia
+    global coordenada_media_base, datos_kml, fecha, fecha_mas_un_dia, ruta_carpeta_gps
     # Captura de respuestas por parte de la funcion cargar_base_pos
-    coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media)
+    coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media, ruta_carpeta_gps)
     # Actualización de mensaje de interfaz
     label_estado_archivo_pos.config(text=mensaje_pos)
     # Validación de coordenada_media_base
     if not coordenada_media_base:
         return
     print('*'*20)
-    print('listado de la snatyenas mas cercanas a la coordenada media base')
+    print('listado de las atenas mas cercanas a la coordenada media base')
     datos_kml = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'],coordenada_media_base['longitud']),datos_kml)
+    print('-'*100,datos_kml)
+    time.sleep(20)
     consumir_servicio_andimistrador_antenas()
 
 #***************************************************************************************************************
@@ -142,17 +147,21 @@ def calcular_antenas():
 def Seleccionar_proyecto():
     
     # Variable global para almacenar las rutas del proyecto 
-    global rutas_proyecto
+    global ruta_carpeta_proyecto, ruta_carpeta_gps
     
     # Ejecucion de función para seleccionar el proyecto
-    rutas_proyecto = selec_proyect()
+    ruta_carpeta_proyecto, ruta_carpeta_gps = selec_proyect()
     
-    # Validación de información de las rutas  
-    if not rutas_proyecto:
+    if not ruta_carpeta_proyecto and not ruta_carpeta_gps:
         return
     
-    # Ejecución de RPA programa RTKLIB
-    ejecutar_rtk(rutas_proyecto)
+    print('*'*50,'\n','ruta carpeta:',ruta_carpeta_proyecto)
+    print('*'*50,'\n','ruta archivos:',ruta_carpeta_gps)
+    print(type(ruta_carpeta_gps))
+
+    print('*'*200)
+    time.sleep(1)
+    calcular_antenas()
     
 #***************************************************************************************************************
 # Cargar archivo KML que contiene la lista de las antenas Geodesicas de la red activa
@@ -173,11 +182,21 @@ def cargar_archivo_kml():
     # Actualizamos el mensaje de la interfaz
     label_estado_base_kml.config(text=mensaje_kml)
     
+# **************************************************************************************************************
+# Funcion para cerrar el programa
+def cerrar_programa():
+    
+    # Destruye la ventana principal
+    ventana.destroy()  
+    
+    # Finaliza el proceso completo del programa incluyendo los hilos
+    os._exit(0)
 # *****************************************ESTILOS TKINTER******************************************************
 # Configuración de la ventana principal 
 ventana = tk.Tk()
-ventana.title("Antenas más cercanas")
 ventana.geometry("800x600")
+ventana.title("Antenas más cercanas")
+ventana.protocol("WM_DELETE_WINDOW", cerrar_programa)
 
 #***************************************************************************************************************
 # Tabla de antenas mas cercanas
@@ -228,7 +247,6 @@ tabla_coordenada_media.column("Longitud", width=120,anchor="center")
 tabla_coordenada_media.column("Altura", width=120,anchor="center")        
 tabla_coordenada_media.column("Semana GPS", width=100,anchor="center")    
 tabla_coordenada_media.column("Dia del Año", width=100,anchor="center")    
-
 tabla_coordenada_media.pack(pady=5, padx=5, fill="both")
 
 #***************************************************************************************************************

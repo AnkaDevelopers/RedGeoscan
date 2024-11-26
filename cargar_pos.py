@@ -78,16 +78,19 @@ def procesar_pos(archivo_pos, insertar_datos):
 
 #********************************************************************************************
 # Función para cargar el archivo .POS
-def cargar_base_pos(insertar_datos):
+def cargar_base_pos(insertar_datos, ruta_pos):
     media_pos = None
     fecha_formateada = None
     fecha_mas_24_formateada = None
     estado = msj_estado[3]
     
-    # Abre una ventana para seleccionar un archivo .pos
-    archivo_pos = filedialog.askopenfilename(
-        filetypes=[("Archivos POS", "*.pos")], title="Selecciona un archivo .POS"
-    )
+    if not ruta_pos: 
+        # Abre una ventana para seleccionar un archivo .pos
+        archivo_pos = filedialog.askopenfilename(
+          filetypes=[("Archivos POS", "*.pos")], title="Selecciona un archivo .POS"
+     )
+    else:
+        archivo_pos = ruta_pos
     
     # Si se cierra  la ventana sin seleccionar archivo, se muestra un mensaje de salida de la funcion
     if not archivo_pos:

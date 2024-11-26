@@ -14,6 +14,7 @@ ruta_ejecutable = os.path.join(ruta_directorio, nombre_ejecutable)
 #*****************************************************************************************************
 # Función para ejecutar el RTKLIB
 def ejecutar_rtk(rutas_rtkilb):
+    ejecucion = False
     try:
         # Comprueba si el archivo existe
         if not os.path.exists(ruta_ejecutable):
@@ -40,13 +41,18 @@ def ejecutar_rtk(rutas_rtkilb):
         for i in range(0, 8):
             pyautogui.press('tab')
         pyautogui.press('enter')  
-
-        time.sleep(40)
-    
+        
+        time.sleep(35)
+           
         for i in range(0, 24):
             pyautogui.press('tab')
         pyautogui.press('enter')  
-    
+        
+        time.sleep(3)
+        print('*'*100,'\n','el programa se cerro')
+        ejecucion = True
+        return ejecucion
+        
     except FileNotFoundError as e:
         print(f"Error: {e}")
     except subprocess.CalledProcessError:
