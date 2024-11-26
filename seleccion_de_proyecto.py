@@ -73,10 +73,7 @@ def seleccionar_carpeta_por_indice(ruta, indice):
 #**********************************************************************************************************
 # Funcion para seleccioanr y alamacenar la ruta del proyecto
 def selec_proyect():
-    
-    # Variable para saber si el archivo.pos ya existe
-    post_existe = False
-    
+
     # Variable para almacenar las rutas para el RPA del programa RTKLIB
     rutas_rinex_proyecto = {}
     
@@ -130,29 +127,36 @@ def selec_proyect():
             print('*'*50,'\n',mensaje[3],'\n',carpeta_base)
             return rutas_rinex_proyecto 
         
-        # Ejecución de función para extraer ruta archivo .OBS
-        ruta_obs = select_archivo(carpeta_gps, '.obs')
-        
-        # Validación mensaje de depuración
-        if not ruta_obs:
-            ruta_obs = select_archivo(carpeta_gps, '.24O')
-            
-            if not ruta_obs:
-                return print('*'*50,'\n',mensaje[4],'\n','.obs ni .24o')
-            
-        # Ejecución de función para extraer ruta archivo .24N
-        ruta_navegado = select_archivo(carpeta_gps, '.24N')  
-        
-        # Validación mensaje de depuración
-        if not ruta_navegado:
-            print('*'*50,'\n',mensaje[4],'\n','.24n')
-            return rutas_rinex_proyecto 
-        
         # Verificamos si ya existe un archivo .pos
         ruta_pos = select_archivo(carpeta_gps, '.pos')
         
-        # Validamos is encontramos el archivo .pos
-        if not ruta_pos:
+        # Validamos si encontgramos un archivo .pos
+        if ruta_pos:
+            
+            # Si post existe entonses enviamos la ruta del proyecto la carpeta gps y confirmamos que si existe un archivo .pos en el directorio
+            return ruta_carpeta_proyecto, ruta_pos
+        
+        # En caso de no encontrar un archivo .pos          
+        else:    
+        
+            # Ejecución de función para extraer ruta archivo .OBS
+            ruta_obs = select_archivo(carpeta_gps, '.obs')
+        
+            # Validación mensaje de depuración
+            if not ruta_obs:
+                ruta_obs = select_archivo(carpeta_gps, '.24O')
+            
+                if not ruta_obs:
+                 return print('*'*50,'\n',mensaje[4],'\n','.obs ni .24O')
+            
+            # Ejecución de función para extraer ruta archivo .24N
+            ruta_navegado = select_archivo(carpeta_gps, '.24N')  
+        
+            # Validación mensaje de depuración
+            if not ruta_navegado:
+                print('*'*50,'\n',mensaje[4],'\n','.24n')
+                return rutas_rinex_proyecto 
+        
             # Creación de un Diccionario con las rutas para el RPA de RTKLIB
             rutas_rinex_proyecto["ruta_obs"] = ruta_obs
             rutas_rinex_proyecto["ruta_nav"] = ruta_navegado
@@ -160,23 +164,18 @@ def selec_proyect():
             
             # Retornamos una lista con la lista de los archivos necesarios para el RPA
             exito = ejecutar_rtk(rutas_rinex_proyecto)
-            
+              
             # Validamos si la funcion se ejecuto correctamente
             if not exito:
-                return print('*'*50,'\n','error en rpa')
+                 return print('*'*50,'\n','error en rpa')
             
-            #extraemos la ruta de nuestro archivo .pos
+            # Extraemos la ruta de nuestro archivo .pos
             ruta_pos = select_archivo(carpeta_gps, '.pos')
 
             # Si todo va bien seguira por este camino
             return ruta_carpeta_proyecto, ruta_pos
-        
-        else:
-            # Si post existe entonses enviamos la ruta del proyecto la carpeta gps y confirmamos que si existe un archivo .pos en el directorio
-            post_existe = True
-            return ruta_carpeta_proyecto, ruta_pos
-        
-            
+    
+    # Mensaje en caso de no seleccionar ninguna carpeta de proyecto        
     else:
         print('*'*50,'\n',mensaje[5])
         return rutas_rinex_proyecto

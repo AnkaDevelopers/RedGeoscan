@@ -1,31 +1,43 @@
 from consumo_servicios import servicio_comprobar_rinex_por_fecha
 import time
+import pandas as pd
 
 def crear_lista_antenas_x_rinex(fecha_inicial, fecha_final, datos_antenas):
-    # Lista para almacenar antenas con datos RINEX y sin datos RINEX
-    antenas_con_rinex = []
-    antenas_sin_rinex = []
+    # Crear nuevas columnas en el DataFrame para indicar si tiene datos RINEX
+    datos_antenas['has_rinex'] = False
+    datos_antenas['rinex_data'] = None
 
-    # Iterar sobre cada antena en la lista de datos
-    for datos in datos_antenas:
+    # Contador para las antenas con datos RINEX
+    contador_rinex = 0
+
+    # Iterar sobre cada fila del DataFrame
+    for index, fila in datos_antenas.iterrows():
+        
+        # Detener el proceso si ya se alcanzaron 8 antenas con datos RINEX
+        if contador_rinex >= 8:
+            print('*' * 100, '\n', "Se alcanzó el límite de 8 antenas con datos RINEX.")
+            break
+        
         # Extraer el nombre de la antena
-        nombre_antena = datos['NAME']
+        nombre_antena = fila['NAME']
 
-        # Llamar al servicio para obtener los datos RINEX asociados
-        rinex_data = servicio_comprobar_rinex_por_fecha(fecha_inicial, fecha_final, nombre_antena)
-        time.sleep(0.1)
-        # Verificar si se encontraron datos RINEX
+        # Intentar llamar al servicio
+        try:
+            rinex_data = servicio_comprobar_rinex_por_fecha(fecha_inicial, fecha_final, nombre_antena)
+            
+        except Exception as e:
+            print(f"Error al procesar antena {nombre_antena}: {e}")
+            rinex_data = None
+
+        # Actualizar el DataFrame con los resultados
         if rinex_data:
-            # Vincular los datos RINEX obtenidos con el diccionario de la antena actual
-            datos['rinex_data'] = rinex_data
-            # Agregar la antena con datos RINEX a la lista final
-            antenas_con_rinex.append(datos)
-            if len(antenas_con_rinex) == 8:
-                print('Procesamiento completado.')
-                return antenas_con_rinex
-        else:
-            # Si no hay datos RINEX, agregar a la lista de antenas sin datos
-            antenas_sin_rinex.append(datos)
+            # Marcar como True y agregar los datos RINEX
+            datos_antenas.at[index, 'has_rinex'] = True
+            datos_antenas.at[index, 'rinex_data'] = rinex_data
+            contador_rinex += 1  # Incrementar el contador para las antenas con datos RINEX
 
-    return antenas_con_rinex
+        # Pausa para evitar saturar el servicio
+        time.sleep(0.1)
 
+    # Retornar el DataFrame completo
+    return datos_antenas

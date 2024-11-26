@@ -7,7 +7,7 @@ from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
 from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
-from token_principal import rpa_igac
+from token_principal import rpa_igac, cerrar_edge
 from tkinter import ttk
 import tkinter as tk 
 import threading
@@ -20,11 +20,12 @@ ruta_carpeta_gps= None
 ruta_carpeta_proyecto = None
 coordenada_media_base = None
 datos_kml = None
+datos_kml_order = None
 antenas_con_administrador = None
 barra_visible = False 
 fecha_mas_un_dia = None
 fecha = None
-antenas_con_rinex = None
+dataSet_antenas = None
 token_principal = None
 progreso_barra = 10
 paso_actual = 0  
@@ -34,20 +35,20 @@ ruta_descarga = None
 #***************************************************************************************************************
 # Función para limpiar las variables globales
 def limpiar():
-    global coordenada_media_base, datos_kml, antenas_con_administrador, barra_visible, fecha_mas_un_dia, fecha, antenas_con_rinex, token_principal, progreso_barra, paso_actual, ruta_descarga
+    global datos_kml_order, coordenada_media_base, antenas_con_administrador, barra_visible, fecha_mas_un_dia, fecha, dataSet_antenas, token_principal, progreso_barra, paso_actual, ruta_descarga
     
     # Restablecer las variables a sus valores iniciales
     coordenada_media_base = None
-    datos_kml = None
     antenas_con_administrador = None
     barra_visible = False 
     fecha_mas_un_dia = None
     fecha = None
-    antenas_con_rinex = None
+    dataSet_antenas = None
     token_principal = None
     progreso_barra = 10
     paso_actual = 0
     ruta_descarga = None
+    datos_kml_order = None
     print("Variables globales restablecidas a sus valores iniciales.")
     
 #***************************************************************************************************************
@@ -58,7 +59,7 @@ def iniciar_consumir_servicio_token_principal():
 #***************************************************************************************************************
 # funcion para imprimir variables y debugear
 def imprimir():
-    for antenas in antenas_con_rinex:
+    for antenas in dataSet_antenas:
         print(antenas)
 
 #***************************************************************************************************************
@@ -81,65 +82,153 @@ def barra_de_progreso():
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
+    
+    # Llamamos nuestra variable global don
     global ruta_descarga
-    if not token_principal:
-        print("segundo intento de descarga del token  principal")
-        consumir_servicio_token_principal()
-    else:    
-        ruta = extraer_token_para_descarga_rinex(antenas_con_rinex, token_principal, fecha, barra_de_progreso)
-        print("descarga completa de los archivos rinex")
-        insertar_datos_antenas(tabla_antenas, antenas_con_rinex, ruta)
-        print("insercion de los datos en la tabla")
+    
+    # función para extraer los token de descarga de los rinex   
+    ruta = extraer_token_para_descarga_rinex(dataSet_antenas, token_principal, fecha, barra_de_progreso)
+    
+    print("descarga completa de los archivos rinex")
+    insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
+    print("insercion de los datos en la tabla")
+    
 # ***************************************************************************************************************
 # Función consumir servicio filtro de antenas para verificar si contiene rinex según fecha
 def consumir_servicio_token_principal():
-    global paso_actual, token_principal
-    token_principal = rpa_igac()  # Ejecuta rpa_igac en este paso
-    consumir_token_descarga_rinex()   # Actualiza la barra nuevamente
-    print("Descarga del token principal")
-    paso_actual += 1
+    
+    # Llamamos nuestra variable global donde vamos a almacenar nuestro token principal
+    global token_principal
+    
+    # Llamamos nuestra función para extraer el token principal
+    token_principal = rpa_igac() 
+    
+    # Validamos que token principal exista
+    if not token_principal:
+        
+        # En caso de no haber podido capturar el token principal lo intentamos una segunda vez
+        token_principal = rpa_igac() 
+        
+        # Si en el segundo intento tampoco lo podemos capturar terminamos el proceso
+        if not token_principal:
+            
+            # Mensaje de depuración
+            return print('fallo en extraer el token principal') 
+    
+    # Llamamos ala funcion para extraer los datos de descarag de los rinex
+    consumir_token_descarga_rinex()
+
 
 #***************************************************************************************************************
-# funcion consumir servicio filtro de antenas para verificar si contiene rinex segun fecha
+# Función para consumir servicio y verificar si las antenas contienen datos RINEX según la fecha
 def consumir_servicio_segun_fecha():
-    global antenas_con_rinex
-    nombre_antenas = antenas_con_administrador
-    antenas_con_rinex = crear_lista_antenas_x_rinex(fecha,fecha,nombre_antenas)
-    if not antenas_con_rinex:
-        return print('*'*150,'\n','No hay rinex de ninguna antena')
+    
+    # Variable global donde se alamcenan la lista de antenas con rinex
+    global dataSet_antenas
 
-    print('+'*100,antenas_con_rinex)
-    print("validadacion de las atenas para saber cuales cuentan con rinex")
+    # Crear una base de las antenas con datos RINEX o no
+    dataSet_antenas = crear_lista_antenas_x_rinex(fecha, fecha, antenas_con_administrador)
+
+    # Validar si el DataFrame está vacío
+    if dataSet_antenas.empty:
+        
+        # Mensaje en caso de que el DataFrame esté vacío
+        mensaje = 'No Ingresaron Datos en dataFrame de antenas con rinex'      
+        label_estado_base_kml.config(text=mensaje)
+        
+        # Finalizamos el proceso y devolvemos un mensaje de depuración
+        return print('*' * 150, '\n', 'No Ingresaron Datos en dataFrame de antenas con rinex')
+
+    # Validar si todos los valores de la columna 'has_rinex' son False
+    if dataSet_antenas['has_rinex'].any() == False:
+        
+        # Mensaje en caso de que no se halla encontrado ningun rinex en ninguna antena
+        mensaje = 'En el momento no hay rinex de ninguna antena.'
+        label_estado_base_kml.config(text=mensaje)
+        
+        # Finalizamos el proceso y devolvemos un mensaje de depuración
+        print('*' * 150, '\n', dataSet_antenas, '\n', '*' * 150)
+        return print('\n','*' * 150, '\n', 'En el momento no hay rinex de ninguna antena.','\n','*'*150)
+
+    # Si se encontro almenos un resultado, Contar cuántas antenas tienen RINEX
+    count_rinex = dataSet_antenas['has_rinex'].sum()
+
+    # Mensaje en caso de que haya antenas con datos RINEX
+    mensaje = f'Se encontraron resultados de RINEX en {count_rinex} antenas.'
+    label_estado_base_kml.config(text=mensaje)
+
+    # Imprimir antenas con RINEX
+    print('*' * 100, '\n', dataSet_antenas, '\n', '*' * 100)
+
+    # Cerrar procesos de Microsoft Edge y esperar
+    time.sleep(0.5)
+    cerrar_edge()
+    time.sleep(0.5)
+
+    # Llamamos nuestra funcion que trae el modulo que captura el token principal
     iniciar_consumir_servicio_token_principal()
 
 #***************************************************************************************************************
 # funcion consumir servicio y crear base de antenas
 def consumir_servicio_andimistrador_antenas():
+    
+    # Llamamos la variable gobal donde podremos almacenar la relación de la antena y su administrador
     global antenas_con_administrador
-    # este servicio me crea una base con la informnacion de las antenas esta base que da como un archivo json con la fecha 
+    
+    # este servicio me crea una base con la información de las antenas esta base que da como un archivo json con la fecha 
     servicio_administrador_antenas()
+    
+     # Mensaje de depuración
+    print('*'*200,'\n','Carga Base de antenas con administrador')
+    print('*'*200,'\n')
+    
     # me devuelve una lista de las antenas que pertenesen al igac y la lista de la que no ordenadas por distancia a mi coordenada base
-    antenas_con_administrador = filtro_antenas_igac(datos_kml)
+    antenas_con_administrador = filtro_antenas_igac(datos_kml_order)
+    
+    # Mensaje de depuración
+    print('Administrador antenas:', len(antenas_con_administrador), '\n', antenas_con_administrador,'\n','*'*100)
+    
     #servicio para buscar archivos rinex segun fecha
-    print("descargar base de antenas para conocer el administrador de la antena")
     consumir_servicio_segun_fecha()
 
 #***************************************************************************************************************
 # funcion principal calcular las  antenas mas cercanas
 def calcular_antenas():
-    global coordenada_media_base, datos_kml, fecha, fecha_mas_un_dia, ruta_carpeta_gps
+    
+    # Llamamos la variables globales las cuales se encuentran en NONE
+    global coordenada_media_base, datos_kml, datos_kml_order, fecha, fecha_mas_un_dia, ruta_carpeta_gps
+    
     # Captura de respuestas por parte de la funcion cargar_base_pos
     coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media, ruta_carpeta_gps)
+    
     # Actualización de mensaje de interfaz
     label_estado_archivo_pos.config(text=mensaje_pos)
+    
     # Validación de coordenada_media_base
     if not coordenada_media_base:
-        return
-    print('*'*20)
-    print('listado de las atenas mas cercanas a la coordenada media base')
-    datos_kml = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'],coordenada_media_base['longitud']),datos_kml)
-    print('-'*100,datos_kml)
-    time.sleep(20)
+        return print('*'*50,'\n','No se pudo calcular la coordenada media base')
+    
+    # Mensaje de depuración
+    print('*'*200,'\n','Se calculo exitosamente la coordenada media')
+    print('*'*200,'\n')
+    print('-'*200,'\n')
+     
+    # Funcion para calcular las antenas mas cercanas a mi coordenada media base
+    datos_kml_order = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'],coordenada_media_base['longitud']),datos_kml)
+    
+    # Validacion que kml contenga algo
+    if datos_kml_order.empty:
+        return print('Data frame de las antenas mas cercanas vacio')
+    
+    # Mensaje de depuración
+    print('\n', 'Antenas mas cercanas:', len(datos_kml_order), '\n', datos_kml_order)
+
+    # Mensaje de depuración
+    print('*'*200,'\n','Se calculo exitosamente la lista de antenas mas cercanas')
+    print('*'*200,'\n')
+    print('-'*200,'\n')
+       
+    # Llamamos la funcion para consumir un servicio que nos trae una base de informacion de las antenas de la red geodesica
     consumir_servicio_andimistrador_antenas()
 
 #***************************************************************************************************************
@@ -152,15 +241,16 @@ def Seleccionar_proyecto():
     # Ejecucion de función para seleccionar el proyecto
     ruta_carpeta_proyecto, ruta_carpeta_gps = selec_proyect()
     
+    # Validacion de ruta del archivo .pos
     if not ruta_carpeta_proyecto and not ruta_carpeta_gps:
-        return
-    
-    print('*'*50,'\n','ruta carpeta:',ruta_carpeta_proyecto)
-    print('*'*50,'\n','ruta archivos:',ruta_carpeta_gps)
-    print(type(ruta_carpeta_gps))
+        return print('*'*50,'\n','No hay rutas')
 
-    print('*'*200)
-    time.sleep(1)
+    # Mensaje de depuración
+    print('*'*200,'\n','Archivo .pos creado o ubicado satisfactoriamente')
+    print('*'*200,'\n')
+    print('-'*200,'\n')
+    
+    # llamamos la función de calcular antenas
     calcular_antenas()
     
 #***************************************************************************************************************
@@ -177,7 +267,10 @@ def cargar_archivo_kml():
     if datos_kml.empty:
         return print('*'*50,'\n','Archivo kml esta vacio')
 
-    print('*'*50,'\n','Archivo KML cargado exitosamente')
+    # Mensaje de depuración
+    print('*'*200,'\n','Archivo KML cargado exitosamente')
+    print('*'*200,'\n')
+    print('-'*200,'\n')
     
     # Actualizamos el mensaje de la interfaz
     label_estado_base_kml.config(text=mensaje_kml)
@@ -191,6 +284,7 @@ def cerrar_programa():
     
     # Finaliza el proceso completo del programa incluyendo los hilos
     os._exit(0)
+    
 # *****************************************ESTILOS TKINTER******************************************************
 # Configuración de la ventana principal 
 ventana = tk.Tk()
@@ -220,7 +314,7 @@ tabla_antenas.column("Nombre", width=100, anchor="center")          # Ajuste par
 tabla_antenas.column("Latitud", width=150, anchor="center")         # Ajuste para latitud
 tabla_antenas.column("Longitud", width=150, anchor="center")        # Ajuste para longitud
 tabla_antenas.column("Distancia", width=100, anchor="center")       # Ajuste para la distancia
-tabla_antenas.column("Administrador", width=100, anchor="center")   # Ajuste para el Administgrador de la antena 
+tabla_antenas.column("Administrador", width=100, anchor="center")   # Ajuste para el Administrador de la antena 
 
 tabla_antenas.pack(pady=5, padx=5, fill="both")
 

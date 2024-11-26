@@ -27,6 +27,7 @@ def cerrar_edge():
         pass
 
 def rpa_igac():
+    
     global ID_TOKEN
     cerrar_edge()
     time.sleep(1)
@@ -35,11 +36,13 @@ def rpa_igac():
     options = Options()
     options.add_argument(f"user-data-dir={ruta_perfil}")
     options.add_argument(f"profile-directory={nombre_perfil}")
-    options.add_argument("--headless")  # Ejecuta el navegador en modo "headless"
+    
+    # Ejecuta el navegador en modo "headless"
+    options.add_argument("--headless")  
 
-    seleniumwire_options = {
-        'disable_http2': True  # Deshabilitar HTTP/2
-    }
+    # Deshabilitar HTTP/2
+    seleniumwire_options = {'disable_http2': True }
+
 
     # Crear instancia de Edge con las opciones de Selenium Wire
     driver = webdriver.Edge(service=service, options=options, seleniumwire_options=seleniumwire_options)
@@ -48,11 +51,12 @@ def rpa_igac():
     driver.get(ruta)
 
     try:
-        WebDriverWait(driver, 20).until(
-            lambda d: d.execute_script("return document.readyState") == "complete"
-        )
+        
+        WebDriverWait(driver, 20).until(lambda d: d.execute_script("return document.readyState") == "complete") 
         print("La página ha cargado completamente.")
+        
     except Exception as e:
+        
         print(f"Error al esperar que la página cargue completamente: {e}")
 
     driver.refresh()
@@ -69,7 +73,7 @@ def rpa_igac():
                     json_data = json.loads(body_data)
                     if "idToken" in json_data:
                         ID_TOKEN = json_data["idToken"]
-                        print("idToken capturado", ID_TOKEN)
+                        print('*'*150,'\n',"idToken capturado",'\n','*'*150)
                         driver.quit()
                         return ID_TOKEN
                     else:

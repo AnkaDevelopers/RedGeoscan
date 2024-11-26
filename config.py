@@ -42,7 +42,7 @@ msj_kml = [
 # Mensajes de estado funcion de selección de proyecto
 msj_select_proyect = [
     "Selecciona la carpeta de tu proyecto",
-    "Usuario selecciono la carpeta del proyecto",
+    "Usuario selecciono la carpeta del proyecto:",
     "La carpeta seleccionada no cumple el estadar",
     "No se encontro ninguna carpeta en la ruta: ",
     "No se encontro el archivo con extención: ",
@@ -75,5 +75,15 @@ msj_pos = [
     "Línea ignorada por error en conversión",
     "No se seleccionó ningún archivo. Salida de la función.",
     "No se encontraron datos válidos en el archivo POS",
-    "El archivo POS se ha cargado correctamente."
+    "El archivo .POS se ha cargado correctamente.",
+    "El archivo .POS seleccionado no cumple con los requisitos."
+]
+
+# Mensajes main
+msj_main = [
+    "Archivo KML Vacio",
+    "Archivo KML cargado Exitosamente",
+    "No se selecciono ningun Proyecto",
+    "Hubo un error en calcular la coordenada media base",
+    
 ]

@@ -15,15 +15,19 @@ ruta_descarga = config.ruta_descargas
 #********************************************************************************************************************************
 # Servicio para ver toda la red geodésica
 def servicio_administrador_antenas():
+    
     try:
         # Define el nombre del archivo basado en la fecha actual
-        fecha_actual = datetime.now().strftime("%d-%B-%Y")
-        nombre_archivo = f"antenas_{fecha_actual}.json"
-        
-        # Verificar si ya existe el archivo JSON con el nombre actual
-        if os.path.exists(nombre_archivo):
-            print(f"El archivo {nombre_archivo} ya existe. No se realiza la solicitud.")
-            return None
+        fecha_actual = datetime.now()
+        mes_actual = fecha_actual.strftime("%B-%Y")
+        nombre_archivo = f"antenas-{fecha_actual.strftime('%d-%B-%Y')}.json"
+
+        # Verificar si ya existe un archivo JSON del mes actual
+        archivos_json = [archivo for archivo in os.listdir() if archivo.startswith("antenas_") and archivo.endswith(".json")]
+        for archivo in archivos_json:
+            if mes_actual in archivo:  # Comprobar si el archivo pertenece al mes actual
+                print(f"El archivo {archivo} ya existe y pertenece al mes actual. No se realiza la solicitud.")
+                return None
         
         print("Iniciando solicitud al servicio...")
 
@@ -62,9 +66,9 @@ def servicio_administrador_antenas():
 
                     print(f"Datos guardados correctamente en {nombre_archivo}")
                     
-                    # Eliminar otros archivos JSON con fechas diferentes
-                    for archivo in os.listdir():
-                        if archivo.startswith("antenas_") and archivo.endswith(".json") and archivo != nombre_archivo:
+                    # Eliminar otros archivos JSON con fechas diferentes al mes actual
+                    for archivo in archivos_json:
+                        if mes_actual not in archivo:  # Archivos fuera del mes actual
                             os.remove(archivo)
                             print(f"Archivo {archivo} eliminado.")
 
@@ -81,7 +85,6 @@ def servicio_administrador_antenas():
 
     except Exception as e:
         print(f"Error inesperado: {e}")
-
 
 #********************************************************************************************************************************
 # Servicio para poder ver los links de descarga de las antenas

@@ -48,6 +48,7 @@ def fecha_a_semana_gps(fecha_str):
 #********************************************************************************************
 # Función para calcular las antenas más cercanas que cumplen con los criterios
 def calcular_antenas_mas_cercanas(punto_central, datos_kml):
+    
     # Calcular la distancia de cada antena al punto central
     datos_kml['Distancia'] = datos_kml.apply(
         lambda row: calcular_distancia(
@@ -55,9 +56,14 @@ def calcular_antenas_mas_cercanas(punto_central, datos_kml):
         ),
         axis=1
     )
-    # Ordenar las antenas por distancia
-    datos_ordenados = datos_kml.sort_values(by='Distancia')
+    # Filtrar antenas con distancia <= 150 km
+    datos_filtrados = datos_kml[datos_kml['Distancia'] <= 150]
+    
+    # Ordenar las antenas filtradas por distancia
+    datos_ordenados = datos_filtrados.sort_values(by='Distancia')
+    
     return datos_ordenados
+
 
 #********************************************************************************************
 #Convierte una fecha en formato 'dd/mm/yyyy' a 'ddmmyy'.

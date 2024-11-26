@@ -4,27 +4,35 @@ import tkinter.messagebox as messagebox
 from tkinter import filedialog
 import numpy as np
 import config  
+import time
 
-
+# Variables globales
 msj_estado = config.msj_pos
 fecha = None
 
 #********************************************************************************************
-#Funcion para organizar el archivo .pos
+# Función para organizar el archivo .pos
 def organizar_pos(datos_pos, tabla_coordenada_media):
     
     # Verificar si los parámetros están vacíos
     if not datos_pos or not tabla_coordenada_media:
-        messagebox.showinfo("Advertencia", "El archivo .pos seleccionado no cumple con los requisitos.")
+        messagebox.showinfo("Advertencia", msj_estado[4])
         return None  
     
-        # Separar las semanas y las coordenadas
-    dias, semanas, latitudes, longitudes, alturas = zip(*datos_pos)
-    dia = int(np.mean(dias))
-    semana = int(np.mean(semanas))
-    media_latitud = np.mean(latitudes)  # Asignar a la variable global
-    media_longitud = np.mean(longitudes)  # Asignar a la variable global
-    media_altura = np.mean(alturas)  # Asignar a la variable global
+    # Separar las coordenadas
+    latitudes, longitudes, alturas = zip(*[(d[0], d[1], d[2]) for d in datos_pos])
+
+    # Buscar la media de los datos y convertir a float estándar
+    media_latitud = float(np.mean(latitudes))
+    media_longitud = float(np.mean(longitudes))
+    media_altura = float(np.mean(alturas))
+
+    # Calcular la fecha media
+    fechas = [datetime.strptime(d[3], "%Y/%m/%d %H:%M:%S.%f") for d in datos_pos]
+    fecha_media = fechas[len(fechas) // 2]  # Fecha central (puede usarse promedio si necesario)
+    
+    # Calcular semana GPS y día del año solo una vez
+    semana, dia = fecha_a_semana_gps(fecha_media.strftime("%Y/%m/%d %H:%M:%S.%f"))
 
     # Actualizar tabla con coordenada media
     lat_g, lat_m, lat_s = decimales_a_gms(media_latitud)
@@ -41,20 +49,27 @@ def organizar_pos(datos_pos, tabla_coordenada_media):
         semana,
         dia 
     ))
+
+    # Devolver resultado en un diccionario
     media_pos = {
-        "dia": dia,
+        "latitud": media_latitud,
+        "longitud": media_longitud,
+        "altura": media_altura,
         "semana": semana,
-        "latitud": float(media_latitud) ,
-        "longitud": float(media_longitud ),
-        "altura": float(media_altura)
+        "dia": dia
     }
+    
+    print('*'*50,'\n','coordenada media:', media_pos)    
     return media_pos
 
 #********************************************************************************************
-#Funcion para procesar el archivo .pos
+# Función para procesar el archivo .pos
 def procesar_pos(archivo_pos, insertar_datos):
     global fecha
+    
+    # Inicialización de una lista para los datos del archivo pos
     datos_pos = []
+    
     with open(archivo_pos, 'r') as file:
         for line in file:
             if not line.startswith('%'):
@@ -62,18 +77,20 @@ def procesar_pos(archivo_pos, insertar_datos):
                 try:
                     # Capturar fecha y hora
                     fecha = valores[0] + ' ' + valores[1]
-                    # Calcular la semana GPS usando la nueva función
-                    semana_gps, dia_del_anio = fecha_a_semana_gps(fecha)
                     latitud = float(valores[2])
                     longitud = float(valores[3])
                     altura = float(valores[4])
-                    # Incluir epoca y dia del año en los datos
-                    datos_pos.append((dia_del_anio, semana_gps, latitud, longitud, altura)) 
+
+                    # Agregar coordenadas y fecha/hora al dataset
+                    datos_pos.append((latitud, longitud, altura, fecha))
+        
                 except ValueError:
                     print(f"{msj_estado[0]}: {line.strip()}")
                     continue
-    #calculamos coordenada media base
-    media_pos = organizar_pos(datos_pos, insertar_datos) 
+    
+    # Calcular coordenada media    
+    media_pos = organizar_pos(datos_pos, insertar_datos)
+     
     return media_pos
 
 #********************************************************************************************
@@ -84,30 +101,26 @@ def cargar_base_pos(insertar_datos, ruta_pos):
     fecha_mas_24_formateada = None
     estado = msj_estado[3]
     
-    if not ruta_pos: 
-        # Abre una ventana para seleccionar un archivo .pos
-        archivo_pos = filedialog.askopenfilename(
-          filetypes=[("Archivos POS", "*.pos")], title="Selecciona un archivo .POS"
-     )
-    else:
+    # En caso de que exista una ruta en el argumento  
+    if ruta_pos:
         archivo_pos = ruta_pos
+    else:
+        # Abrir ventana para seleccionar archivo .pos
+        archivo_pos = filedialog.askopenfilename(filetypes=[("Archivos POS", "*.pos")], title="Selecciona un archivo .POS")  
+        if not archivo_pos:
+            estado = msj_estado[1]
+            return media_pos, estado, fecha_formateada, fecha_mas_24_formateada
     
-    # Si se cierra  la ventana sin seleccionar archivo, se muestra un mensaje de salida de la funcion
-    if not archivo_pos:
-        estado = msj_estado[1]
-        return media_pos, estado ,fecha_formateada, fecha_mas_24_formateada
-    
-    # Se procesan los satos del archivo.pos
+    # Procesar los datos del archivo.pos
     media_pos = procesar_pos(archivo_pos, insertar_datos)
     if not media_pos:
         estado = msj_estado[1]
-        return media_pos, estado ,fecha_formateada, fecha_mas_24_formateada
+        return media_pos, estado, fecha_formateada, fecha_mas_24_formateada
     
-    # los datos estan cargados
-    # Convertir la cadena a un objeto datetime, solo con la fecha
+    # Calcular fechas formateadas
     fecha_nueva = datetime.strptime(fecha, "%Y/%m/%d %H:%M:%S.%f")
     fecha_formateada = fecha_nueva.strftime("%d/%m/%Y")
-    # Crear una nueva fecha con un día más
     fecha_mas_24 = fecha_nueva + timedelta(days=1)
     fecha_mas_24_formateada = fecha_mas_24.strftime("%d/%m/%Y")
-    return media_pos, estado ,fecha_formateada, fecha_mas_24_formateada
+    
+    return media_pos, estado, fecha_formateada, fecha_mas_24_formateada

@@ -1,6 +1,7 @@
 import json
 import os
 import glob
+import pandas as pd  # Importar pandas para manejar DataFrames
 
 def filtro_antenas_igac(Antenas_kml):
     # Buscar el archivo JSON que comienza con 'antenas' en el mismo proyecto
@@ -9,7 +10,7 @@ def filtro_antenas_igac(Antenas_kml):
 
     if not archivos_json:
         print("No se encontró ningún archivo JSON que comience con 'antenas'.")
-        return
+        return pd.DataFrame()  # Retornar un DataFrame vacío en caso de error
 
     # Usar el primer archivo que coincida con el patrón
     ruta_json = archivos_json[0]
@@ -19,7 +20,6 @@ def filtro_antenas_igac(Antenas_kml):
         datos_json = json.load(archivo_json)
 
     antenas_con_administrador = []  # Lista para almacenar antenas administradas por IGAC o IGAC-SGC
-
 
     # Iterar sobre cada antena en Antenas_kml
     for _, antena in Antenas_kml.iterrows():
@@ -43,4 +43,7 @@ def filtro_antenas_igac(Antenas_kml):
 
         else:
             print(f"Antena {nombre_antena} no encontrada en el archivo JSON.")
-    return antenas_con_administrador
+
+    # Convertir la lista de antenas filtradas a un DataFrame
+    df_antenas_con_administrador = pd.DataFrame(antenas_con_administrador)
+    return df_antenas_con_administrador
