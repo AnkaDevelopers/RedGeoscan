@@ -1,10 +1,16 @@
-from consumo_servicios import consumir_servicio_descarga
+from consumo_servicios import consumir_servicio_descarga,descargar_archivo
 import time
 
 def extraer_token_para_descarga_rinex(dataSet_antenas, token_principal, callback_progreso=None):
     
     # Convertir el DataFrame a un diccionario
     dataSet_dict = dataSet_antenas.to_dict(orient='records')
+
+    # Calcular el número total de archivos RINEX a procesar
+    total_rinex = sum(len(antena['rinex_data']) for antena in dataSet_dict)
+
+    # Inicializar el progreso
+    progreso_actual = 0
 
     # Recorrer cada antena en el dataset
     for antena in dataSet_dict:
@@ -22,9 +28,10 @@ def extraer_token_para_descarga_rinex(dataSet_antenas, token_principal, callback
             else:
                 print(f"No se pudo obtener token para {archivo_rinex['NOMBRE_ARCHIVO']} (ID: {id_rinex})")
 
-            # Llamar al callback de progreso si está definido
+            # Actualizar el progreso
+            progreso_actual += 1
             if callback_progreso:
-                callback_progreso()
+                callback_progreso(total_rinex, progreso_actual)
 
             # Pausa para evitar saturar el servicio
             time.sleep(0.5)

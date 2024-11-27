@@ -14,7 +14,7 @@ def crear_lista_antenas_x_rinex(fecha_inicial, fecha_final, datos_antenas):
     for index, fila in datos_antenas.iterrows():
         
         # Detener el proceso si ya se alcanzaron 8 antenas con datos RINEX
-        if contador_rinex >= 8:
+        if contador_rinex >= 2:
             print('*' * 100, '\n', "Se alcanzó el límite de 8 antenas con datos RINEX.")
             break
         

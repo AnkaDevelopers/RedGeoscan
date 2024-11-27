@@ -57,42 +57,34 @@ def limpiar():
 def iniciar_consumir_servicio_token_principal():
     hilo = threading.Thread(target=consumir_servicio_token_principal)
     hilo.start()
+    
 #***************************************************************************************************************
 # Función para imprimir variables y depurar
 def imprimir():
-    # Imprimir la fila completa
-    #print('ruta en menu', ruta_carpeta_proyecto)
-    print("Fila 1 completa:")
-    print(dataSet_antenas.loc[1])
-    
-    # Acceder a la columna 'rinex_data' de la fila 1
-    rinex_data = dataSet_antenas.loc[1, 'rinex_data']
-    
-    # Validar si hay datos en 'rinex_data' y luego imprimirlos
-    if rinex_data:
-        print("\nLista de RINEX data:")
-        for rinex in rinex_data:
-            print(rinex)
-    else:
-        print("\nNo hay datos en la columna 'rinex_data' para la fila 1.") 
-
+    print(dataSet_antenas)
 
 #***************************************************************************************************************
-# Barra de progreso: incrementa cada vez que se llama
-def barra_de_progreso():
+# Barra de progreso: controla el avance basado en parámetros
+def barra_de_progreso(valor_maximo, progreso_actual):
     global barra_visible
+
+    # Configurar la barra de progreso solo la primera vez
     if not barra_visible:
-        barra_progreso.pack(pady=10)  
+        barra_progreso['maximum'] = valor_maximo  # Establecer el valor máximo
+        barra_progreso['value'] = 0  # Reiniciar el valor actual
+        barra_progreso.pack(pady=10)
         barra_visible = True
-        
-    # Aumenta el valor actual de la barra
-    if barra_progreso['value'] < 100:  
-        barra_progreso['value'] += progreso_barra
-    if barra_progreso['value'] == 100:
+
+    # Actualizar el valor actual de la barra
+    barra_progreso['value'] = progreso_actual
+
+    # Ocultar la barra cuando se completa el progreso
+    if progreso_actual >= valor_maximo:
         barra_progreso.pack_forget()
         barra_visible = False
 
-    ventana.update_idletasks()  # Actualiza la interfaz
+    ventana.update_idletasks()  # Actualizar la interfaz
+
 
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
