@@ -74,6 +74,8 @@ def seleccionar_carpeta_por_indice(ruta, indice):
 # Funcion para seleccioanr y alamacenar la ruta del proyecto
 def selec_proyect():
 
+    ruta_pos = None
+
     # Variable para almacenar las rutas para el RPA del programa RTKLIB
     rutas_rinex_proyecto = {}
     

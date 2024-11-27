@@ -163,7 +163,7 @@ def consumir_servicio_descarga(id_rinex, token):
     
 #********************************************************************************************************************************
 # Servicio para capturar el token de descarga y descargar el archivo
-def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ruta_carpeta_inicial):
+def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ruta_carpeta_inicial, validacion):
     
     #verifico si ya existe la ruta donde voy a guardar mis archivos
     if  not ruta_carpeta_inicial:

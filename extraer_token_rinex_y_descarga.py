@@ -4,11 +4,12 @@ import os
 
 ruta_carpeta = None
 
-def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyectyo, antenas, token_principal, fecha, callback_progreso=None):
+def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyecto, antenas, token_principal, fecha, callback_progreso=None):
     global ruta_carpeta
     
+    # Validamos si la interaccion fue cargando proyecto o directamente el archivo .pos
     if cargo_proyecto == True:
-        ruta_carpeta = ruta_carpeta_proyectyo
+        ruta_carpeta = ruta_carpeta_proyecto # C:\Users\camil-code\Desktop\AGRADO-RPA-RTKLIB
     
     # Filtrar solo las antenas con has_rinex == True
     antenas_filtradas = antenas[antenas['has_rinex'] == True]
@@ -68,7 +69,8 @@ def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyectyo, an
                     nombre_archivo=nombre_archivo,
                     fecha=fecha,
                     administrador=administrador,
-                    ruta_carpeta_inicial=ruta_carpeta
+                    ruta_carpeta_inicial=ruta_carpeta,
+                    validacion = cargo_proyecto
                 )
                 print(f"Descarga exitosa para {nombre_antena} - Archivo: {nombre_archivo}")
             else:

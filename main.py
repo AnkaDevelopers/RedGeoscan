@@ -95,10 +95,11 @@ def consumir_token_descarga_rinex():
     ruta = extraer_token_para_descarga_rinex(
         confirmacion_btn_carga_proyecto, 
         ruta_carpeta_proyecto, dataSet_antenas, 
-        token_principal, fecha, 
+        token_principal, 
+        fecha, 
         barra_de_progreso)
     
-    print("descarga completa de los archivos rinex")
+    print("descarga completa de los archivos rinex",'\n', ruta)
     
     #insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
     #print("insercion de los datos en la tabla")
