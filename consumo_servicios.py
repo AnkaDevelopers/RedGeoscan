@@ -1,4 +1,4 @@
-from buscador_de_carpetas import buscar_y_crear_carpeta
+from buscador_de_carpetas import buscar_y_crear_carpeta, buscar_crear_carpeta
 from datetime import datetime
 from tkinter import filedialog
 from zipfile import ZipFile
@@ -165,9 +165,13 @@ def consumir_servicio_descarga(id_rinex, token):
 # Servicio para capturar el token de descarga y descargar el archivo
 def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ruta_carpeta_inicial, validacion):
     
+    if validacion == True:
+        ruta_descarga == ruta_carpeta_inicial
+        ruta_carpeta_inicial = None
+    
     #verifico si ya existe la ruta donde voy a guardar mis archivos
     if  not ruta_carpeta_inicial:
-        ruta_carpeta_inicial = buscar_y_crear_carpeta(ruta_descarga, fecha)
+        ruta_carpeta_inicial = buscar_crear_carpeta(ruta_descarga, fecha)
                   
     #nombre de la carpeta del administrador
     nombre_carpeta_red_geoscan = administrador            

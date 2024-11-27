@@ -63,7 +63,7 @@ def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyecto, ant
                 archivo_rinex['TOKEN'] = respuesta
                 
                 # Descargar el archivo usando el token
-                ruta_carpeta = descargar_archivo(
+                ruta_carpetas = descargar_archivo(
                     token=respuesta,
                     subcarpeta=subcarpeta,
                     nombre_archivo=nombre_archivo,
@@ -72,6 +72,9 @@ def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyecto, ant
                     ruta_carpeta_inicial=ruta_carpeta,
                     validacion = cargo_proyecto
                 )
+                if ruta_carpetas:
+                    ruta_carpeta = ruta_carpetas
+                    cargo_proyecto = False
                 print(f"Descarga exitosa para {nombre_antena} - Archivo: {nombre_archivo}")
             else:
                 print(f"No se pudo descargar el token para {nombre_antena} - Archivo: {nombre_archivo}")

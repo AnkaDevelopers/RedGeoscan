@@ -90,7 +90,7 @@ def barra_de_progreso(valor_maximo, progreso_actual):
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
-    global ruta_descarga
+    global ruta_descarga, ruta_carpeta_gps
     
     ruta = extraer_token_para_descarga_rinex(
         confirmacion_btn_carga_proyecto, 
@@ -101,7 +101,9 @@ def consumir_token_descarga_rinex():
     
     print("descarga completa de los archivos rinex",'\n', ruta)
     
-    #insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
+    ruta_carpeta_gps = None
+    
+    insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
     #print("insercion de los datos en la tabla")
     
 # ***************************************************************************************************************
@@ -207,9 +209,10 @@ def consumir_servicio_andimistrador_antenas():
 # funcion principal calcular las  antenas mas cercanas
 def calcular_antenas():
     
+    
     # Llamamos la variables globales las cuales se encuentran en NONE
     global coordenada_media_base, datos_kml, datos_kml_order, fecha, fecha_mas_un_dia, ruta_carpeta_gps
-    
+       
     # Captura de respuestas por parte de la funcion cargar_base_pos
     coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media, ruta_carpeta_gps)
     
