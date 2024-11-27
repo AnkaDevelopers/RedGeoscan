@@ -17,6 +17,7 @@ import os
 
 #***************************************************************************************************************
 # Variables globales y sus valores iniciales
+confirmacion_btn_carga_proyecto = None
 ruta_carpeta_gps= None
 ruta_carpeta_proyecto = None
 coordenada_media_base = None
@@ -89,23 +90,16 @@ def barra_de_progreso(valor_maximo, progreso_actual):
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
-    global dataSet_antenas
-
-    # Iterar sobre las filas del DataFrame donde has_rinex es True
-    for index, fila in dataSet_antenas[dataSet_antenas['has_rinex'] == True].iterrows():
-        # Llamar a la función por cada fila como un DataFrame
-        fila_df = pd.DataFrame([fila])
-
-        # Obtener la fila actualizada con los tokens
-        fila_actualizada = extraer_token_para_descarga_rinex(fila_df, token_principal, barra_de_progreso)
-
-        # Actualizar el DataFrame global con los datos procesados
-        if fila_actualizada:
-            dataSet_antenas.at[index, 'rinex_data'] = fila_actualizada[0]['rinex_data']
-
-
+    global ruta_descarga
     
-    #print("descarga completa de los archivos rinex")
+    ruta = extraer_token_para_descarga_rinex(
+        confirmacion_btn_carga_proyecto, 
+        ruta_carpeta_proyecto, dataSet_antenas, 
+        token_principal, fecha, 
+        barra_de_progreso)
+    
+    print("descarga completa de los archivos rinex")
+    
     #insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
     #print("insercion de los datos en la tabla")
     
@@ -253,7 +247,7 @@ def calcular_antenas():
 def Seleccionar_proyecto():
     
     # Variable global para almacenar las rutas del proyecto 
-    global ruta_carpeta_proyecto, ruta_carpeta_gps
+    global ruta_carpeta_proyecto, ruta_carpeta_gps, confirmacion_btn_carga_proyecto
     
     # Ejecucion de función para seleccionar el proyecto
     ruta_carpeta_proyecto, ruta_carpeta_gps = selec_proyect()
@@ -268,6 +262,7 @@ def Seleccionar_proyecto():
     print('-'*200,'\n')
     
     # llamamos la función de calcular antenas
+    confirmacion_btn_carga_proyecto = True
     calcular_antenas()
     
 #***************************************************************************************************************

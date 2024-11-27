@@ -168,7 +168,7 @@ def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ru
     #verifico si ya existe la ruta donde voy a guardar mis archivos
     if  not ruta_carpeta_inicial:
         ruta_carpeta_inicial = buscar_y_crear_carpeta(ruta_descarga, fecha)
-        
+                  
     #nombre de la carpeta del administrador
     nombre_carpeta_red_geoscan = administrador            
 

@@ -1,39 +1,83 @@
-from consumo_servicios import consumir_servicio_descarga,descargar_archivo
+from consumo_servicios import consumir_servicio_descarga, descargar_archivo
 import time
+import os
 
-def extraer_token_para_descarga_rinex(dataSet_antenas, token_principal, callback_progreso=None):
+ruta_carpeta = None
+
+def extraer_token_para_descarga_rinex(cargo_proyecto, ruta_carpeta_proyectyo, antenas, token_principal, fecha, callback_progreso=None):
+    global ruta_carpeta
     
-    # Convertir el DataFrame a un diccionario
-    dataSet_dict = dataSet_antenas.to_dict(orient='records')
+    if cargo_proyecto == True:
+        ruta_carpeta = ruta_carpeta_proyectyo
+    
+    # Filtrar solo las antenas con has_rinex == True
+    antenas_filtradas = antenas[antenas['has_rinex'] == True]
 
-    # Calcular el número total de archivos RINEX a procesar
-    total_rinex = sum(len(antena['rinex_data']) for antena in dataSet_dict)
+    # Longitud total de las antenas filtradas para la barra de progreso
+    longitud_total = len(antenas_filtradas)
+    progreso_actual = 0  # Inicializar el progreso actual
 
-    # Inicializar el progreso
-    progreso_actual = 0
+    print("Comenzando la descarga de tokens RINEX...")
 
-    # Recorrer cada antena en el dataset
-    for antena in dataSet_dict:
+    for index, fila in antenas_filtradas.iterrows():
         
-        # Recorrer cada archivo RINEX y consumir el servicio
-        for archivo_rinex in antena['rinex_data']:
-            id_rinex = archivo_rinex['ID_RINEX']
+        # Extraemos el nombre de la antena
+        nombre_antena = fila['NAME']
+        
+        # Extraemos la distancia de la antena
+        distancia = round(fila['Distancia'], 1)
+        
+        # Extraemos el nombre del administrador de la antena
+        administrador = fila['ADMINISTRADOR']
+        
+        # Extraemos la información de rinex_data
+        rinex_data = fila['rinex_data']
+        
+        # Validar que rinex_data sea una lista válida
+        if not isinstance(rinex_data, list):
+            print(f"Advertencia: rinex_data no es una lista válida para la antena {nombre_antena}.")
+            continue
 
-            # Consumir el servicio para obtener el token
+        # Creamos el nombre de la subcarpeta
+        subcarpeta = f"{index + 1}-{nombre_antena}-{distancia}-km"
+
+        for archivo_rinex in rinex_data:
+            
+            # Validar que el archivo RINEX tenga un ID válido
+            id_rinex = archivo_rinex.get('ID_RINEX')
+            if not id_rinex:
+                print(f"Advertencia: No se encontró ID_RINEX en el archivo {archivo_rinex.get('NOMBRE_ARCHIVO', 'desconocido')}.")
+                continue
+            
+            # Extraer el nombre del archivo RINEX
+            nombre_archivo = archivo_rinex.get('NOMBRE_ARCHIVO', 'desconocido')
+
+            # Consumir servicio para obtener el token
             respuesta = consumir_servicio_descarga(id_rinex, token_principal)
-
-            # Si hay una respuesta válida, agregar el token al archivo RINEX
-            if respuesta:
-                archivo_rinex['TOKEN'] = respuesta
-            else:
-                print(f"No se pudo obtener token para {archivo_rinex['NOMBRE_ARCHIVO']} (ID: {id_rinex})")
-
-            # Actualizar el progreso
-            progreso_actual += 1
-            if callback_progreso:
-                callback_progreso(total_rinex, progreso_actual)
-
-            # Pausa para evitar saturar el servicio
             time.sleep(0.5)
 
-    return dataSet_dict
+            # Validar la respuesta del servicio
+            if respuesta:
+                # Agregar el token al archivo RINEX
+                archivo_rinex['TOKEN'] = respuesta
+                
+                # Descargar el archivo usando el token
+                ruta_carpeta = descargar_archivo(
+                    token=respuesta,
+                    subcarpeta=subcarpeta,
+                    nombre_archivo=nombre_archivo,
+                    fecha=fecha,
+                    administrador=administrador,
+                    ruta_carpeta_inicial=ruta_carpeta
+                )
+                print(f"Descarga exitosa para {nombre_antena} - Archivo: {nombre_archivo}")
+            else:
+                print(f"No se pudo descargar el token para {nombre_antena} - Archivo: {nombre_archivo}")
+
+        # Actualizar el progreso
+        progreso_actual += 1
+        if callback_progreso:
+            callback_progreso(longitud_total, progreso_actual)
+
+    print("Proceso de descarga completado.")
+    return ruta_carpeta
