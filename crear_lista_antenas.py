@@ -1,4 +1,5 @@
 from calculos import decimales_a_gms
+from openpyxl.styles import PatternFill
 import openpyxl
 import os
 
@@ -62,7 +63,7 @@ def insertar_datos_antenas(tabla_antenas, antenas_con_rinex, ruta):
 def exportar_datos_a_excel(datos, ruta_base):
     try:
         # Crear la ruta de la carpeta 'lista-control-antenas'
-        ruta_carpeta = os.path.join(ruta_base, "lista-control-antenas")
+        ruta_carpeta = os.path.join(ruta_base, "1-lista-control-antenas")
 
         # Crear la carpeta si no existe
         if not os.path.exists(ruta_carpeta):
@@ -83,9 +84,27 @@ def exportar_datos_a_excel(datos, ruta_base):
         encabezados = ["Nombre", "Latitud", "Longitud", "Distancia", "Administrador", "RINEX Encontrado"]
         ws.append(encabezados)
 
-        # Escribir los datos
+        # Crear estilos para las filas
+        fill_verde = PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid")  # Verde claro
+        fill_rojo = PatternFill(start_color="FF6347", end_color="FF6347", fill_type="solid")  # Rojo claro
+
+        # Escribir los datos y aplicar estilos
         for fila in datos:
             ws.append(fila)
+
+            # Obtener el índice de la fila actual
+            fila_actual = ws.max_row
+            valor_rinex = fila[-1]  # Última columna es "RINEX Encontrado"
+
+            # Seleccionar estilo según el valor de "RINEX Encontrado"
+            if valor_rinex == "Sí":
+                fill = fill_verde
+            else:
+                fill = fill_rojo
+
+            # Aplicar el estilo a toda la fila
+            for col in range(1, len(fila) + 1):  # Desde la columna 1 hasta el número de columnas en la fila
+                ws.cell(row=fila_actual, column=col).fill = fill
 
         # Ajustar el ancho de las columnas a 130 píxeles
         for col in ws.columns:
