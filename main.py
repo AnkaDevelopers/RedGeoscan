@@ -11,6 +11,7 @@ from token_principal import rpa_igac, cerrar_edge
 from tkinter import ttk
 import tkinter as tk 
 import threading
+import pandas as pd
 import time
 import os
 
@@ -57,10 +58,24 @@ def iniciar_consumir_servicio_token_principal():
     hilo = threading.Thread(target=consumir_servicio_token_principal)
     hilo.start()
 #***************************************************************************************************************
-# funcion para imprimir variables y debugear
+# Función para imprimir variables y depurar
 def imprimir():
-    for antenas in dataSet_antenas:
-        print(antenas)
+    # Imprimir la fila completa
+    #print('ruta en menu', ruta_carpeta_proyecto)
+    print("Fila 1 completa:")
+    print(dataSet_antenas.loc[1])
+    
+    # Acceder a la columna 'rinex_data' de la fila 1
+    rinex_data = dataSet_antenas.loc[1, 'rinex_data']
+    
+    # Validar si hay datos en 'rinex_data' y luego imprimirlos
+    if rinex_data:
+        print("\nLista de RINEX data:")
+        for rinex in rinex_data:
+            print(rinex)
+    else:
+        print("\nNo hay datos en la columna 'rinex_data' para la fila 1.") 
+
 
 #***************************************************************************************************************
 # Barra de progreso: incrementa cada vez que se llama
@@ -82,16 +97,25 @@ def barra_de_progreso():
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id rinex de manera secuencial
 def consumir_token_descarga_rinex():
+    global dataSet_antenas
+
+    # Iterar sobre las filas del DataFrame donde has_rinex es True
+    for index, fila in dataSet_antenas[dataSet_antenas['has_rinex'] == True].iterrows():
+        # Llamar a la función por cada fila como un DataFrame
+        fila_df = pd.DataFrame([fila])
+
+        # Obtener la fila actualizada con los tokens
+        fila_actualizada = extraer_token_para_descarga_rinex(fila_df, token_principal, barra_de_progreso)
+
+        # Actualizar el DataFrame global con los datos procesados
+        if fila_actualizada:
+            dataSet_antenas.at[index, 'rinex_data'] = fila_actualizada[0]['rinex_data']
+
+
     
-    # Llamamos nuestra variable global don
-    global ruta_descarga
-    
-    # función para extraer los token de descarga de los rinex   
-    ruta = extraer_token_para_descarga_rinex(dataSet_antenas, token_principal, fecha, barra_de_progreso)
-    
-    print("descarga completa de los archivos rinex")
-    insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
-    print("insercion de los datos en la tabla")
+    #print("descarga completa de los archivos rinex")
+    #insertar_datos_antenas(tabla_antenas, dataSet_antenas, ruta)
+    #print("insercion de los datos en la tabla")
     
 # ***************************************************************************************************************
 # Función consumir servicio filtro de antenas para verificar si contiene rinex según fecha
@@ -107,6 +131,7 @@ def consumir_servicio_token_principal():
     if not token_principal:
         
         # En caso de no haber podido capturar el token principal lo intentamos una segunda vez
+        time.sleep(2)
         token_principal = rpa_igac() 
         
         # Si en el segundo intento tampoco lo podemos capturar terminamos el proceso

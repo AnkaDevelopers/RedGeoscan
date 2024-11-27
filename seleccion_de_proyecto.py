@@ -178,7 +178,7 @@ def selec_proyect():
     # Mensaje en caso de no seleccionar ninguna carpeta de proyecto        
     else:
         print('*'*50,'\n',mensaje[5])
-        return rutas_rinex_proyecto
+        return rutas_rinex_proyecto, ruta_pos
 
 
 
