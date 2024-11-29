@@ -67,7 +67,7 @@ msj_buscador_carpetas =[
     "Directorio con nombre de 'Fecha' no encontrada (101024) en ruta:",
     "Directorio 'RED ACTIVA'no de encotro en: ",
     "Ruta Final encontrada: ",
-    "Explorando: "
+    "Explorando:"
 ]
 
 # Mensajes de estado de base archivo pos
@@ -85,5 +85,4 @@ msj_main = [
     "Archivo KML cargado Exitosamente",
     "No se selecciono ningun Proyecto",
     "Hubo un error en calcular la coordenada media base",
-    
 ]

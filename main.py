@@ -1,17 +1,19 @@
+from seleccion_de_proyecto import selec_proyect,transformar_subcarpetas, buscar_archivos_en_gps
 from extraer_token_rinex_y_descarga import extraer_token_para_descarga_rinex
 from agrupar_rinex_x_antena import crear_lista_antenas_x_rinex
 from consumo_servicios import servicio_administrador_antenas
 from crear_lista_antenas import insertar_datos_antenas
-from seleccion_de_proyecto import selec_proyect
 from filtro_antenas_igac import filtro_antenas_igac
 from calculos import calcular_antenas_mas_cercanas
+from token_principal import rpa_igac, cerrar_edge
+from rpa_rtklib import ejecutar_rtk_para_gps
 from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
-from token_principal import rpa_igac, cerrar_edge
+from generar_log import agregar_log
 from tkinter import ttk
 import tkinter as tk 
-import threading
 import pandas as pd
+import threading
 import time
 import os
 
@@ -19,7 +21,7 @@ import os
 # Variables globales y sus valores iniciales
 confirmacion_btn_carga_proyecto = None
 ruta_carpeta_gps= None
-ruta_carpeta_proyecto = None
+info_proyecto = None
 coordenada_media_base = None
 datos_kml = None
 datos_kml_order = None
@@ -62,7 +64,8 @@ def iniciar_consumir_servicio_token_principal():
 #***************************************************************************************************************
 # Función para imprimir variables y depurar
 def imprimir():
-    print(dataSet_antenas)
+    global_list = agregar_log('imprimir')
+    print(global_list)
 
 #***************************************************************************************************************
 # Barra de progreso: controla el avance basado en parámetros
@@ -94,7 +97,7 @@ def consumir_token_descarga_rinex():
     
     ruta = extraer_token_para_descarga_rinex(
         confirmacion_btn_carga_proyecto, 
-        ruta_carpeta_proyecto, dataSet_antenas, 
+        #Sruta_carpeta_proyecto, dataSet_antenas, 
         token_principal, 
         fecha, 
         barra_de_progreso)
@@ -251,23 +254,28 @@ def calcular_antenas():
 def Seleccionar_proyecto():
     
     # Variable global para almacenar las rutas del proyecto 
-    global ruta_carpeta_proyecto, ruta_carpeta_gps, confirmacion_btn_carga_proyecto
+    global info_proyecto
     
     # Ejecucion de función para seleccionar el proyecto
-    ruta_carpeta_proyecto, ruta_carpeta_gps = selec_proyect()
+    info_proyecto = selec_proyect()
+    
+    # Ejecucion de funcion para organizar diccionario de rutas
+    info_proyecto = transformar_subcarpetas(info_proyecto)
+    
+    # Ejecucion de funcion para buscar las rutas de los archivos para el rtklib
+    info_proyecto = buscar_archivos_en_gps(info_proyecto)
     
     # Validacion de ruta del archivo .pos
-    if not ruta_carpeta_proyecto and not ruta_carpeta_gps:
-        return print('*'*50,'\n','No hay rutas')
-
-    # Mensaje de depuración
-    print('*'*200,'\n','Archivo .pos creado o ubicado satisfactoriamente')
-    print('*'*200,'\n')
-    print('-'*200,'\n')
+    if not info_proyecto:
+        return print('*'*50,'\n','fallo1')
     
-    # llamamos la función de calcular antenas
-    confirmacion_btn_carga_proyecto = True
-    calcular_antenas()
+    print(info_proyecto)
+    # Ejecucion de rpa
+    ejecutar_rtk_para_gps(info_proyecto)
+    
+    
+
+    #calcular_antenas()
     
 #***************************************************************************************************************
 # Cargar archivo KML que contiene la lista de las antenas Geodesicas de la red activa
