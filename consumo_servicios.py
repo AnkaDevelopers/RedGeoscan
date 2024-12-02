@@ -15,7 +15,6 @@ ruta_descarga = config.ruta_descargas
 #********************************************************************************************************************************
 # Servicio para ver toda la red geodésica
 def servicio_administrador_antenas():
-    
     try:
         # Define el nombre del archivo basado en la fecha actual
         fecha_actual = datetime.now()
@@ -23,9 +22,20 @@ def servicio_administrador_antenas():
         nombre_archivo = f"antenas-{fecha_actual.strftime('%d-%B-%Y')}.json"
 
         # Verificar si ya existe un archivo JSON del mes actual
-        archivos_json = [archivo for archivo in os.listdir() if archivo.startswith("antenas_") and archivo.endswith(".json")]
+        archivos_json = [archivo for archivo in os.listdir() if archivo.startswith("antenas-") and archivo.endswith(".json")]
+
+        # Eliminar archivos que no correspondan al mes actual
         for archivo in archivos_json:
-            if mes_actual in archivo:  # Comprobar si el archivo pertenece al mes actual
+            if mes_actual not in archivo:  # Archivos fuera del mes actual
+                try:
+                    os.remove(archivo)
+                    print(f"Archivo antiguo eliminado: {archivo}")
+                except Exception as e:
+                    print(f"Error al eliminar el archivo {archivo}: {e}")
+
+        # Comprobar si ya existe el archivo del mes actual
+        for archivo in archivos_json:
+            if mes_actual in archivo:  # Si existe un archivo del mes actual
                 print(f"El archivo {archivo} ya existe y pertenece al mes actual. No se realiza la solicitud.")
                 return None
         
@@ -65,13 +75,6 @@ def servicio_administrador_antenas():
                         json.dump(datos_limpios, archivo, ensure_ascii=False, indent=4)
 
                     print(f"Datos guardados correctamente en {nombre_archivo}")
-                    
-                    # Eliminar otros archivos JSON con fechas diferentes al mes actual
-                    for archivo in archivos_json:
-                        if mes_actual not in archivo:  # Archivos fuera del mes actual
-                            os.remove(archivo)
-                            print(f"Archivo {archivo} eliminado.")
-
                     return datos_limpios
                 
                 else:

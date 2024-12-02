@@ -118,7 +118,7 @@ def transformar_subcarpetas(diccionario_proyecto):
     return diccionario_proyecto
 
 #**********************************************************************************************************
-# Funcion para alamacenar las rutas de los archivos .pos .obs .24o y .24n
+# Función para actualizar las rutas de los archivos .pos, .obs, .24o, y .24n
 def buscar_archivos_en_gps(diccionario_proyecto):
 
     # Extensiones que buscamos
@@ -128,12 +128,20 @@ def buscar_archivos_en_gps(diccionario_proyecto):
     for dia, info in diccionario_proyecto["dias_rastreos"].items():
         subcarpetas_actualizadas = {}
         
-        # Recorrer cada carpeta en subcarpetas_base
-        for gps_nombre, ruta_gps in info["subcarpetas_base"].items():
+        # Recorrer cada GPS en subcarpetas_base
+        for gps_nombre, datos in info["subcarpetas_base"].items():
+            
+            # Si `datos` ya es un diccionario, extraer la ruta base desde `pos` u otra clave válida
+            if isinstance(datos, dict):
+                ruta_gps = os.path.dirname(datos["pos"]) if datos["pos"] != 0 else None
+            else:
+                # Si `datos` es un string, asumir que es la ruta de la carpeta GPS
+                ruta_gps = datos
+
             archivos_encontrados = {ext: 0 for ext in extensiones}  # Inicializar claves con 0
             
             # Verificar que la ruta existe
-            if os.path.exists(ruta_gps) and os.path.isdir(ruta_gps):
+            if ruta_gps and os.path.exists(ruta_gps) and os.path.isdir(ruta_gps):
                 for archivo in os.listdir(ruta_gps):
                     ruta_archivo = os.path.join(ruta_gps, archivo)
                     

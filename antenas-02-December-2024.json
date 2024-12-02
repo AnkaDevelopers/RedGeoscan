@@ -350,13 +350,6 @@
         "ESTACION": "BQLA"
     },
     {
-        "ADMINISTRADOR": "Galileo Instruments",
-        "ESTADO": "Inactiva",
-        "TIPO_ESTACION": "Activa",
-        "MATERIALIZADA": "Galileo Instruments",
-        "ESTACION": "BTAG"
-    },
-    {
         "ADMINISTRADOR": "IGAC",
         "ESTADO": "Inactiva",
         "TIPO_ESTACION": "Activa",
@@ -376,13 +369,6 @@
         "TIPO_ESTACION": "Activa",
         "MATERIALIZADA": "IGAC-SGC",
         "ESTACION": "CALE"
-    },
-    {
-        "ADMINISTRADOR": "Galileo Instruments",
-        "ESTADO": "Activa",
-        "TIPO_ESTACION": "Activa",
-        "MATERIALIZADA": "Galileo Instruments",
-        "ESTACION": "CALG"
     },
     {
         "ADMINISTRADOR": "IGAC",
@@ -453,6 +439,13 @@
         "TIPO_ESTACION": "Activa",
         "MATERIALIZADA": "IGAC",
         "ESTACION": "CHRL"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "CHVL"
     },
     {
         "ADMINISTRADOR": "SGC",
@@ -798,6 +791,13 @@
         "ESTACION": "LSJU"
     },
     {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "MAIC"
+    },
+    {
         "ADMINISTRADOR": "SGC",
         "ESTADO": "Activa",
         "TIPO_ESTACION": "Activa",
@@ -1022,18 +1022,18 @@
         "ESTACION": "PINI"
     },
     {
-        "ADMINISTRADOR": "Galileo Instruments",
-        "ESTADO": "Activa",
-        "TIPO_ESTACION": "Activa",
-        "MATERIALIZADA": "Galileo Instruments",
-        "ESTACION": "PITA"
-    },
-    {
         "ADMINISTRADOR": "IGAC-SGC",
         "ESTADO": "Activa",
         "TIPO_ESTACION": "Activa",
         "MATERIALIZADA": "IGAC-SGC",
         "ESTACION": "PLCO"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "PLRI"
     },
     {
         "ADMINISTRADOR": "IGAC",
