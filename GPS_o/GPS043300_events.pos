@@ -1,0 +1,14 @@
+% program   : RTKPOST ver.demo5 b33c
+% inp file  : C:\Users\camil-code\Desktop\NAS - PROYECTOS\ECOPETROL\2411_AFINO\1.Procesamiento\1.Topografia\Rastreos\101024\Base\GPS_o\GPS043300.24O
+% inp file  : C:\Users\camil-code\Desktop\NAS - PROYECTOS\ECOPETROL\2411_AFINO\1.Procesamiento\1.Topografia\Rastreos\101024\Base\GPS_o\GPS043300.24N
+% obs start : 2024/11/25 15:05:41.0 GPST (week2342 140741.0s)
+% obs end   : 2024/11/25 20:16:04.0 GPST (week2342 159364.0s)
+% pos mode  : single
+% elev mask : 10.0 deg
+% ionos opt : off
+% tropo opt : off
+% ephemeris : broadcast
+% navi sys  : gps glonass galileo beidou
+%
+% (lat/lon/height=WGS84/ellipsoidal,Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp,ns=# of satellites)
+%  GPST                  latitude(deg) longitude(deg)  height(m)   Q  ns   sdn(m)   sde(m)   sdu(m)  sdne(m)  sdeu(m)  sdun(m) age(s)  ratio

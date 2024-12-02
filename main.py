@@ -269,11 +269,14 @@ def Seleccionar_proyecto():
     if not info_proyecto:
         return print('*'*50,'\n','fallo1')
     
-    print(info_proyecto)
     # Ejecucion de rpa
     ejecutar_rtk_para_gps(info_proyecto)
     
+    # Ejecucion de funcion para buscar las rutas de los archivos para el rtklib
+    info_proyecto = buscar_archivos_en_gps(info_proyecto)
     
+    # Diccionarioa actualizado
+    print(info_proyecto)
 
     #calcular_antenas()
     
