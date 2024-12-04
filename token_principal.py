@@ -77,11 +77,13 @@ def rpa_igac():
                         driver.quit()
                         return ID_TOKEN
                     else:
-                        print("idToken no encontrado en el cuerpo de la solicitud.")
+                        return ''
             except Exception as e:
                 print(f"Error al procesar el cuerpo de la solicitud getAccountInfo: {e}")
+                return ''
             break
     else:
         print("No se encontró la solicitud `getAccountInfo` después de recargar la página.")
+        return ''
     driver.quit()
 
