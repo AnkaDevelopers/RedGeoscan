@@ -11,6 +11,7 @@ from cargar_kml import cargar_base_kml
 from cargar_pos import cargar_base_pos
 from token_principal import rpa_igac
 from generar_log import agregar_log
+from threading import Thread
 from tkinter import ttk
 import tkinter as tk 
 import pandas as pd
@@ -38,164 +39,48 @@ def imprimir():
     print(token_principal)
 
 #***************************************************************************************************************
-# Barra de progreso: controla el avance basado en parámetros
-def barra_de_progreso(valor_maximo, progreso_actual):
+def barra_de_progreso_indefinida():
     global barra_visible
 
     # Configurar la barra de progreso solo la primera vez
     if not barra_visible:
-        barra_progreso['maximum'] = valor_maximo  # Establecer el valor máximo
-        barra_progreso['value'] = 0  # Reiniciar el valor actual
+        barra_progreso['mode'] = 'indeterminate'  # Modo de progreso indeterminado
         barra_progreso.pack(pady=10)
         barra_visible = True
 
-    # Actualizar el valor actual de la barra
-    barra_progreso['value'] = progreso_actual
-
-    # Ocultar la barra cuando se completa el progreso
-    if progreso_actual >= valor_maximo:
-        barra_progreso.pack_forget()
-        barra_visible = False
-
+    # Iniciar la barra de progreso indeterminada
+    barra_progreso.start(10)
     ventana.update_idletasks()  # Actualizar la interfaz
 
+# Detener la barra de progreso
+
+def detener_barra_de_progreso():
+    global barra_visible
+    if barra_visible:
+        barra_progreso.stop()
+        barra_progreso.pack_forget()
+        barra_visible = False
+    ventana.update_idletasks()  # Actualizar la interfaz
+    
 #***************************************************************************************************************
 # Función para ejecutar la extracción del token en un hilo separado y actualizar la barra de progreso
 def informe_rinex():
-    insertar_datos_antenas(lista_antenas_con_rinex)
-#***************************************************************************************************************
-# Función para ejecutar la descarga de los archivos rinex en un hilo aparte
-def ejecutar_descarga_rinex_y_actualizar_barra():
-    global  lista_antenas_con_rinex, ruta_red_activa
-
-    valor_maximo = 100
-    progreso_actual = 0
-
-    # Inicializar la barra de progreso
-    barra_de_progreso(valor_maximo, progreso_actual)
-
-    # Llamar a la función que está en otro módulo para extraer tokens
-    token_extraido = threading.Event()  # Evento para controlar el estado del hilo
-
-    def extraer_token():
-        global lista_antenas_con_rinex
-        nonlocal token_extraido
-        
-        label_estado_barra_progreso.config(text='Descargando Rinex de las antenas')
-        # Ejecutar la extracción de tokens
-        lista_antenas_con_rinex = descargar_rinex_en_ruta(lista_antenas_con_rinex, ruta_red_activa, nombre_gps)
-
-        # Marcar la extracción del token como completada
-        token_extraido.set()
-
-    # Iniciar el hilo para extraer el token
-    hilo_extraccion = threading.Thread(target=extraer_token)
-    hilo_extraccion.start()
-
-    # Actualizar la barra de progreso mientras el hilo está en ejecución
-    def actualizar_barra():
-        nonlocal progreso_actual
-
-        if not token_extraido.is_set():
-            # Incrementar el progreso para simular la actualización de la barra
-            progreso_actual += 5
-            if progreso_actual > valor_maximo:
-                # Reiniciar la barra para simular progreso continuo
-                progreso_actual = 0
-
-            barra_de_progreso(valor_maximo, progreso_actual)
-
-            # Reprogramar la función para actualizar la barra después de 200 ms
-            ventana.after(200, actualizar_barra)
-        else:
-            # Cuando el hilo de extracción del token termine
-            progreso_actual = valor_maximo
-            barra_de_progreso(valor_maximo, progreso_actual)
-            label_estado_barra_progreso.config(text='Rinex Descargados con exito')
-
-            # Ejecutar la función para imprimir la lista de antenas con RINEX en el hilo principal
-            ventana.after(0, informe_rinex)
-
-    # Iniciar la actualización de la barra de progreso
-    actualizar_barra()
-
+    print(lista_antenas_con_rinex)
 
 #***************************************************************************************************************
 # Función para imprimir la lista de antenas con RINEX después de la descarga del token
 def descargar_rinex_antenas():
-    print('Iniciando descarga... de los rinex')
-    
-    # Crear e iniciar un hilo para ejecutar la extracción del token y la barra de progreso
-    hilo_descarga = threading.Thread(target=ejecutar_descarga_rinex_y_actualizar_barra)
-    hilo_descarga.start()
-
-#***************************************************************************************************************
-# Función para ejecutar la extracción del token en un hilo separado y actualizar la barra de progreso
-def ejecutar_descarga_y_actualizar_barra():
-    global token_principal, lista_antenas_con_rinex
-
-    valor_maximo = 100
-    progreso_actual = 0
-
-    # Inicializar la barra de progreso
-    barra_de_progreso(valor_maximo, progreso_actual)
-
-    # Llamar a la función que está en otro módulo para extraer tokens
-    token_extraido = threading.Event()  # Evento para controlar el estado del hilo
-
-    def extraer_token():
-        global lista_antenas_con_rinex
-        nonlocal token_extraido
-        
-        label_estado_barra_progreso.config(text='Capturando Tokens de descarga de las antenas.')
-        # Ejecutar la extracción de tokens
-        lista_antenas_con_rinex = extraer_token_para_descarga_rinex(lista_antenas_con_rinex, token_principal)
-
-        # Marcar la extracción del token como completada
-        token_extraido.set()
-
-    # Iniciar el hilo para extraer el token
-    hilo_extraccion = threading.Thread(target=extraer_token)
-    hilo_extraccion.start()
-
-    # Actualizar la barra de progreso mientras el hilo está en ejecución
-    def actualizar_barra():
-        nonlocal progreso_actual
-
-        if not token_extraido.is_set():
-            # Incrementar el progreso para simular la actualización de la barra
-            progreso_actual += 5
-            if progreso_actual > valor_maximo:
-                # Reiniciar la barra para simular progreso continuo
-                progreso_actual = 0
-
-            barra_de_progreso(valor_maximo, progreso_actual)
-
-            # Reprogramar la función para actualizar la barra después de 200 ms
-            ventana.after(200, actualizar_barra)
-        else:
-            # Cuando el hilo de extracción del token termine
-            progreso_actual = valor_maximo
-            barra_de_progreso(valor_maximo, progreso_actual)
-            print('Token de descarga extraído con éxito.')
-            label_estado_barra_progreso.config(text='Tokens de descarga de las antenas extraídos con éxito.')
-
-            # Ejecutar la función para imprimir la lista de antenas con RINEX en el hilo principal
-            ventana.after(0, descargar_rinex_antenas)
-
-    # Iniciar la actualización de la barra de progreso
-    actualizar_barra()
+    global lista_antenas_con_rinex
+    lista_antenas_con_rinex = descargar_rinex_en_ruta(lista_antenas_con_rinex, ruta_red_activa, nombre_gps)
 
 
 #***************************************************************************************************************
 # Función consumir servicio token de descarga según id RINEX de manera secuencial
 def consumir_token_descarga_rinex():
-    print('Iniciando consumo del token de descarga...')
-    
-    # Crear e iniciar un hilo para ejecutar la extracción del token y la barra de progreso
-    hilo_descarga = threading.Thread(target=ejecutar_descarga_y_actualizar_barra)
-    hilo_descarga.start()
-    
+    global lista_antenas_con_rinex
+    lista_antenas_con_rinex = extraer_token_para_descarga_rinex(lista_antenas_con_rinex, token_principal)
+
+
 #***************************************************************************************************************
 # Función para consumir servicio y verificar si las antenas contienen datos RINEX según la fecha
 def consumir_servicio_segun_fecha():
@@ -218,44 +103,35 @@ def consumir_servicio_segun_fecha():
     # Mensaje en caso de que haya antenas con datos RINEX
     mensaje = f'Se encontraron resultados de RINEX en {numero_antenas_con_rinex} antenas.'
     label_estado_base_kml.config(text=mensaje)
-    
-    # Iniciar la extracción del token y actualizar la barra de progreso
-    consumir_token_descarga_rinex()
 
 
 #***************************************************************************************************************
-# funcion consumir servicio y crear base de antenas
+# función consumir servicio y crear base de antenas
 def consumir_servicio_andimistrador_antenas():
-    
-    # Llamamos la variable gobal donde podremos almacenar la relación de la antena y su administrador
+    # Llamamos la variable global donde podremos almacenar la relación de la antena y su administrador
     global datos_kml_order
     
-    # este servicio me crea una base con la información de las antenas esta base que da como un archivo json con la fecha 
+    # Este servicio me crea una base con la información de las antenas, esta base queda como un archivo JSON con la fecha 
     servicio_administrador_antenas()
     
     # Mensaje de depuración
-    print('*'*50,'\n','Carga Base de antenas con administrador','\n','*'*50)
+    print('*'*50, '\n', 'Carga Base de antenas con administrador', '\n', '*'*50)
    
-    # me devuelve una lista de las antenas que pertenesen al igac y la lista de la que no ordenadas por distancia a mi coordenada base
-    datos_kml_order = filtro_antenas(datos_kml_order)# Mensaje de depuración
-    #print('Administrador antenas por distancia:', len(datos_kml_order), '\n', datos_kml_order,'\n','*'*100)
-    
-    #servicio para buscar archivos rinex segun fecha
-    consumir_servicio_segun_fecha()
-    
+    # Me devuelve una lista de las antenas que pertenecen al IGAC y la lista de las que no, ordenadas por distancia a mi coordenada base
+    datos_kml_order = filtro_antenas(datos_kml_order)
+
 
 #***************************************************************************************************************
-# funcion principal calcular las  antenas mas cercanas
+# función principal calcular las antenas más cercanas
 def calcular_antenas(ruta_pos, red_activa, gps_nombre):
-    
-    # Llamamos la variables globales las cuales se encuentran en NONE
+    # Llamamos las variables globales las cuales se encuentran en NONE
     global coordenada_media_base, datos_kml, datos_kml_order, fecha, fecha_mas_un_dia, ruta_red_activa, nombre_gps
     
-    # Capoturamos globalmente la ruta de descarga
+    # Capturamos globalmente la ruta de descarga
     ruta_red_activa = red_activa
     nombre_gps = gps_nombre
          
-    # Captura de respuestas por parte de la funcion cargar_base_pos
+    # Captura de respuestas por parte de la función cargar_base_pos
     coordenada_media_base, mensaje_pos, fecha, fecha_mas_un_dia = cargar_base_pos(tabla_coordenada_media, ruta_pos)
     
     # Actualización de mensaje de interfaz
@@ -265,39 +141,54 @@ def calcular_antenas(ruta_pos, red_activa, gps_nombre):
     
     # Validación de coordenada_media_base
     if not coordenada_media_base:
-        return print('*'*50,'\n','No se pudo calcular la coordenada media base')
+        return print('*'*50, '\n', 'No se pudo calcular la coordenada media base')
 
-    # Funcion para calcular las antenas mas cercanas a mi coordenada media base
-    datos_kml_order = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'],coordenada_media_base['longitud']),datos_kml)
-       
-    # Mensaje de depuración
-    #print('\n', 'Antenas mas cercanas 1:', len(datos_kml_order), '\n','Lista de antenas cercanas: ','\n', datos_kml_order)
+    # Función para calcular las antenas más cercanas a mi coordenada media base
+    datos_kml_order = calcular_antenas_mas_cercanas((coordenada_media_base['latitud'], coordenada_media_base['longitud']), datos_kml)      
     
     # Convertir DataFrame a diccionario
-    datos_kml_order = datos_kml_order.to_dict(orient='records')
-    
-    # Llamamos la funcion para consumir un servicio que nos trae una base de informacion de las antenas de la red geodesica
-    consumir_servicio_andimistrador_antenas()
+    datos_kml_order = datos_kml_order.to_dict(orient='records')   
+
 
 #***************************************************************************************************************
 # función para procesar cada archivo .pos
-def imprimir_rutas_pos(info_proyecto): 
-    
-    # Iterar sobre los días de rastreo
-    for dia, info in info_proyecto["dias_rastreos"].items():
-        print(f"Día: {dia}")
-        
-        # Obtener la red activa del día actual
-        red_activa = info.get("redActiva")
-        
-        # Iterar sobre las carpetas GPS en cada día
-        for gps_nombre, rutas in info["subcarpetas_base"].items():
-            ruta_pos = rutas.get("pos")
+def imprimir_rutas_pos(info_proyecto):
+    label_estado_barra_progreso.config(text='')
+    def ejecutar_procesos():
+        for dia, info in info_proyecto["dias_rastreos"].items():
+            print(f"Día: {dia}")
             
-            # Verificar si existe un archivo .pos para esta carpeta GPS
-            if ruta_pos and ruta_pos != 0:  # Asegurarnos de que no sea 0
-                print(f"Carpeta GPS: {gps_nombre}, Archivo .pos: {ruta_pos}")
-                calcular_antenas(ruta_pos, red_activa, gps_nombre)
+            # Obtener la red activa del día actual
+            red_activa = info.get("redActiva")
+            
+            # Iterar sobre las carpetas GPS en cada día
+            for gps_nombre, rutas in info["subcarpetas_base"].items():
+                ruta_pos = rutas.get("pos")
+                
+                # Verificar si existe un archivo .pos para esta carpeta GPS
+                if ruta_pos and ruta_pos != 0:  # Asegurarnos de que no sea 0
+                    print(f"Carpeta GPS: {gps_nombre}, Archivo .pos: {ruta_pos}")
+                    
+                    # Ejecutar las funciones en secuencia
+                    label_estado_barra_progreso.config(text='Calculando media')
+                    calcular_antenas(ruta_pos, red_activa, gps_nombre)
+                    label_estado_barra_progreso.config(text='Consultando administrador antenas')
+                    consumir_servicio_andimistrador_antenas()
+                    label_estado_barra_progreso.config(text='Consultando existencia de los rinex')
+                    consumir_servicio_segun_fecha()
+                    label_estado_barra_progreso.config(text='descargando token de descarga')
+                    consumir_token_descarga_rinex()
+                    label_estado_barra_progreso.config(text='descargando archivos rinex')
+                    descargar_rinex_antenas()
+                    informe_rinex()
+        
+        # Detener la barra de progreso una vez que se completen todas las tareas
+        detener_barra_de_progreso()
+
+    # Iniciar la barra de progreso en un hilo separado
+    barra_de_progreso_indefinida()
+    proceso_hilo = Thread(target=ejecutar_procesos)
+    proceso_hilo.start()
 
 # ***************************************************************************************************************
 # Función que espera a que el token sea extraído y luego llama a imprimir_rutas_pos
