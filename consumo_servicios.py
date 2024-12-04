@@ -10,7 +10,6 @@ import time
 import os
 
 antenasIgac = config.antenas_igac
-ruta_descarga = config.ruta_descargas
 
 #********************************************************************************************************************************
 # Servicio para ver toda la red geodésica
@@ -157,7 +156,7 @@ def consumir_servicio_descarga(id_rinex, token):
         data = response.json()
         token_rinex = data.get('token', None)
         
-        print('exito')
+        #print('exito')
         
         return token_rinex
     except requests.exceptions.RequestException as e:
@@ -166,28 +165,21 @@ def consumir_servicio_descarga(id_rinex, token):
     
 #********************************************************************************************************************************
 # Servicio para capturar el token de descarga y descargar el archivo
-def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ruta_carpeta_inicial, validacion):
-    
-    if validacion == True:
-        ruta_descarga == ruta_carpeta_inicial
-        ruta_carpeta_inicial = None
-    
-    #verifico si ya existe la ruta donde voy a guardar mis archivos
-    if  not ruta_carpeta_inicial:
-        ruta_carpeta_inicial = buscar_crear_carpeta(ruta_descarga, fecha)
-                  
-    #nombre de la carpeta del administrador
-    nombre_carpeta_red_geoscan = administrador            
+def descargar_archivo(token, ruta_red_activa, administrador, subcarpeta, nombre_archivo, nombre_gps):
+                            
+
+
 
     # Ruta de la carpeta del administrador de la antena
-    ruta_redgeoscan = os.path.join(ruta_carpeta_inicial, nombre_carpeta_red_geoscan)
-    ruta_carpeta = os.path.join(ruta_redgeoscan, subcarpeta)
+    ruta_red_activa_administrador = os.path.join(ruta_red_activa,nombre_gps)
+    ruta_red_activa_administrador = os.path.join(ruta_red_activa_administrador, administrador)
+    ruta_red_activa_administrador_subcarpeta = os.path.join(ruta_red_activa_administrador, subcarpeta)
     
     # Crear las carpetas si no existen
-    os.makedirs(ruta_carpeta, exist_ok=True)
+    os.makedirs(ruta_red_activa_administrador_subcarpeta, exist_ok=True)
     
     # Ruta completa del archivo que se descargará dentro de la subcarpeta
-    ruta_archivo = os.path.join(ruta_carpeta, nombre_archivo)
+    ruta_red_activa_administrador_subcarpeta_archivo_rinex = os.path.join(ruta_red_activa_administrador_subcarpeta, nombre_archivo)
 
     # Construcción de la URL del servicio de descarga con el token proporcionado
     url = f"https://serviciosgeovisor.igac.gov.co:8080/Geovisor/descargas?cmd=download&token={token}"
@@ -203,12 +195,12 @@ def descargar_archivo(token, subcarpeta, nombre_archivo,fecha, administrador, ru
     # Verificar si la solicitud fue exitosa
     if response.status_code == 200:
         # Guardar el contenido en el archivo
-        with open(ruta_archivo, "wb") as file:
+        with open(ruta_red_activa_administrador_subcarpeta_archivo_rinex, "wb") as file:
             for chunk in response.iter_content(chunk_size=8192):
                 file.write(chunk)
         
         print("Archivo descargado exitosamente")
-        return ruta_carpeta_inicial  # Retorna la ruta completa del archivo descargado
+        return True
     else:
-        print(f"Error en la descarga. Código de estado: {response.status_code}")
-        return ruta_carpeta_inicial
+        print(f"Error en la descarga")
+        return False

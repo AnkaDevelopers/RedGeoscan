@@ -1,27 +1,63 @@
 from consumo_servicios import consumir_servicio_descarga, descargar_archivo
 import time
-import os
 
 
-
-def extraer_token_para_descarga_rinex(lista_antenas_con_rinex):
+def extraer_token_para_descarga_rinex(lista_antenas_con_rinex, token_principal):
     
-    for antenas in lista_antenas_con_rinex:
-        
-        if antenas['has_rinex'] == True and antenas['rinex_data'] != None:
+    global token_pinci
+    
+    token_pinci = token_principal
+    
+    # Iterar sobre cada antena en la lista
+    for antena in lista_antenas_con_rinex:
+        if antena['has_rinex'] == True and antena['rinex_data'] is not None:
             
-            for info_rinex in antenas['rinex_data']:
-                print(info_rinex['NOMBRE_ARCHIVO'])
-                print(info_rinex['ID_RINEX'])
-                token_descarga = consumir_servicio_descarga(info_rinex['ID_RINEX'])
+            # Iterar sobre los datos RINEX de la antena
+            for info_rinex in antena['rinex_data']:
+
+                # Consumir servicio para obtener el token de descarga
+                time.sleep(0.5)
+                token_descarga = consumir_servicio_descarga(info_rinex['ID_RINEX'], token_principal)
                 
                 if not token_descarga:
-                    print('no se encontro el token del archivo: ', info_rinex['NOMBRE_ARCHIVO'], ' con id: ',info_rinex['ID_RINEX'] )
-                    break
-                info_rinex = ['TOKEN_DESCARGA'] = token_descarga
+                    print('No se encontró el token para el archivo:', info_rinex['NOMBRE_ARCHIVO'], 'con ID:', info_rinex['ID_RINEX'])
+                    continue  
+
+                # Agregar el token de descarga al archivo RINEX
+                info_rinex['TOKEN_DESCARGA'] = token_descarga
+
+    return lista_antenas_con_rinex
+
+
+def descargar_rinex_en_ruta(lista_antenas_con_rinex, ruta_red_activa, nombre_gps):
+    
+    # Iterar sobre cada antena en la lista
+    for antena in lista_antenas_con_rinex:
         
-    return 
+        administrador = antena["ADMINISTRADOR"]
+        sub_carpeta = antena["NAME"]
+        
+        if antena['has_rinex'] == True and antena['rinex_data'] is not None:
+        
+            # Iterar sobre los datos RINEX de la antena
+            for info_rinex in antena['rinex_data']:
 
-
-def token_principal():
-        token_principal_txt = [archivo for archivo in os.listdir() if archivo.startswith("*token_principal") and archivo.endswith(".txt")]
+                token = info_rinex['TOKEN_DESCARGA']
+                nombre_archivo = info_rinex["NOMBRE_ARCHIVO"]
+                
+                # Consumir servicio para obtener el token de descarga
+                time.sleep(0.5)
+                # Retorna True o False segun el status
+                respuesta = descargar_archivo(token,ruta_red_activa,administrador,sub_carpeta,nombre_archivo, nombre_gps)
+                
+                if respuesta == False:
+                    print('No se descargo el archivo:', info_rinex['NOMBRE_ARCHIVO'], 'con ID:', info_rinex['ID_RINEX'])
+                    info_rinex['DESCARGO'] = respuesta
+                    continue 
+                if respuesta == True:
+                    info_rinex['DESCARGO'] = respuesta
+                    continue
+    
+    return lista_antenas_con_rinex
+    
+    

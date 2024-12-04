@@ -3,6 +3,7 @@ from tkinter import filedialog
 import tkinter as tk
 import config
 import os
+import re
 
 mensaje = config.msj_select_proyect
 
@@ -157,6 +158,46 @@ def buscar_archivos_en_gps(diccionario_proyecto):
             subcarpetas_actualizadas[gps_nombre] = archivos_encontrados
         
         # Actualizar subcarpetas_base con la nueva estructura
+        info["subcarpetas_base"] = subcarpetas_actualizadas
+    
+    return diccionario_proyecto
+
+#**********************************************************************************************************
+def actualizar_rutas_archivos(diccionario_proyecto):
+    # Extensiones a buscar
+    extensiones = ["pos", "obs", "24o", "24n"]
+    
+    # Iterar sobre los días de rastreo
+    for dia, info in diccionario_proyecto["dias_rastreos"].items():
+        subcarpetas_actualizadas = {}
+        
+        # Recorrer las subcarpetas en `subcarpetas_base`
+        for gps_nombre, datos in info["subcarpetas_base"].items():
+            
+            # Determinar la ruta base para buscar
+            if isinstance(datos, dict):
+                ruta_gps = os.path.dirname(datos["24o"]) if datos["24o"] != 0 else None
+            else:
+                ruta_gps = datos
+            
+            # Inicializar estructura para almacenar rutas encontradas
+            archivos_encontrados = {ext: 0 for ext in extensiones}
+            
+            # Verificar si la ruta existe y es un directorio
+            if ruta_gps and os.path.exists(ruta_gps) and os.path.isdir(ruta_gps):
+                for archivo in os.listdir(ruta_gps):
+                    archivo_lower = archivo.lower()
+                    ruta_archivo = os.path.join(ruta_gps, archivo)
+                    
+                    # Verificar si el archivo coincide con alguna extensión
+                    for ext in extensiones:
+                        if archivo_lower.endswith(f".{ext}") and archivos_encontrados[ext] == 0:
+                            archivos_encontrados[ext] = ruta_archivo
+            
+            # Actualizar las subcarpetas con los resultados encontrados
+            subcarpetas_actualizadas[gps_nombre] = archivos_encontrados
+        
+        # Reemplazar el contenido de `subcarpetas_base` con la información actualizada
         info["subcarpetas_base"] = subcarpetas_actualizadas
     
     return diccionario_proyecto
