@@ -1,5 +1,6 @@
 from consumo_servicios import consumir_servicio_descarga, descargar_archivo
 import time
+import os
 
 
 def extraer_token_para_descarga_rinex(lista_antenas_con_rinex, token_principal):
@@ -31,6 +32,8 @@ def extraer_token_para_descarga_rinex(lista_antenas_con_rinex, token_principal):
 
 def descargar_rinex_en_ruta(lista_antenas_con_rinex, ruta_red_activa, nombre_gps):
     
+    ruta_red_activa_gps = os.path.join(ruta_red_activa,nombre_gps)
+    
     # Iterar sobre cada antena en la lista
     for antena in lista_antenas_con_rinex:
         
@@ -48,7 +51,7 @@ def descargar_rinex_en_ruta(lista_antenas_con_rinex, ruta_red_activa, nombre_gps
                 # Consumir servicio para obtener el token de descarga
                 time.sleep(0.5)
                 # Retorna True o False segun el status
-                respuesta = descargar_archivo(token,ruta_red_activa,administrador,sub_carpeta,nombre_archivo, nombre_gps)
+                respuesta = descargar_archivo(token,ruta_red_activa_gps,administrador,sub_carpeta,nombre_archivo)
                 
                 if respuesta == False:
                     print('No se descargo el archivo:', info_rinex['NOMBRE_ARCHIVO'], 'con ID:', info_rinex['ID_RINEX'])

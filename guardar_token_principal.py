@@ -48,11 +48,11 @@ def buscar_y_leer_archivo_token():
     token_txt_encontrado = token_txt[0]
     ruta_txt = os.path.join(ruta, token_txt_encontrado)
     
-    # Validar si el archivo tiene máximo 30 minutos de creado
+    # Validar si el archivo tiene máximo 20 minutos de creado
     tiempo_creacion = datetime.fromtimestamp(os.path.getctime(ruta_txt))
     tiempo_actual = datetime.now()
-    if tiempo_actual - tiempo_creacion > timedelta(minutes=10):
-        print('El archivo tiene más de 30 minutos de antigüedad')
+    if tiempo_actual - tiempo_creacion > timedelta(minutes=20):
+        print('El archivo tiene más de 20 minutos de antigüedad')
         return ""
     
     # Leer el contenido del archivo si es válido

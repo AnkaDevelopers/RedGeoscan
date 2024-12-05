@@ -3,7 +3,7 @@ from extraer_token_rinex_y_descarga import extraer_token_para_descarga_rinex, de
 from guardar_token_principal import crear_archivo_con_fecha_y_hora, buscar_y_leer_archivo_token
 from agrupar_rinex_x_antena import crear_lista_antenas_x_rinex
 from consumo_servicios import servicio_administrador_antenas
-from crear_lista_antenas import insertar_datos_antenas
+from reporte_antenas import info_report_antenas
 from calculos import calcular_antenas_mas_cercanas
 from filtro_antenas_igac import filtro_antenas
 from rpa_rtklib import ejecutar_rtk_para_gps
@@ -34,7 +34,7 @@ nombre_gps = None
 #***************************************************************************************************************
 # Función para imprimir variables y depurar
 def imprimir():
-    print(token_principal)
+    print(ruta_red_activa)
 
 #***************************************************************************************************************
 def barra_de_progreso_indefinida():
@@ -63,7 +63,7 @@ def detener_barra_de_progreso():
 #***************************************************************************************************************
 # Función para ejecutar la extracción del token en un hilo separado y actualizar la barra de progreso
 def informe_rinex():
-    print(lista_antenas_con_rinex)
+    info_report_antenas(lista_antenas_con_rinex, ruta_red_activa, nombre_gps)
 
 #***************************************************************************************************************
 # Función para imprimir la lista de antenas con RINEX después de la descarga del token
@@ -181,9 +181,12 @@ def imprimir_rutas_pos(info_proyecto):
                         label_estado_barra_progreso.config(text='Consultando existencia de los rinex')
                         consumir_servicio_segun_fecha()
                         label_estado_barra_progreso.config(text='Descargando token de descarga')
+                        time.sleep(30)
                         consumir_token_descarga_rinex()
                         label_estado_barra_progreso.config(text='Descargando archivos rinex')
                         descargar_rinex_antenas()
+                        label_estado_barra_progreso.config(text=f'Generando reporte {gps_nombre}')
+                        informe_rinex()
                         
 
         except Exception as e:
@@ -197,6 +200,7 @@ def imprimir_rutas_pos(info_proyecto):
     proceso_hilo = Thread(target=ejecutar_procesos)
     proceso_hilo.start()
 
+    label_estado_barra_progreso.config(text=' ')
 # ***************************************************************************************************************
 # Función para procesar el resultado del token
 def procesar_resultado_token(hay_token):

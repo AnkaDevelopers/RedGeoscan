@@ -165,14 +165,10 @@ def consumir_servicio_descarga(id_rinex, token):
     
 #********************************************************************************************************************************
 # Servicio para capturar el token de descarga y descargar el archivo
-def descargar_archivo(token, ruta_red_activa, administrador, subcarpeta, nombre_archivo, nombre_gps):
+def descargar_archivo(token, ruta_red_activa_gps, administrador, subcarpeta, nombre_archivo):
                             
-
-
-
     # Ruta de la carpeta del administrador de la antena
-    ruta_red_activa_administrador = os.path.join(ruta_red_activa,nombre_gps)
-    ruta_red_activa_administrador = os.path.join(ruta_red_activa_administrador, administrador)
+    ruta_red_activa_administrador = os.path.join(ruta_red_activa_gps, administrador)
     ruta_red_activa_administrador_subcarpeta = os.path.join(ruta_red_activa_administrador, subcarpeta)
     
     # Crear las carpetas si no existen
@@ -204,3 +200,25 @@ def descargar_archivo(token, ruta_red_activa, administrador, subcarpeta, nombre_
     else:
         print(f"Error en la descarga")
         return False
+#********************************************************************************************************************************
+# Servicio para descargar la coordenada de las antenas
+def descargar_archivo_sirgas(nombre_archivo):
+    
+    # URL del archivo
+    url = f"https://www.sirgas.org/fileadmin/docs/SIRGAS_CRD/{nombre_archivo.upper()}.XYZ"
+    
+    # Realizar la solicitud GET al servicio
+    response = requests.get(url)
+    
+    # Verificar el estado de la respuesta
+    if response.status_code != 200:
+        return False
+
+    # Decodificar el contenido de la respuesta en texto y dividirlo en líneas
+    contenido = response.text
+    lineas = contenido.splitlines()
+
+    # Obtener la última línea
+    ultima_linea = lineas[-2] if lineas else None
+
+    return ultima_linea
