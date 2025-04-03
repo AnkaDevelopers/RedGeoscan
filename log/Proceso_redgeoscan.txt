@@ -1,0 +1,198 @@
+2025-04-02 16:26:23 - Verificando EdgeDriver...
+2025-04-02 16:26:23 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:26:23 - Inicio Redgeoscan
+2025-04-02 16:26:23 - Inicio Programa director
+
+2025-04-02 16:26:23 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:26:23 - RedGeoScan iniciado...
+2025-04-02 16:26:23 - Cargando Base informacion antenas KML...
+2025-04-02 16:26:23 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:26:23 - Inicio Validación de estructura proyecto....
+2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:26:23 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:26:23 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:26:23 - Generando diccionario 1...
+2025-04-02 16:26:23 - Diccionario generado exitosamente.
+2025-04-02 16:26:23 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:26:23 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:26:23 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:26:23 - No se encontraron subcarpetas para el día c
+2025-04-02 16:26:23 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:26:26 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:26:26 - Redgeoscan finalizado correctamente
+2025-04-02 16:27:26 - Verificando EdgeDriver...
+2025-04-02 16:27:27 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:27:27 - Inicio Redgeoscan
+2025-04-02 16:27:27 - Inicio Programa director
+
+2025-04-02 16:27:27 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:27:27 - RedGeoScan iniciado...
+2025-04-02 16:27:27 - Cargando Base informacion antenas KML...
+2025-04-02 16:27:27 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:27:27 - Inicio Validación de estructura proyecto....
+2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:27:27 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:27:27 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:27:27 - Generando diccionario 1...
+2025-04-02 16:27:27 - Diccionario generado exitosamente.
+2025-04-02 16:27:27 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:27:27 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:27:27 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:27:27 - No se encontraron subcarpetas para el día c
+2025-04-02 16:27:27 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:27:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:27:30 - Redgeoscan finalizado correctamente
+2025-04-02 16:28:30 - Verificando EdgeDriver...
+2025-04-02 16:28:30 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:28:30 - Inicio Redgeoscan
+2025-04-02 16:28:30 - Inicio Programa director
+
+2025-04-02 16:28:30 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:28:30 - RedGeoScan iniciado...
+2025-04-02 16:28:30 - Cargando Base informacion antenas KML...
+2025-04-02 16:28:30 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:28:30 - Inicio Validación de estructura proyecto....
+2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:28:30 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:28:30 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:28:30 - Generando diccionario 1...
+2025-04-02 16:28:30 - Diccionario generado exitosamente.
+2025-04-02 16:28:30 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:28:30 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:28:30 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:28:30 - No se encontraron subcarpetas para el día c
+2025-04-02 16:28:30 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:28:33 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:28:33 - Redgeoscan finalizado correctamente
+2025-04-02 16:29:33 - Verificando EdgeDriver...
+2025-04-02 16:29:33 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:29:33 - Inicio Redgeoscan
+2025-04-02 16:29:33 - Inicio Programa director
+
+2025-04-02 16:29:33 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:29:33 - RedGeoScan iniciado...
+2025-04-02 16:29:33 - Cargando Base informacion antenas KML...
+2025-04-02 16:29:33 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:29:33 - Inicio Validación de estructura proyecto....
+2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:29:33 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:29:33 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:29:33 - Generando diccionario 1...
+2025-04-02 16:29:33 - Diccionario generado exitosamente.
+2025-04-02 16:29:33 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:29:33 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:29:33 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:29:33 - No se encontraron subcarpetas para el día c
+2025-04-02 16:29:33 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:29:36 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:29:36 - Redgeoscan finalizado correctamente
+2025-04-02 16:30:36 - Verificando EdgeDriver...
+2025-04-02 16:30:36 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:30:36 - Inicio Redgeoscan
+2025-04-02 16:30:36 - Inicio Programa director
+
+2025-04-02 16:30:36 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:30:36 - RedGeoScan iniciado...
+2025-04-02 16:30:36 - Cargando Base informacion antenas KML...
+2025-04-02 16:30:36 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:30:36 - Inicio Validación de estructura proyecto....
+2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:30:36 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:30:36 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:30:36 - Generando diccionario 1...
+2025-04-02 16:30:36 - Diccionario generado exitosamente.
+2025-04-02 16:30:36 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:30:36 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:30:36 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:30:36 - No se encontraron subcarpetas para el día c
+2025-04-02 16:30:36 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:30:39 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:30:39 - Redgeoscan finalizado correctamente
+2025-04-02 16:31:39 - Verificando EdgeDriver...
+2025-04-02 16:31:40 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:31:40 - Inicio Redgeoscan
+2025-04-02 16:31:40 - Inicio Programa director
+
+2025-04-02 16:31:40 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:31:40 - RedGeoScan iniciado...
+2025-04-02 16:31:40 - Cargando Base informacion antenas KML...
+2025-04-02 16:31:40 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:31:40 - Inicio Validación de estructura proyecto....
+2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:31:40 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:31:40 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:31:40 - Generando diccionario 1...
+2025-04-02 16:31:40 - Diccionario generado exitosamente.
+2025-04-02 16:31:40 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:31:40 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:31:40 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:31:40 - No se encontraron subcarpetas para el día c
+2025-04-02 16:31:40 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:31:43 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:31:43 - Redgeoscan finalizado correctamente
+2025-04-02 16:32:43 - Verificando EdgeDriver...
+2025-04-02 16:32:43 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:32:43 - Inicio Redgeoscan
+2025-04-02 16:32:43 - Inicio Programa director
+
+2025-04-02 16:32:43 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:32:43 - RedGeoScan iniciado...
+2025-04-02 16:32:43 - Cargando Base informacion antenas KML...
+2025-04-02 16:32:43 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:32:43 - Inicio Validación de estructura proyecto....
+2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:32:43 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:32:43 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:32:43 - Generando diccionario 1...
+2025-04-02 16:32:43 - Diccionario generado exitosamente.
+2025-04-02 16:32:43 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:32:43 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:32:43 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:32:43 - No se encontraron subcarpetas para el día c
+2025-04-02 16:32:43 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-02 16:32:46 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-04-02 16:32:46 - Redgeoscan finalizado correctamente
+2025-04-02 16:33:46 - Verificando EdgeDriver...
+2025-04-02 16:33:46 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
+2025-04-02 16:33:46 - Inicio Redgeoscan
+2025-04-02 16:33:46 - Inicio Programa director
+
+2025-04-02 16:33:46 - Procesando proyecto: 2501-CAMPANO
+2025-04-02 16:33:46 - RedGeoScan iniciado...
+2025-04-02 16:33:46 - Cargando Base informacion antenas KML...
+2025-04-02 16:33:46 - Carga de la base de antenas KML fue exitosa.
+2025-04-02 16:33:46 - Inicio Validación de estructura proyecto....
+2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
+2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
+2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:33:46 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
+2025-04-02 16:33:46 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-02 16:33:46 - Generando diccionario 1...
+2025-04-02 16:33:46 - Diccionario generado exitosamente.
+2025-04-02 16:33:46 - Inicio de procesamiento de días de rastreos...
+2025-04-02 16:33:46 - Obteniendo listado de subcarpetas de carpeta: c
+2025-04-02 16:33:46 - Hubo un error al intenar listar las subcarpetas: 
+ [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
+2025-04-02 16:33:46 - No se encontraron subcarpetas para el día c
+2025-04-02 16:33:46 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
