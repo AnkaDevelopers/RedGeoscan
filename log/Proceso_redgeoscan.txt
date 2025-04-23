@@ -1,198 +1,344 @@
-2025-04-02 16:26:23 - Verificando EdgeDriver...
-2025-04-02 16:26:23 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:26:23 - Inicio Redgeoscan
-2025-04-02 16:26:23 - Inicio Programa director
+2025-04-22 16:50:13 - Verificando EdgeDriver...
+2025-04-22 16:50:13 - EdgeDriver se encuentra actualizado en la (versión 135.0.3179).
+2025-04-22 16:50:13 - Inicio Redgeoscan
+2025-04-22 16:50:13 - Inicio Programa director
 
-2025-04-02 16:26:23 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:26:23 - RedGeoScan iniciado...
-2025-04-02 16:26:23 - Cargando Base informacion antenas KML...
-2025-04-02 16:26:23 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:26:23 - Inicio Validación de estructura proyecto....
-2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:26:23 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:26:23 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:26:23 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:26:23 - Generando diccionario 1...
-2025-04-02 16:26:23 - Diccionario generado exitosamente.
-2025-04-02 16:26:23 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:26:23 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:26:23 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:26:23 - No se encontraron subcarpetas para el día c
-2025-04-02 16:26:23 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:26:26 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:26:26 - Redgeoscan finalizado correctamente
-2025-04-02 16:27:26 - Verificando EdgeDriver...
-2025-04-02 16:27:27 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:27:27 - Inicio Redgeoscan
-2025-04-02 16:27:27 - Inicio Programa director
+2025-04-22 16:50:14 - Procesando proyecto: 2503-AVR_GUADUAS
+2025-04-22 16:50:14 - RedGeoScan iniciado...
+2025-04-22 16:50:19 - Cargando Base informacion antenas KML...
+2025-04-22 16:50:19 - Carga de la base de antenas KML fue exitosa.
+2025-04-22 16:50:19 - Inicio Validación de estructura proyecto....
+2025-04-22 16:50:19 - Ruta encontrada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento
+2025-04-22 16:50:19 - Ruta encontrada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia
+2025-04-22 16:50:19 - Ruta encontrada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos
+2025-04-22 16:50:19 - Ruta completa: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos
+2025-04-22 16:50:19 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-04-22 16:50:19 - Listado de subcarpetas obtenido exitosamente
+2025-04-22 16:50:19 - Generando diccionario 1...
+2025-04-22 16:50:19 - Diccionario generado exitosamente.
+2025-04-22 16:50:19 - Inicio de procesamiento de días de rastreos...
+2025-04-22 16:50:19 - Obteniendo listado de subcarpetas de carpeta: 070325
+2025-04-22 16:50:19 - Listado de subcarpetas obtenido exitosamente
+2025-04-22 16:50:19 - Procesamiento completado exitosamente.
+2025-04-22 16:50:19 - Inicio de procesamiento de subcarpetas en la carpeta 'Base'...
+2025-04-22 16:50:19 - Obteniendo listado de subcarpetas de carpeta: 070325
+2025-04-22 16:50:19 - Listado de subcarpetas obtenido exitosamente
+2025-04-22 16:50:19 - Subcarpetas de 'Base' actualizadas para el día 070325
+2025-04-22 16:50:19 - Procesamiento de subcarpetas en 'Base' completado exitosamente.
+2025-04-22 16:50:19 - Inicio de procesamiento de archivos GPS en las carpetas 'Base'...
+2025-04-22 16:50:19 - Procesando carpeta GPS: GPS0 en Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0
+2025-04-22 16:50:19 - Archivo .pos encontrado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0\Reach_raw_20250318142910.pos para GPS0
+2025-04-22 16:50:19 - Procesamiento de archivos GPS completado exitosamente.
+2025-04-22 16:50:19 - Todos los archivos .pos ya existen. No se requiere ejecutar RTKLIB.
+2025-04-22 16:50:20 - Iniciando actualización del diccionario con archivos .pos...
+2025-04-22 16:50:20 - Procesando día de rastreo: 070325
+2025-04-22 16:50:20 - Procesando subcarpeta: GPS0
+2025-04-22 16:50:20 - Archivo .pos válido encontrado en GPS0: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0\Reach_raw_20250318142910.pos
+2025-04-22 16:50:20 - Actualización completada exitosamente.
+2025-04-22 16:50:20 - Buscando token en base...
+2025-04-22 16:50:20 - El archivo C:\\bot-auto\\docs\\16-29-09-04-25-token-principal.txt tiene 18741.27 minutos de antigüedad.
+2025-04-22 16:50:20 - El archivo C:\\bot-auto\\docs\\16-29-09-04-25-token-principal.txt tiene más de 20 minutos de antigüedad.
+2025-04-22 16:50:20 - Se cerraron todas las instancias de Microsoft Edge.
+2025-04-22 16:50:25 - Iniciando el navegador y abriendo la página.
+2025-04-22 16:50:41 - La página ha cargado completamente.
+2025-04-22 16:50:45 - Página recargada.
+2025-04-22 16:51:12 - idToken capturado correctamente.
+2025-04-22 16:51:15 - Archivo existente eliminado: C:\\bot-auto\\docs\\16-29-09-04-25-token-principal.txt
+2025-04-22 16:51:15 - Nuevo archivo de token creado: C:\\bot-auto\\docs\\16-51-22-04-25-token-principal.txt
+2025-04-22 16:51:15 - Procesando archivo POS para GPS0 en el día 070325: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0\Reach_raw_20250318142910.pos
+2025-04-22 16:51:16 - coordenada media: {'latitud': '3 32 49.89', 'longitud': '-76 29 53.33', 'fecha': '2025/03/18 17:00:23.000000', 'semana': 2358, 'dia': 77}
+2025-04-22 16:51:16 - Información media POS agregada para GPS0 en el día 070325.
+2025-04-22 16:51:16 - Iniciando el procesamiento del diccionario para antenas más cercanas......
+2025-04-22 16:51:16 - Procesando día de rastreo: 070325
+2025-04-22 16:51:16 - Antenas cercanas para GPS0:
+ 		      [{'NAME': 'YMBO', 'Latitud (Decimal)': 3.516914333333333, 'Longitud (Decimal)': -76.50202191666666, 'Distancia': 3.3940385548615533, 'Tiempo de Rastreo (h)': 0.7}, {'NAME': 'CALG', 'Latitud (Decimal)': 3.44115325, 'Longitud (Decimal)': -76.50680702777778, 'Distancia': 11.830042542673498, 'Tiempo de Rastreo (h)': 1.1}, {'NAME': 'EMCA', 'Latitud (Decimal)': 3.440211638888889, 'Longitud (Decimal)': -76.52880586111111, 'Distancia': 12.372746807471929, 'Tiempo de Rastreo (h)': 1.2}, {'NAME': 'AEPA', 'Latitud (Decimal)': 3.532835694444445, 'Longitud (Decimal)': -76.382448, 'Distancia': 12.93946285368875, 'Tiempo de Rastreo (h)': 1.2}, {'NAME': 'CIA1', 'Latitud (Decimal)': 3.505289361111111, 'Longitud (Decimal)': -76.35742619444444, 'Distancia': 16.298042801673162, 'Tiempo de Rastreo (h)': 1.4}, {'NAME': 'CALI', 'Latitud (Decimal)': 3.3757885, 'Longitud (Decimal)': -76.53256419444445, 'Distancia': 19.438213602306565, 'Tiempo de Rastreo (h)': 1.5}, {'NAME': 'SGCC', 'Latitud (Decimal)': 3.37223275, 'Longitud (Decimal)': -76.52990905555555, 'Distancia': 19.77137162578649, 'Tiempo de Rastreo (h)': 1.5}, {'NAME': 'DAGA', 'Latitud (Decimal)': 3.739071694444445, 'Longitud (Decimal)': -76.6797308888889, 'Distancia': 29.347333198878367, 'Tiempo de Rastreo (h)': 2.0}, {'NAME': 'ANCH', 'Latitud (Decimal)': 3.534662222222222, 'Longitud (Decimal)': -76.87013927777777, 'Distancia': 41.30816442778546, 'Tiempo de Rastreo (h)': 2.6}, {'NAME': 'BUGT', 'Latitud (Decimal)': 3.825686555555555, 'Longitud (Decimal)': -76.99579813888889, 'Distancia': 63.31196678332318, 'Tiempo de Rastreo (h)': 3.7}, {'NAME': 'VTUL', 'Latitud (Decimal)': 4.091622999999999, 'Longitud (Decimal)': -76.2236241388889, 'Distancia': 67.76812469589488, 'Tiempo de Rastreo (h)': 3.9}, {'NAME': 'BUEN', 'Latitud (Decimal)': 3.882024527777778, 'Longitud (Decimal)': -77.01041980555556, 'Distancia': 67.95038263065895, 'Tiempo de Rastreo (h)': 3.9}, {'NAME': 'SUES', 'Latitud (Decimal)': 2.944717194444445, 'Longitud (Decimal)': -76.70685541666667, 'Distancia': 70.8857446413261, 'Tiempo de Rastreo (h)': 4.1}]
+2025-04-22 16:51:16 - Procesamiento del diccionario completado con éxito.
+2025-04-22 16:51:16 - No se encontró archivo para la fecha actual. Iniciando solicitud al servicio...
+2025-04-22 16:51:16 - Archivo anterior eliminado: C:\bot-auto\docs\antenas-09-April-2025.json
+2025-04-22 16:51:16 - Datos guardados correctamente en C:\bot-auto\docs\antenas-22-April-2025.json
+2025-04-22 16:51:16 - Inicio del proceso: Consulta de administradores de antenas.
+2025-04-22 16:51:16 - Administrador no encontrado para la antena YMBO.
+2025-04-22 16:51:16 - Administrador no encontrado para la antena CALG.
+2025-04-22 16:51:16 - Administrador agregado para la antena EMCA.
+2025-04-22 16:51:16 - Administrador agregado para la antena AEPA.
+2025-04-22 16:51:16 - Administrador agregado para la antena CIA1.
+2025-04-22 16:51:16 - Administrador agregado para la antena CALI.
+2025-04-22 16:51:16 - Administrador agregado para la antena SGCC.
+2025-04-22 16:51:16 - Administrador agregado para la antena DAGA.
+2025-04-22 16:51:16 - Administrador agregado para la antena ANCH.
+2025-04-22 16:51:16 - Administrador agregado para la antena BUGT.
+2025-04-22 16:51:16 - Administrador agregado para la antena VTUL.
+2025-04-22 16:51:16 - Administrador agregado para la antena BUEN.
+2025-04-22 16:51:16 - Administrador agregado para la antena SUES.
+2025-04-22 16:51:16 - Proceso completado: Actualización de administradores de antenas finalizada.
+2025-04-22 16:51:16 - Inicio actualización del diccionario con nombres e IDs de archivos RINEX.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena YMBO.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena CALG.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena EMCA.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena AEPA.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena CIA1.
+2025-04-22 16:51:17 - Actualizados datos RINEX para la antena CALI.
+2025-04-22 16:51:17 - Actualizados datos RINEX para la antena SGCC.
+2025-04-22 16:51:17 - Actualizados datos RINEX para la antena DAGA.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena ANCH.
+2025-04-22 16:51:17 - Actualizados datos RINEX para la antena BUGT.
+2025-04-22 16:51:17 - No se encontraron datos RINEX para la antena VTUL.
+2025-04-22 16:51:17 - Actualizados datos RINEX para la antena BUEN.
+2025-04-22 16:51:18 - No se encontraron datos RINEX para la antena SUES.
+2025-04-22 16:51:18 - Finalizada la actualización del diccionario con datos RINEX.
+2025-04-22 16:51:18 - Inicio actualización del diccionario con Token de descarga de archivos RINEX.
+2025-04-22 16:51:18 - buscando token de Antena: CALI, archivo cali0770.25n.gz con Id: 1064476
+2025-04-22 16:51:19 - Token asignado al archivo RINEX cali0770.25n.gz de la antena CALI.
+2025-04-22 16:51:19 - buscando token de Antena: CALI, archivo CALI00COL_R_20250770000_01D_15S_MO.crx.gz con Id: 1064530
+2025-04-22 16:51:20 - Token asignado al archivo RINEX CALI00COL_R_20250770000_01D_15S_MO.crx.gz de la antena CALI.
+2025-04-22 16:51:20 - buscando token de Antena: CALI, archivo cali0770.25g.gz con Id: 1064026
+2025-04-22 16:51:21 - Token asignado al archivo RINEX cali0770.25g.gz de la antena CALI.
+2025-04-22 16:51:21 - buscando token de Antena: CALI, archivo cali0770.25d.gz con Id: 1064158
+2025-04-22 16:51:22 - Token asignado al archivo RINEX cali0770.25d.gz de la antena CALI.
+2025-04-22 16:51:22 - buscando token de Antena: CALI, archivo CALI00COL_R_20250770000_01D_MN.rnx.gz con Id: 1064310
+2025-04-22 16:51:23 - Token asignado al archivo RINEX CALI00COL_R_20250770000_01D_MN.rnx.gz de la antena CALI.
+2025-04-22 16:51:23 - buscando token de Antena: SGCC, archivo sgcc0770.25n.gz con Id: 1064465
+2025-04-22 16:51:24 - Token asignado al archivo RINEX sgcc0770.25n.gz de la antena SGCC.
+2025-04-22 16:51:24 - buscando token de Antena: SGCC, archivo SGCC00COL_R_20250770000_01D_15S_MO.crx.gz con Id: 1064632
+2025-04-22 16:51:25 - Token asignado al archivo RINEX SGCC00COL_R_20250770000_01D_15S_MO.crx.gz de la antena SGCC.
+2025-04-22 16:51:25 - buscando token de Antena: SGCC, archivo sgcc0770.25g.gz con Id: 1064044
+2025-04-22 16:51:27 - Token asignado al archivo RINEX sgcc0770.25g.gz de la antena SGCC.
+2025-04-22 16:51:27 - buscando token de Antena: SGCC, archivo sgcc0770.25d.gz con Id: 1064214
+2025-04-22 16:51:28 - Token asignado al archivo RINEX sgcc0770.25d.gz de la antena SGCC.
+2025-04-22 16:51:28 - buscando token de Antena: SGCC, archivo SGCC00COL_R_20250770000_01D_MN.rnx.gz con Id: 1064317
+2025-04-22 16:51:29 - Token asignado al archivo RINEX SGCC00COL_R_20250770000_01D_MN.rnx.gz de la antena SGCC.
+2025-04-22 16:51:29 - buscando token de Antena: DAGA, archivo DAGA00COL_R_20250770000_01D_15S_MO.crx.gz con Id: 1065534
+2025-04-22 16:51:30 - Token asignado al archivo RINEX DAGA00COL_R_20250770000_01D_15S_MO.crx.gz de la antena DAGA.
+2025-04-22 16:51:30 - buscando token de Antena: DAGA, archivo daga0770.25g.gz con Id: 1063953
+2025-04-22 16:51:31 - Token asignado al archivo RINEX daga0770.25g.gz de la antena DAGA.
+2025-04-22 16:51:31 - buscando token de Antena: DAGA, archivo DAGA00COL_R_20250770000_15H_15S_MO.crx.gz con Id: 1064643
+2025-04-22 16:51:32 - Token asignado al archivo RINEX DAGA00COL_R_20250770000_15H_15S_MO.crx.gz de la antena DAGA.
+2025-04-22 16:51:32 - buscando token de Antena: DAGA, archivo daga0770.25d.gz con Id: 1064090
+2025-04-22 16:51:33 - Token asignado al archivo RINEX daga0770.25d.gz de la antena DAGA.
+2025-04-22 16:51:33 - buscando token de Antena: DAGA, archivo DAGA00COL_R_20250770000_01D_MN.rnx.gz con Id: 1064332
+2025-04-22 16:51:34 - Token asignado al archivo RINEX DAGA00COL_R_20250770000_01D_MN.rnx.gz de la antena DAGA.
+2025-04-22 16:51:34 - buscando token de Antena: DAGA, archivo daga0770.25n.gz con Id: 1064407
+2025-04-22 16:51:35 - Token asignado al archivo RINEX daga0770.25n.gz de la antena DAGA.
+2025-04-22 16:51:35 - buscando token de Antena: BUGT, archivo bugt0770.25n.gz con Id: 1064466
+2025-04-22 16:51:37 - Token asignado al archivo RINEX bugt0770.25n.gz de la antena BUGT.
+2025-04-22 16:51:37 - buscando token de Antena: BUGT, archivo BUGT00COL_R_20250770000_15H_15S_MO.crx.gz con Id: 1064527
+2025-04-22 16:51:38 - Token asignado al archivo RINEX BUGT00COL_R_20250770000_15H_15S_MO.crx.gz de la antena BUGT.
+2025-04-22 16:51:38 - buscando token de Antena: BUGT, archivo BUGT00COL_R_20250770000_01D_15S_MO.crx.gz con Id: 1065519
+2025-04-22 16:51:39 - Token asignado al archivo RINEX BUGT00COL_R_20250770000_01D_15S_MO.crx.gz de la antena BUGT.
+2025-04-22 16:51:39 - buscando token de Antena: BUGT, archivo bugt0770.25g.gz con Id: 1064045
+2025-04-22 16:51:40 - Token asignado al archivo RINEX bugt0770.25g.gz de la antena BUGT.
+2025-04-22 16:51:40 - buscando token de Antena: BUGT, archivo bugt0770.25d.gz con Id: 1064215
+2025-04-22 16:51:41 - Token asignado al archivo RINEX bugt0770.25d.gz de la antena BUGT.
+2025-04-22 16:51:41 - buscando token de Antena: BUGT, archivo BUGT00COL_R_20250770000_01D_MN.rnx.gz con Id: 1064252
+2025-04-22 16:51:42 - Token asignado al archivo RINEX BUGT00COL_R_20250770000_01D_MN.rnx.gz de la antena BUGT.
+2025-04-22 16:51:42 - buscando token de Antena: BUEN, archivo BUEN00COL_R_20250770000_01D_15S_MO.crx.gz con Id: 1064639
+2025-04-22 16:51:43 - Token asignado al archivo RINEX BUEN00COL_R_20250770000_01D_15S_MO.crx.gz de la antena BUEN.
+2025-04-22 16:51:43 - buscando token de Antena: BUEN, archivo buen0770.25g.gz con Id: 1064059
+2025-04-22 16:51:44 - Token asignado al archivo RINEX buen0770.25g.gz de la antena BUEN.
+2025-04-22 16:51:44 - buscando token de Antena: BUEN, archivo buen0770.25d.gz con Id: 1064185
+2025-04-22 16:51:45 - Token asignado al archivo RINEX buen0770.25d.gz de la antena BUEN.
+2025-04-22 16:51:45 - buscando token de Antena: BUEN, archivo BUEN00COL_R_20250770000_01D_MN.rnx.gz con Id: 1064314
+2025-04-22 16:51:47 - Token asignado al archivo RINEX BUEN00COL_R_20250770000_01D_MN.rnx.gz de la antena BUEN.
+2025-04-22 16:51:47 - buscando token de Antena: BUEN, archivo buen0770.25n.gz con Id: 1064447
+2025-04-22 16:51:48 - Token asignado al archivo RINEX buen0770.25n.gz de la antena BUEN.
+2025-04-22 16:51:48 - Finalizada la actualización del diccionario con Token de descarga de archivos RINEX.
+2025-04-22 16:51:48 - Procesando día: 070325
+2025-04-22 16:51:48 - Procesando carpeta GPS: GPS0
+2025-04-22 16:51:48 - Procesando antena: YMBO, Materializada: None
+2025-04-22 16:51:48 - No se encontraron archivos RINEX para la antena: YMBO
+2025-04-22 16:51:48 - Procesando antena: CALG, Materializada: None
+2025-04-22 16:51:48 - No se encontraron archivos RINEX para la antena: CALG
+2025-04-22 16:51:48 - Procesando antena: EMCA, Materializada: EMCALI
+2025-04-22 16:51:48 - No se encontraron archivos RINEX para la antena: EMCA
+2025-04-22 16:51:48 - Procesando antena: AEPA, Materializada: SGC
+2025-04-22 16:51:48 - No se encontraron archivos RINEX para la antena: AEPA
+2025-04-22 16:51:48 - Procesando antena: CIA1, Materializada: SGC
+2025-04-22 16:51:48 - No se encontraron archivos RINEX para la antena: CIA1
+2025-04-22 16:51:48 - Procesando antena: CALI, Materializada: IGAC
+2025-04-22 16:51:48 - Intentando descargar archivo: cali0770.25n.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:48 - Iniciando proceso para el archivo cali0770.25n.gz en la subcarpeta CALI...
+2025-04-22 16:51:48 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI
+2025-04-22 16:51:48 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25n.gz
+2025-04-22 16:51:48 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25n.gz. Descarga omitida.
+2025-04-22 16:51:48 - Intentando descargar archivo: CALI00COL_R_20250770000_01D_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:48 - Iniciando proceso para el archivo CALI00COL_R_20250770000_01D_15S_MO.crx.gz en la subcarpeta CALI...
+2025-04-22 16:51:49 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI
+2025-04-22 16:51:49 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\CALI00COL_R_20250770000_01D_15S_MO.crx.gz
+2025-04-22 16:51:49 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\CALI00COL_R_20250770000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:49 - Intentando descargar archivo: cali0770.25g.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:49 - Iniciando proceso para el archivo cali0770.25g.gz en la subcarpeta CALI...
+2025-04-22 16:51:49 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI
+2025-04-22 16:51:49 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25g.gz
+2025-04-22 16:51:49 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25g.gz. Descarga omitida.
+2025-04-22 16:51:49 - Intentando descargar archivo: cali0770.25d.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:49 - Iniciando proceso para el archivo cali0770.25d.gz en la subcarpeta CALI...
+2025-04-22 16:51:50 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI
+2025-04-22 16:51:50 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25d.gz
+2025-04-22 16:51:50 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\cali0770.25d.gz. Descarga omitida.
+2025-04-22 16:51:50 - Intentando descargar archivo: CALI00COL_R_20250770000_01D_MN.rnx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:50 - Iniciando proceso para el archivo CALI00COL_R_20250770000_01D_MN.rnx.gz en la subcarpeta CALI...
+2025-04-22 16:51:50 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI
+2025-04-22 16:51:50 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\CALI00COL_R_20250770000_01D_MN.rnx.gz
+2025-04-22 16:51:50 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\CALI\CALI00COL_R_20250770000_01D_MN.rnx.gz. Descarga omitida.
+2025-04-22 16:51:50 - Procesando antena: SGCC, Materializada: SGC
+2025-04-22 16:51:50 - Intentando descargar archivo: sgcc0770.25n.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:50 - Iniciando proceso para el archivo sgcc0770.25n.gz en la subcarpeta SGCC...
+2025-04-22 16:51:51 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC
+2025-04-22 16:51:51 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25n.gz
+2025-04-22 16:51:51 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25n.gz. Descarga omitida.
+2025-04-22 16:51:51 - Intentando descargar archivo: SGCC00COL_R_20250770000_01D_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:51 - Iniciando proceso para el archivo SGCC00COL_R_20250770000_01D_15S_MO.crx.gz en la subcarpeta SGCC...
+2025-04-22 16:51:51 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC
+2025-04-22 16:51:51 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\SGCC00COL_R_20250770000_01D_15S_MO.crx.gz
+2025-04-22 16:51:51 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\SGCC00COL_R_20250770000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:51 - Intentando descargar archivo: sgcc0770.25g.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:51 - Iniciando proceso para el archivo sgcc0770.25g.gz en la subcarpeta SGCC...
+2025-04-22 16:51:52 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC
+2025-04-22 16:51:52 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25g.gz
+2025-04-22 16:51:52 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25g.gz. Descarga omitida.
+2025-04-22 16:51:52 - Intentando descargar archivo: sgcc0770.25d.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:52 - Iniciando proceso para el archivo sgcc0770.25d.gz en la subcarpeta SGCC...
+2025-04-22 16:51:52 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC
+2025-04-22 16:51:52 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25d.gz
+2025-04-22 16:51:52 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\sgcc0770.25d.gz. Descarga omitida.
+2025-04-22 16:51:52 - Intentando descargar archivo: SGCC00COL_R_20250770000_01D_MN.rnx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:52 - Iniciando proceso para el archivo SGCC00COL_R_20250770000_01D_MN.rnx.gz en la subcarpeta SGCC...
+2025-04-22 16:51:53 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC
+2025-04-22 16:51:53 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\SGCC00COL_R_20250770000_01D_MN.rnx.gz
+2025-04-22 16:51:53 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\SGCC\SGCC00COL_R_20250770000_01D_MN.rnx.gz. Descarga omitida.
+2025-04-22 16:51:53 - Procesando antena: DAGA, Materializada: SGC
+2025-04-22 16:51:53 - Intentando descargar archivo: DAGA00COL_R_20250770000_01D_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:53 - Iniciando proceso para el archivo DAGA00COL_R_20250770000_01D_15S_MO.crx.gz en la subcarpeta DAGA...
+2025-04-22 16:51:53 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:53 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_01D_15S_MO.crx.gz
+2025-04-22 16:51:53 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:53 - Intentando descargar archivo: daga0770.25g.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:53 - Iniciando proceso para el archivo daga0770.25g.gz en la subcarpeta DAGA...
+2025-04-22 16:51:54 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:54 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25g.gz
+2025-04-22 16:51:54 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25g.gz. Descarga omitida.
+2025-04-22 16:51:54 - Intentando descargar archivo: DAGA00COL_R_20250770000_15H_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:54 - Iniciando proceso para el archivo DAGA00COL_R_20250770000_15H_15S_MO.crx.gz en la subcarpeta DAGA...
+2025-04-22 16:51:54 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:54 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_15H_15S_MO.crx.gz
+2025-04-22 16:51:54 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_15H_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:54 - Intentando descargar archivo: daga0770.25d.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:54 - Iniciando proceso para el archivo daga0770.25d.gz en la subcarpeta DAGA...
+2025-04-22 16:51:55 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:55 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25d.gz
+2025-04-22 16:51:55 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25d.gz. Descarga omitida.
+2025-04-22 16:51:55 - Intentando descargar archivo: DAGA00COL_R_20250770000_01D_MN.rnx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:55 - Iniciando proceso para el archivo DAGA00COL_R_20250770000_01D_MN.rnx.gz en la subcarpeta DAGA...
+2025-04-22 16:51:55 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:55 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_01D_MN.rnx.gz
+2025-04-22 16:51:55 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\DAGA00COL_R_20250770000_01D_MN.rnx.gz. Descarga omitida.
+2025-04-22 16:51:55 - Intentando descargar archivo: daga0770.25n.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:55 - Iniciando proceso para el archivo daga0770.25n.gz en la subcarpeta DAGA...
+2025-04-22 16:51:56 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA
+2025-04-22 16:51:56 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25n.gz
+2025-04-22 16:51:56 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\DAGA\daga0770.25n.gz. Descarga omitida.
+2025-04-22 16:51:56 - Procesando antena: ANCH, Materializada: SGC
+2025-04-22 16:51:56 - No se encontraron archivos RINEX para la antena: ANCH
+2025-04-22 16:51:56 - Procesando antena: BUGT, Materializada: SGC
+2025-04-22 16:51:56 - Intentando descargar archivo: bugt0770.25n.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:56 - Iniciando proceso para el archivo bugt0770.25n.gz en la subcarpeta BUGT...
+2025-04-22 16:51:57 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:57 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25n.gz
+2025-04-22 16:51:57 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25n.gz. Descarga omitida.
+2025-04-22 16:51:57 - Intentando descargar archivo: BUGT00COL_R_20250770000_15H_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:57 - Iniciando proceso para el archivo BUGT00COL_R_20250770000_15H_15S_MO.crx.gz en la subcarpeta BUGT...
+2025-04-22 16:51:57 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:57 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_15H_15S_MO.crx.gz
+2025-04-22 16:51:57 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_15H_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:57 - Intentando descargar archivo: BUGT00COL_R_20250770000_01D_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:57 - Iniciando proceso para el archivo BUGT00COL_R_20250770000_01D_15S_MO.crx.gz en la subcarpeta BUGT...
+2025-04-22 16:51:58 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:58 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_01D_15S_MO.crx.gz
+2025-04-22 16:51:58 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:51:58 - Intentando descargar archivo: bugt0770.25g.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:58 - Iniciando proceso para el archivo bugt0770.25g.gz en la subcarpeta BUGT...
+2025-04-22 16:51:58 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:58 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25g.gz
+2025-04-22 16:51:58 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25g.gz. Descarga omitida.
+2025-04-22 16:51:58 - Intentando descargar archivo: bugt0770.25d.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:58 - Iniciando proceso para el archivo bugt0770.25d.gz en la subcarpeta BUGT...
+2025-04-22 16:51:59 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:59 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25d.gz
+2025-04-22 16:51:59 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\bugt0770.25d.gz. Descarga omitida.
+2025-04-22 16:51:59 - Intentando descargar archivo: BUGT00COL_R_20250770000_01D_MN.rnx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:59 - Iniciando proceso para el archivo BUGT00COL_R_20250770000_01D_MN.rnx.gz en la subcarpeta BUGT...
+2025-04-22 16:51:59 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT
+2025-04-22 16:51:59 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_01D_MN.rnx.gz
+2025-04-22 16:51:59 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\SGC\BUGT\BUGT00COL_R_20250770000_01D_MN.rnx.gz. Descarga omitida.
+2025-04-22 16:51:59 - Procesando antena: VTUL, Materializada: SGC
+2025-04-22 16:51:59 - No se encontraron archivos RINEX para la antena: VTUL
+2025-04-22 16:51:59 - Procesando antena: BUEN, Materializada: IGAC
+2025-04-22 16:51:59 - Intentando descargar archivo: BUEN00COL_R_20250770000_01D_15S_MO.crx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:51:59 - Iniciando proceso para el archivo BUEN00COL_R_20250770000_01D_15S_MO.crx.gz en la subcarpeta BUEN...
+2025-04-22 16:52:00 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN
+2025-04-22 16:52:00 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\BUEN00COL_R_20250770000_01D_15S_MO.crx.gz
+2025-04-22 16:52:00 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\BUEN00COL_R_20250770000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-04-22 16:52:00 - Intentando descargar archivo: buen0770.25g.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:00 - Iniciando proceso para el archivo buen0770.25g.gz en la subcarpeta BUEN...
+2025-04-22 16:52:00 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN
+2025-04-22 16:52:00 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25g.gz
+2025-04-22 16:52:00 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25g.gz. Descarga omitida.
+2025-04-22 16:52:00 - Intentando descargar archivo: buen0770.25d.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:00 - Iniciando proceso para el archivo buen0770.25d.gz en la subcarpeta BUEN...
+2025-04-22 16:52:01 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN
+2025-04-22 16:52:01 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25d.gz
+2025-04-22 16:52:01 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25d.gz. Descarga omitida.
+2025-04-22 16:52:01 - Intentando descargar archivo: BUEN00COL_R_20250770000_01D_MN.rnx.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:01 - Iniciando proceso para el archivo BUEN00COL_R_20250770000_01D_MN.rnx.gz en la subcarpeta BUEN...
+2025-04-22 16:52:01 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN
+2025-04-22 16:52:01 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\BUEN00COL_R_20250770000_01D_MN.rnx.gz
+2025-04-22 16:52:01 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\BUEN00COL_R_20250770000_01D_MN.rnx.gz. Descarga omitida.
+2025-04-22 16:52:01 - Intentando descargar archivo: buen0770.25n.gz en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:01 - Iniciando proceso para el archivo buen0770.25n.gz en la subcarpeta BUEN...
+2025-04-22 16:52:02 - Carpeta creada/verificada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN
+2025-04-22 16:52:02 - Ruta destino del archivo descargado: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25n.gz
+2025-04-22 16:52:02 - El archivo ya existe en la ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0\IGAC\BUEN\buen0770.25n.gz. Descarga omitida.
+2025-04-22 16:52:02 - Procesando antena: SUES, Materializada: IGAC-SGC
+2025-04-22 16:52:02 - No se encontraron archivos RINEX para la antena: SUES
+2025-04-22 16:52:02 - Actualización del diccionario completada.
+2025-04-22 16:52:02 - Inicio actualización del diccionario con la coordenada SIRGAS.
+2025-04-22 16:52:02 - Se omite la antena YMBO porque la descarga no es completa.
+2025-04-22 16:52:02 - Se omite la antena CALG porque la descarga no es completa.
+2025-04-22 16:52:02 - Se omite la antena EMCA porque la descarga no es completa.
+2025-04-22 16:52:02 - Se omite la antena AEPA porque la descarga no es completa.
+2025-04-22 16:52:02 - Se omite la antena CIA1 porque la descarga no es completa.
+2025-04-22 16:52:02 - Solicitando coordenada SIRGAS para antena CALI en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:06 - Coordenadas SIRGAS actualizadas para la antena CALI: X=1483100.00149, Y=-6193060.15485, Z=373124.31752.
+2025-04-22 16:52:06 - Solicitando coordenada SIRGAS para antena SGCC en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:08 - No se encontró coordenada SIRGAS para la antena SGCC.
+2025-04-22 16:52:08 - Solicitando coordenada SIRGAS para antena DAGA en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:10 - No se encontró coordenada SIRGAS para la antena DAGA.
+2025-04-22 16:52:10 - Se omite la antena ANCH porque la descarga no es completa.
+2025-04-22 16:52:10 - Solicitando coordenada SIRGAS para antena BUGT en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:12 - No se encontró coordenada SIRGAS para la antena BUGT.
+2025-04-22 16:52:12 - Se omite la antena VTUL porque la descarga no es completa.
+2025-04-22 16:52:12 - Solicitando coordenada SIRGAS para antena BUEN en ruta: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS0
+2025-04-22 16:52:15 - Coordenadas SIRGAS actualizadas para la antena BUEN: X=1430383.95470, Y=-6200818.13396, Z=428934.25175.
+2025-04-22 16:52:15 - Se omite la antena SUES porque la descarga no es completa.
+2025-04-22 16:52:15 - Finalizada la actualización del diccionario con coordenadas SIRGAS.
+2025-04-22 16:52:15 - Ruta_principal: Z:\MAAT\2503-AVR_GUADUAS
+2025-04-22 16:52:15 - Nombre_proyecto: 2503-AVR_GUADUAS
+2025-04-22 16:52:15 - Ruta_archivo: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - El archivo está oculto: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - Archivo desocultado temporalmente: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - Archivo JSON guardado correctamente: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - Archivo marcado como oculto: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - Archivo JSON oculto guardado exitosamente como: Z:\MAAT\2503-AVR_GUADUAS\.2503-AVR_GUADUAS.json
+2025-04-22 16:52:15 - Informe PDF generado y guardado en: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\INFORME-GPS0.pdf
+2025-04-22 16:52:16 - Procesando proyecto: 2503-AVR_GUADUAS
+2025-04-22 16:52:16 - Procesando día de rastreo: 070325
+2025-04-22 16:52:16 - Procesando carpeta GPS: GPS0
+2025-04-22 16:52:16 - Total antenas procesadas: 13, Descargas completas: 5, Orden 0 completas: 2, Estado: COMPLETO
+2025-04-22 16:52:16 - Carpeta GPS renombrada: Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0 → Z:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Base\GPS0-completo
+2025-04-22 16:52:16 - Resumen del proyecto generado correctamente.
+2025-04-22 16:52:16 - Proyecto 2503-AVR_GUADUAS completado con éxito.
+2025-04-22 16:52:16 - Proyecto 2503-AVR_GUADUAS
+Días rastreos: 070325
+GPS0: se procesaron 13 antenas, 5 completas, 2 de orden 0 (COMPLETO)
 
-2025-04-02 16:27:27 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:27:27 - RedGeoScan iniciado...
-2025-04-02 16:27:27 - Cargando Base informacion antenas KML...
-2025-04-02 16:27:27 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:27:27 - Inicio Validación de estructura proyecto....
-2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:27:27 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:27:27 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:27:27 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:27:27 - Generando diccionario 1...
-2025-04-02 16:27:27 - Diccionario generado exitosamente.
-2025-04-02 16:27:27 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:27:27 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:27:27 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:27:27 - No se encontraron subcarpetas para el día c
-2025-04-02 16:27:27 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:27:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:27:30 - Redgeoscan finalizado correctamente
-2025-04-02 16:28:30 - Verificando EdgeDriver...
-2025-04-02 16:28:30 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:28:30 - Inicio Redgeoscan
-2025-04-02 16:28:30 - Inicio Programa director
-
-2025-04-02 16:28:30 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:28:30 - RedGeoScan iniciado...
-2025-04-02 16:28:30 - Cargando Base informacion antenas KML...
-2025-04-02 16:28:30 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:28:30 - Inicio Validación de estructura proyecto....
-2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:28:30 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:28:30 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:28:30 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:28:30 - Generando diccionario 1...
-2025-04-02 16:28:30 - Diccionario generado exitosamente.
-2025-04-02 16:28:30 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:28:30 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:28:30 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:28:30 - No se encontraron subcarpetas para el día c
-2025-04-02 16:28:30 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:28:33 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:28:33 - Redgeoscan finalizado correctamente
-2025-04-02 16:29:33 - Verificando EdgeDriver...
-2025-04-02 16:29:33 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:29:33 - Inicio Redgeoscan
-2025-04-02 16:29:33 - Inicio Programa director
-
-2025-04-02 16:29:33 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:29:33 - RedGeoScan iniciado...
-2025-04-02 16:29:33 - Cargando Base informacion antenas KML...
-2025-04-02 16:29:33 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:29:33 - Inicio Validación de estructura proyecto....
-2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:29:33 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:29:33 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:29:33 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:29:33 - Generando diccionario 1...
-2025-04-02 16:29:33 - Diccionario generado exitosamente.
-2025-04-02 16:29:33 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:29:33 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:29:33 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:29:33 - No se encontraron subcarpetas para el día c
-2025-04-02 16:29:33 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:29:36 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:29:36 - Redgeoscan finalizado correctamente
-2025-04-02 16:30:36 - Verificando EdgeDriver...
-2025-04-02 16:30:36 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:30:36 - Inicio Redgeoscan
-2025-04-02 16:30:36 - Inicio Programa director
-
-2025-04-02 16:30:36 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:30:36 - RedGeoScan iniciado...
-2025-04-02 16:30:36 - Cargando Base informacion antenas KML...
-2025-04-02 16:30:36 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:30:36 - Inicio Validación de estructura proyecto....
-2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:30:36 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:30:36 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:30:36 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:30:36 - Generando diccionario 1...
-2025-04-02 16:30:36 - Diccionario generado exitosamente.
-2025-04-02 16:30:36 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:30:36 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:30:36 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:30:36 - No se encontraron subcarpetas para el día c
-2025-04-02 16:30:36 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:30:39 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:30:39 - Redgeoscan finalizado correctamente
-2025-04-02 16:31:39 - Verificando EdgeDriver...
-2025-04-02 16:31:40 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:31:40 - Inicio Redgeoscan
-2025-04-02 16:31:40 - Inicio Programa director
-
-2025-04-02 16:31:40 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:31:40 - RedGeoScan iniciado...
-2025-04-02 16:31:40 - Cargando Base informacion antenas KML...
-2025-04-02 16:31:40 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:31:40 - Inicio Validación de estructura proyecto....
-2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:31:40 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:31:40 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:31:40 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:31:40 - Generando diccionario 1...
-2025-04-02 16:31:40 - Diccionario generado exitosamente.
-2025-04-02 16:31:40 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:31:40 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:31:40 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:31:40 - No se encontraron subcarpetas para el día c
-2025-04-02 16:31:40 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:31:43 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:31:43 - Redgeoscan finalizado correctamente
-2025-04-02 16:32:43 - Verificando EdgeDriver...
-2025-04-02 16:32:43 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:32:43 - Inicio Redgeoscan
-2025-04-02 16:32:43 - Inicio Programa director
-
-2025-04-02 16:32:43 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:32:43 - RedGeoScan iniciado...
-2025-04-02 16:32:43 - Cargando Base informacion antenas KML...
-2025-04-02 16:32:43 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:32:43 - Inicio Validación de estructura proyecto....
-2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:32:43 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:32:43 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:32:43 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:32:43 - Generando diccionario 1...
-2025-04-02 16:32:43 - Diccionario generado exitosamente.
-2025-04-02 16:32:43 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:32:43 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:32:43 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:32:43 - No se encontraron subcarpetas para el día c
-2025-04-02 16:32:43 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
-2025-04-02 16:32:46 - No se realizaron cambios en el Excel. No se actualizó el archivo.
-2025-04-02 16:32:46 - Redgeoscan finalizado correctamente
-2025-04-02 16:33:46 - Verificando EdgeDriver...
-2025-04-02 16:33:46 - EdgeDriver se encuentra actualizado en la (versión 134.0.3124).
-2025-04-02 16:33:46 - Inicio Redgeoscan
-2025-04-02 16:33:46 - Inicio Programa director
-
-2025-04-02 16:33:46 - Procesando proyecto: 2501-CAMPANO
-2025-04-02 16:33:46 - RedGeoScan iniciado...
-2025-04-02 16:33:46 - Cargando Base informacion antenas KML...
-2025-04-02 16:33:46 - Carga de la base de antenas KML fue exitosa.
-2025-04-02 16:33:46 - Inicio Validación de estructura proyecto....
-2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento
-2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-04-02 16:33:46 - Ruta encontrada: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:33:46 - Ruta completa: Z:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-04-02 16:33:46 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-04-02 16:33:46 - Generando diccionario 1...
-2025-04-02 16:33:46 - Diccionario generado exitosamente.
-2025-04-02 16:33:46 - Inicio de procesamiento de días de rastreos...
-2025-04-02 16:33:46 - Obteniendo listado de subcarpetas de carpeta: c
-2025-04-02 16:33:46 - Hubo un error al intenar listar las subcarpetas: 
- [WinError 3] El sistema no puede encontrar la ruta especificada: 'Z:\\DISAIN\\2501-CAMPANO\\Procesamiento\\1. Topografia\\Rastreos\\c'
-2025-04-02 16:33:46 - No se encontraron subcarpetas para el día c
-2025-04-02 16:33:46 - FALLA EN OBTENCIÓN DE RUTAS SUB-CARPETAS DÍAS RASTREOS !!!
+2025-04-22 16:52:16 - Proyecto: 2503-AVR_GUADUAS completo

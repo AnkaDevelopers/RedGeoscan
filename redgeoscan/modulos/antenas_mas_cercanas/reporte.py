@@ -3,23 +3,21 @@ from monitor.log.log import agregar_log
 
 # Importaciones adicionales
 from fpdf import FPDF
+import time
 import os
 
-def generar_informe_pdf_por_gps(datos_proyecto):
+def generar_informe_pdf_por_gps(datos_proyecto, radio):
+
     class PDF(FPDF):
         def header(self):
-            # Logo
             self.image('C:\\bot-auto\\data\\logo_anka.jpg', 10, 8, 33)
             self.set_font('Arial', 'B', 12)
-            # Título dinámico
             self.cell(0, 10, self.title, align='C', ln=True)
             self.ln(10)
 
         def footer(self):
-            # Posición a 1.5 cm del final
             self.set_y(-15)
             self.set_font('Arial', 'I', 8)
-            # Número de página
             self.cell(0, 10, f'Página {self.page_no()}', align='C')
 
     try:
@@ -38,20 +36,17 @@ def generar_informe_pdf_por_gps(datos_proyecto):
                 informacion_pos = info_gps.get('informacion_pos', {})
                 antenas_cercanas = info_gps.get('antenas_cercanas', [])
 
-                # Filtrar antenas descargadas y no descargadas
                 antenas_descargadas = [antena for antena in antenas_cercanas if antena.get('DESCARGA', '').upper() == "COMPLETA"]
                 antenas_no_descargadas = [antena for antena in antenas_cercanas if antena.get('DESCARGA', '').upper() != "COMPLETA"]
 
-                # Crear PDF personalizado para la carpeta GPS
                 pdf = PDF(orientation='L')
                 pdf.title = f"Informe de GPS - {nombre_gps}"
                 pdf.add_page()
 
-                # Página 1: Resumen General y Coordenada Media
                 pdf.set_font("Arial", style="B", size=14)
                 pdf.cell(0, 10, txt="Resumen General", ln=True)
                 pdf.set_font("Arial", size=12)
-                pdf.cell(0, 10, txt=f"Antenas totales analizadas en un radio de 150 km: {len(antenas_cercanas)}", ln=True)
+                pdf.cell(0, 10, txt=f"Antenas totales analizadas en un radio de {radio} km: {len(antenas_cercanas)}", ln=True)
                 pdf.cell(0, 10, txt=f"Número de antenas descargadas: {len(antenas_descargadas)}", ln=True)
                 pdf.ln(10)
 
@@ -65,33 +60,34 @@ def generar_informe_pdf_por_gps(datos_proyecto):
                 pdf.cell(0, 10, txt=f"Semana: {informacion_pos.get('semana', 'N/A')} - Día: {informacion_pos.get('dia', 'N/A')}", ln=True)
                 pdf.ln(10)
 
-                # A partir de la página 2: Detalles de las antenas descargadas
-                pdf.set_font("Arial", style="B", size=12)
-                pdf.add_page()
-                pdf.cell(0, 10, txt="Antenas Cercanas:", ln=True)
-                pdf.set_font("Arial", size=10)
+                # Página individual por cada antena descargada
+                for idx, antena in enumerate(antenas_descargadas, start=1):
+                    pdf.add_page()
+                    pdf.set_font("Arial", style="B", size=12)
+                    pdf.cell(0, 10, txt=f"Antena {idx} - Detalles", ln=True)
+                    pdf.set_font("Arial", size=10)
 
-                if not antenas_descargadas:
-                    pdf.cell(0, 10, txt="No se encontraron antenas descargadas.", ln=True)
-                else:
-                    for idx, antena in enumerate(antenas_descargadas, start=1):
-                        if (idx - 1) % 2 == 0 and idx > 1:  # Cada dos antenas, agregar una nueva página
-                            pdf.add_page()
-                            pdf.set_font("Arial", style="B", size=12)
-                            pdf.cell(0, 10, txt="Antenas Cercanas (Continuación):", ln=True)
-                            pdf.set_font("Arial", size=10)
+                    nombre = antena.get('NAME', 'N/A')
+                    distancia = round(float(antena.get('Distancia', 0)), 1)
+                    tiempo = antena.get('Tiempo de Rastreo (h)', 'N/A')
+                    materializada = antena.get('MATERIALIZADA', 'N/A')
+                    orden = antena.get('ORDEN', 'N/A')
+                    coordenada = antena.get('COORDENADA', 'N/A')
 
-                        coordenada = antena.get('COORDENADA', '0')
-                        pdf.cell(0, 10, txt=f"{idx}. Nombre: {antena['NAME']}", ln=True)
-                        pdf.cell(0, 10, txt=f"   Distancia: {antena['Distancia']} km", ln=True)
-                        pdf.cell(0, 10, txt=f"   Coordenadas: {coordenada}", ln=True)
-                        pdf.cell(0, 10, txt=f"   Tiempo de Rastreo (h): {antena.get('Tiempo de Rastreo (h)', 'N/A')}", ln=True)
-                        pdf.cell(0, 10, txt=f"   Materializada: {antena.get('MATERIALIZADA', 'N/A')}", ln=True)
-                        pdf.cell(0, 10, txt=f"   Orden: {antena.get('ORDEN', 'N/A')}", ln=True)
-                        pdf.cell(0, 10, txt=f"   Descarga: {antena.get('DESCARGA', 'N/A')}", ln=True)
-                        pdf.ln(5)
+                    pdf.cell(0, 10, txt=f"Nombre: {nombre}", ln=True)
+                    pdf.cell(0, 10, txt=f"Distancia: {distancia} km", ln=True)
+                    pdf.cell(0, 10, txt=f"Tiempo de Rastreo: {tiempo} (h)", ln=True)
+                    pdf.cell(0, 10, txt=f"Materializada o administrada por: {materializada}", ln=True)
+                    pdf.cell(0, 10, txt=f"Orden: {orden}", ln=True)
 
-                # Lista de antenas no descargadas
+                    if orden == "0":
+                        pdf.cell(0, 10, txt=f"Coordenadas: {coordenada}", ln=True)
+                        if all(k in antena for k in ['x', 'y', 'z']):
+                            pdf.cell(0, 10, txt=f"    X: {antena['x']}", ln=True)
+                            pdf.cell(0, 10, txt=f"    Y: {antena['y']}", ln=True)
+                            pdf.cell(0, 10, txt=f"    Z: {antena['z']}", ln=True)
+
+                # Antenas no descargadas
                 pdf.add_page()
                 pdf.set_font("Arial", style="B", size=12)
                 pdf.cell(0, 10, txt="Antenas No Descargadas:", ln=True)
@@ -101,15 +97,17 @@ def generar_informe_pdf_por_gps(datos_proyecto):
                     pdf.cell(0, 10, txt="Todas las antenas fueron descargadas.", ln=True)
                 else:
                     for antena in antenas_no_descargadas:
-                        pdf.cell(0, 10, txt=f"Nombre: {antena['NAME']} - Distancia: {antena['Distancia']} km - Descarga: {antena.get('DESCARGA', 'N/A')}", ln=True)
+                        nombre = antena.get('NAME', 'N/A')
+                        distancia = round(float(antena.get('Distancia', 0)), 1)
+                        descarga = antena.get('DESCARGA', 'N/A')
+                        pdf.cell(0, 10, txt=f"Nombre: {nombre} - Distancia: {distancia} km - Descarga: {descarga}", ln=True)
 
-                # Guardar PDF en la ruta de Red Activa + nombre de la carpeta GPS
-                ruta_guardado = os.path.join(red_activa, f"{nombre_gps}_informe_descargas.pdf")
+                ruta_guardado = os.path.join(red_activa, f"INFORME-{nombre_gps}.pdf")
                 pdf.output(ruta_guardado)
                 agregar_log(f"Informe PDF generado y guardado en: {ruta_guardado}")
 
-        return None, True  
+        return None, True
 
     except Exception as e:
         msj_depuracion = f"Error al generar los informes PDF: {e}"
-        return msj_depuracion, None  
+        return msj_depuracion, None

@@ -68,7 +68,7 @@ def buscar_y_leer_archivo_token():
     ruta_txt = os.path.join(ruta_token, token_txt_encontrado)
 
     # Verificar si el archivo tiene menos de 20 minutos de antigüedad
-    if not archivo_valido_por_tiempo(ruta_txt, minutos=20):
+    if not archivo_valido_por_tiempo(ruta_txt, minutos=10):
         # Si el archivo es demasiado antiguo, se registra un mensaje y se retorna una cadena vacía
         agregar_log(f'El archivo {ruta_txt} tiene más de 20 minutos de antigüedad.')
         return None, 1

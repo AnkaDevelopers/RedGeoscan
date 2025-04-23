@@ -6,19 +6,20 @@ import os
     
     
 def obtener_lista_sub_carpetas(ruta_carpeta, carpeta):
-    
     # Mensaje de depuración
     agregar_log(f"Obteniendo listado de subcarpetas de carpeta: {carpeta}")
     
     try:
         # Obtenemos todos los elementos en la ruta_carpeta y filtramos las carpetas
-        carpetas = [d for d in os.listdir(ruta_carpeta) if os.path.isdir(os.path.join(ruta_carpeta, d)) and "-completo" not in d.lower()]
-
+        carpetas = [
+            d for d in os.listdir(ruta_carpeta)
+            if os.path.isdir(os.path.join(ruta_carpeta, d)) and not d.endswith("-completo")
+        ]
         
         # Verificar si se encontraron carpetas
         if not carpetas:
-            msj = f"No se encontraron subcarpetas en la ruta o ya estan revisadas: {ruta_carpeta}"
-            return msj, "completo"
+            msj = f"No se encontraron subcarpetas en la ruta: {ruta_carpeta}"
+            return msj, None
 
         # Mensaje de depuración
         agregar_log("Listado de subcarpetas obtenido exitosamente")
@@ -26,6 +27,5 @@ def obtener_lista_sub_carpetas(ruta_carpeta, carpeta):
         return None, carpetas
     
     except Exception as e:
-        print("aca")
-        msj = f"Hubo un error al intenar listar las subcarpetas: \n {e}"
+        msj = f"Hubo un error al intentar listar las subcarpetas: \n {e}"
         return msj, None

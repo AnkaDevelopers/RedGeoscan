@@ -53,7 +53,8 @@ def calcular_distancia(lat1, lon1, lat2, lon2):
 
 #********************************************************************************************
 # Función para calcular las antenas más cercanas que cumplen con los criterios
-def calcular_antenas_mas_cercanas(punto_central, datos_kml):
+def calcular_antenas_mas_cercanas(punto_central, datos_kml, radio):
+    
     try:
         # Validar que el punto central tenga valores válidos
         if not punto_central or len(punto_central) != 2:
@@ -72,7 +73,7 @@ def calcular_antenas_mas_cercanas(punto_central, datos_kml):
         )
         
         # Filtrar antenas con distancia <= 150 km
-        datos_filtrados = datos_kml[datos_kml['Distancia'] <= 150]
+        datos_filtrados = datos_kml[datos_kml['Distancia'] <= radio]
         
         # Ordenar las antenas filtradas por distancia
         datos_ordenados = datos_filtrados.sort_values(by='Distancia')

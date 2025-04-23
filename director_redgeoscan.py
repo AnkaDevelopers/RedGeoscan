@@ -47,6 +47,10 @@ def control_redgeoscan(ruta_archivos_excel, nombre_archivo_excel):
 
             # Extraer nombre del proyecto desde la ruta
             nombre_proyecto = os.path.basename(ruta_proyecto.strip())
+            
+            # Extraer el radio de busqueda
+            radio = row.get("radio", None)
+
 
             if estado == "completo":
                 continue
@@ -58,7 +62,7 @@ def control_redgeoscan(ruta_archivos_excel, nombre_archivo_excel):
             agregar_log(f"Procesando proyecto: {nombre_proyecto}")
             agregar_log("RedGeoScan iniciado...")
 
-            respuesta_red_geoscan, codigo_estado = redGeoscan(ruta_archivos_excel[1], ruta_proyecto, nombre_proyecto)
+            respuesta_red_geoscan, codigo_estado = redGeoscan(ruta_archivos_excel[1], ruta_proyecto, nombre_proyecto, radio)
 
             # Manejo de errores por código de estado
             mensajes_error = {

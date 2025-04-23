@@ -8,7 +8,7 @@ from monitor.log.log import agregar_log
 import time
 
 #**************************************************************************************************
-def crear_diccionario_con_antenas_mas_cercanas(diccionario, kml):
+def crear_diccionario_con_antenas_mas_cercanas(diccionario, kml, radio):
  
     try:
         # Registrar inicio del procesamiento
@@ -34,7 +34,7 @@ def crear_diccionario_con_antenas_mas_cercanas(diccionario, kml):
                 if latitud and longitud:
                     
                     # Calcular las antenas más cercanas
-                    antenas_cercanas = calcular_antenas_mas_cercanas((latitud, longitud), kml)
+                    antenas_cercanas = calcular_antenas_mas_cercanas((latitud, longitud), kml, radio)
                     
                     # Agregar las antenas cercanas al diccionario bajo el GPS actual
                     gps_info["antenas_cercanas"] = antenas_cercanas
