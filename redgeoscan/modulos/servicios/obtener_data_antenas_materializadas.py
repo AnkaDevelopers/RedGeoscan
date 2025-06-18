@@ -33,7 +33,7 @@ def servicio_administrador_antenas():
         # Configuración inicial
         intentos = 0
         max_intentos = 3
-        length = 261  # Longitud inicial predeterminada
+        length = 500  # Longitud inicial predeterminada
         url_base = "https://serviciosgeovisor.igac.gov.co:8080/Geovisor/geodesia"
         params = {
             "draw": 1,

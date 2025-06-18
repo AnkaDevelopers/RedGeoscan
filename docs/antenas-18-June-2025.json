@@ -830,6 +830,13 @@
         "ESTADO": "Activa",
         "TIPO_ESTACION": "Activa",
         "MATERIALIZADA": "IGAC",
+        "ESTACION": "LPDR"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
         "ESTACION": "LSJU"
     },
     {
@@ -1825,5 +1832,47 @@
         "TIPO_ESTACION": "Activa",
         "MATERIALIZADA": "SGC",
         "ESTACION": "VZPQ"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "YARU"
+    },
+    {
+        "ADMINISTRADOR": "CELSIA COLOMBIA S.A. E.S.P.",
+        "ESTADO": "Inactiva",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "CELSIA COLOMBIA S.A. E.S.P.",
+        "ESTACION": "YMBO"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "YOPA"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "ZARZ"
+    },
+    {
+        "ADMINISTRADOR": "IGAC",
+        "ESTADO": "Activa",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "IGAC",
+        "ESTACION": "ZBNO"
+    },
+    {
+        "ADMINISTRADOR": "CELSIA COLOMBIA S.A. E.S.P.",
+        "ESTADO": "Inactiva",
+        "TIPO_ESTACION": "Activa",
+        "MATERIALIZADA": "CELSIA COLOMBIA S.A. E.S.P.",
+        "ESTACION": "ZRZL"
     }
 ]

@@ -32,7 +32,35 @@ def obtener_version_driver():
 
 def construir_url_driver(version_edge):
     version_base = ".".join(version_edge.split(".")[:3])
-    return f"https://msedgedriver.azureedge.net/{version_base}.0/edgedriver_win64.zip"
+
+    # Intento 1: LATEST_RELEASE_{version}
+    try:
+        r = requests.get(f"https://msedgedriver.azureedge.net/LATEST_RELEASE_{version_base}")
+        if r.status_code == 200:
+            latest_version = r.text.strip()
+            return f"https://msedgedriver.azureedge.net/{latest_version}/edgedriver_win64.zip"
+    except:
+        pass
+
+    # Intento 2: LATEST_RELEASE (última versión general)
+    try:
+        r = requests.get("https://msedgedriver.azureedge.net/LATEST_RELEASE")
+        if r.status_code == 200:
+            latest_version = r.text.strip()
+            return f"https://msedgedriver.azureedge.net/{latest_version}/edgedriver_win64.zip"
+    except:
+        pass
+
+    # Intento 3: construir la URL directamente con la versión de Edge instalada
+    try:
+        fallback_url = f"https://msedgedriver.microsoft.com/{version_edge}/edgedriver_win64.zip"
+        test = requests.head(fallback_url)
+        if test.status_code == 200:
+            return fallback_url
+    except:
+        pass
+
+    raise Exception("No se pudo obtener ninguna versión compatible desde los endpoints de Microsoft.")
 
 def descargar_y_extraer_driver(url, destino):
     zip_path = os.path.join(destino, "edgedriver.zip")

@@ -61,7 +61,6 @@ def actualizar_diccionario_antenas_descargadas(diccionario):
                         
                             # Funcion descargar archivo
                             resultado_descarga = descargar_archivo(token_rinex,ruta_red_activa_gps,materializada,nombre_antena,nombre_archivo)
-                        
                             if resultado_descarga == True:
                                 antena["DESCARGA"] = "COMPLETA"
                             else:

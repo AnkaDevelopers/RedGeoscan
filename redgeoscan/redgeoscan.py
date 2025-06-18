@@ -42,8 +42,6 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     print(f"ruta proyecto ingresada como parametro {ruta_proyecto}")
     print(f"nombre_proyecto ingresada como parametro {ruta_proyecto}")
     
-    print("\n",radio)
-    time.sleep(5)
     
     # Si la ruta empieza con cualquier letra seguida de ":", se reemplaza por la ruta UNC
     if len(ruta_proyecto) > 2 and ruta_proyecto[1] == ":":
@@ -56,6 +54,10 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     # Validación de la carga del archivo KML
     if respuesta_kml is None or respuesta_kml.empty:
         return None, 0
+    
+    
+    print("ruta proyecto corregida: ", ruta_proyecto)
+    time.sleep(2)
     
     # Modulo que se encarga de validar la estructura del proyecto
     msj_depuracion, respuesta_estructura = validar_carpetacion(ruta_proyecto)
@@ -150,13 +152,14 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     # Modulo para calcular las antenas mas cercanas
     msj_depuracion, diccionario_con_antenas_mas_cercanas = crear_diccionario_con_antenas_mas_cercanas(diccionario_con_coordenada_media, respuesta_kml, radio) 
     
+    
     # Validación de la actualización del diccionario donde podemos encontrar las antenas mas cercanas a cada archivo .pos en un radio de max 150 km
     if not diccionario_con_antenas_mas_cercanas:
         return msj_depuracion, 13
     
     # Modulo que se encarga de bajar la información de las antenas del serviciogeovisor del IGAC  y lo almacena en un JSON en esta ruta C:\bot-auto\docs
     msj_depuracion, consulta_base_administradores_antenas = servicio_administrador_antenas()
- 
+     
     # Mensaje de validación consumo serviciogeovisor
     if consulta_base_administradores_antenas == False:
         agregar_log(msj_depuracion)
@@ -178,19 +181,21 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     # Modulo que se encarga de capturar el token de descarga de los archivos rinex de las antenas y lo agrega al diccioanrio
     msj_depuracion, diccionario_antenas_con_token = actualizar_diccionario_con_el_token_rinex(diccionario_antenas_con_rinex) 
     
+    
     # Validación de actualizacion de diccionario con el token de descarga de los archivos rinex
     if not diccionario_antenas_con_token:
         return msj_depuracion, 17
     
     # Modulo que se encarga de descargar los archivos rinex
     msj_depuracion, diccionario_con_informacion_final_proyecto = actualizar_diccionario_antenas_descargadas(diccionario_antenas_con_token)
-
+    
     # Validación de actualizacion de diccionario con el estado de los archivos descaragdos
     if not diccionario_con_informacion_final_proyecto:
         return msj_depuracion, 18
     
     # Modulo que se encarga de validar si una antena pertenece al orden 0 y tambien captura la coordenada SIRGAS
     msj_depuracion, diccionario_antenas_con_coordenada = actualizar_diccionario_con_coordenada(diccionario_con_informacion_final_proyecto)
+    
     
     # Validacion de actualizacion de antenas con la coordenada
     if not diccionario_antenas_con_coordenada:
