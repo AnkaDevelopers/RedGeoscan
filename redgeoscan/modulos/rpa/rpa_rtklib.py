@@ -8,11 +8,6 @@ import pyautogui
 import time
 import ctypes
 import os
-from PIL import ImageGrab
-import pytesseract
-
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
 
 # Variables globales
 ruta_directorio = config.ruta_rtk
@@ -20,20 +15,6 @@ nombre_ejecutable = config.nombre_exe
 
 # Ruta completa del ejecutable
 ruta_ejecutable = os.path.join(ruta_directorio, nombre_ejecutable)
-
-#*****************************************************************************************************
-# Función auxiliar para esperar hasta que RTKLIB muestre "done"
-def esperar_done(timeout=160):
-    inicio = time.time()
-    while time.time() - inicio < timeout:
-        img = ImageGrab.grab()
-        texto = pytesseract.image_to_string(img).lower()
-        if "done" in texto:
-            agregar_log("RTKLIB ha terminado el proceso (detected 'done').")
-            return True
-        time.sleep(2)
-    agregar_log("Tiempo agotado esperando 'done' en RTKLIB.")
-    return False
 
 #*****************************************************************************************************
 # Función para ejecutar el RTKLIB para todas las carpetas GPS
@@ -148,13 +129,11 @@ def ejecutar_rtk_para_gps(diccionario_proyecto):
 
                 iteracion += 1
 
-                time.sleep(20)
-                # Esperar a que el proceso de RTKLIB diga "done"
-                esperar_done(timeout=180)
+                # Esperar 120 segundos para que RTKLIB procese
+                agregar_log("⏳ Esperando 120 segundos para que RTKLIB termine...")
+                time.sleep(500)
         
         agregar_log('nueva carpeta días rastreos')
-        time.sleep(0)   
-
         agregar_log("Procesamiento completado para todas las carpetas GPS.")
         proceso_rtk.terminate()
         agregar_log("RTKLIB ha sido cerrado.")
