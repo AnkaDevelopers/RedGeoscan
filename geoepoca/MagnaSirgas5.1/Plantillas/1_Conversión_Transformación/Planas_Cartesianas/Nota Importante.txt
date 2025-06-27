@@ -1,0 +1,5 @@
+Sólo para estas plantillas de ejemplo, en el aplicativo seleccionar:
+Origen TOLIMA - ESPINAL - 2006
+
+Es importante resaltar que el usuario debe identificar adecuadamente
+el Origen Cartesiano al cual se refieren sus coordenadas de interes.  

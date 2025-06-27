@@ -1,3 +1,21 @@
+import os
+import sys
+import ctypes
+
+# 🔐 Verificar y elevar permisos si es necesario
+def es_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+if not es_admin():
+    script = os.path.abspath(sys.argv[0])
+    params = " ".join([f'"{arg}"' for arg in sys.argv[1:]])
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, f'"{script}" {params}', None, 1)
+    sys.exit()
+
+# ------------------------------------------------------------------------------------------------
 # Importar modulos de monitor
 from config import config
 from monitor.log.log import agregar_log
@@ -10,8 +28,6 @@ import threading
 import logging
 import json
 import time
-import sys
-import os
 
 # Variables
 ruta = config.ruta_gov
@@ -23,11 +39,12 @@ target_url = config.target_url
 # Variable global para almacenar el idToken
 ID_TOKEN = None
 
-# Función para cerrar todas las instancias de Edge
+# Función para cerrar todas las instancias de Edge y su driver
 def cerrar_edge():
     try:
         os.system("taskkill /IM msedge.exe /F")
-        agregar_log("Se cerraron todas las instancias de Microsoft Edge.")
+        os.system("taskkill /IM msedgedriver.exe /F")
+        agregar_log("Se cerraron todas las instancias de Microsoft Edge y EdgeDriver.")
     except Exception as e:
         agregar_log(f"Error al cerrar Microsoft Edge: {e}")
 
@@ -44,7 +61,16 @@ def rpa_igac():
         options = Options()
         options.add_argument(f"user-data-dir={ruta_perfil}")
         options.add_argument(f"profile-directory={nombre_perfil}")
-        options.add_argument("--headless")  # Ejecuta en modo sin interfaz gráfica
+        options.add_argument("--headless=new")
+
+        # Eliminar archivo DevToolsActivePort si quedó colgado
+        devtools_file = os.path.join(ruta_perfil, "DevToolsActivePort")
+        try:
+            if os.path.exists(devtools_file):
+                os.remove(devtools_file)
+                agregar_log("Archivo DevToolsActivePort eliminado manualmente.")
+        except Exception as e:
+            agregar_log(f"Error al eliminar DevToolsActivePort: {e}")
 
         # Deshabilitar HTTP/2 en Selenium Wire
         seleniumwire_options = {'disable_http2': True}
@@ -52,7 +78,6 @@ def rpa_igac():
         # Crear instancia del navegador
         os.environ["PATH"] += os.pathsep + os.path.dirname(webdriver_path)
         driver = webdriver.Edge(options=options, seleniumwire_options=seleniumwire_options)
-
 
         agregar_log("Iniciando el navegador y abriendo la página.")
         driver.get(ruta)
@@ -107,7 +132,6 @@ def rpa_igac():
         msj_depuracion = f"Error general en rpa_igac: {e}"
         if 'driver' in locals():
             driver.quit()
-            return None
         sys.stderr.close()
         sys.stderr = sys.__stderr__
         return msj_depuracion, None

@@ -1,6 +1,6 @@
 #************************************************************************************************************
 # Ruta del archivo Excel
-ruta_excel = [r"Z:\1 - CAPTURADOR DE RUTAS\RutaList",r"C:\bot-auto\docs"]
+ruta_excel = [r"F:\1 - CAPTURADOR DE RUTAS\RutaList",r"C:\bot-auto\docs"] #en la maquina virtual el indice es Z no F
 
 # Nombres archivos Excel
 nombre_archivo_excel = ["Cola_proyectos.xlsx", "kml_antenas.xlsx"]
@@ -55,7 +55,7 @@ ruta_gov = "https://www.colombiaenmapas.gov.co/?e=-74.19790397936877,4.606824129
 # Verifica la ruta del perfil de usuario
 # Verifica la ruta del perfil de usuario
 ruta_perfil = r"C:\Users\red-g\AppData\Local\Microsoft\Edge\User Data"
-nombre_perfil = "Default"
+nombre_perfil = "Profile 1" #en la maquina virtual debe ser Default
 webdriver_path = r"C:\Webdriver\msedgedriver.exe"
 target_url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo"
 

@@ -38,15 +38,15 @@ nombre_archivo_kml = config.nombre_archivo_excel[1]
 # Funcion de control RedGEoScan
 def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     
-    print(f"ruta archivo excel ingresada como parametro {ruta_archivos_excel}")
-    print(f"ruta proyecto ingresada como parametro {ruta_proyecto}")
-    print(f"nombre_proyecto ingresada como parametro {ruta_proyecto}")
+    agregar_log(f"ruta archivo excel ingresada como parametro {ruta_archivos_excel}")
+    agregar_log(f"ruta proyecto ingresada como parametro {ruta_proyecto}")
+    agregar_log(f"nombre_proyecto ingresada como parametro {nombre_proyecto}")
     
     
     # Si la ruta empieza con cualquier letra seguida de ":", se reemplaza por la ruta UNC
     if len(ruta_proyecto) > 2 and ruta_proyecto[1] == ":":
         # Se reemplaza la letra de unidad por la ruta UNC correspondiente
-        ruta_proyecto = r"Z:" + ruta_proyecto[2:]
+        ruta_proyecto = r"F:" + ruta_proyecto[2:]
     
 
     # Modulo que carga el archivo excel de las antenas

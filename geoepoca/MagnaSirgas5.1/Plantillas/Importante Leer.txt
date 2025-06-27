@@ -1,0 +1,20 @@
+Las plantillas pueden usarse como guia para subir nuevos datos, 
+siempre es importante verificar la codificación del archivo (.csv)
+para hacer un cálculo masivo en el software Magna Sirgas 5.0
+
+                             CODIFICACION
+Plantilla Elipsoidal Decimal    UTF-8
+Plantilla Elipsoidal GMS        ANSI
+Plantilla Origen Nacional       UTF-8
+Plantilla Geocéntrica           UTF-8
+Plantilla UTM                   UTF-8
+Plantilla Plana Cartesiana      UTF-8
+Plantilla Gauss Kruger          UTF-8
+
+Por otra parte es importante aclarar que el valor de la 
+Altura Elipsoidal sólo aplica cuando el Tipo de Coordenada
+de Destino es Geocéntrica, en las plantillas 
+se puede omitir esta columna si no es el caso.
+
+
+
