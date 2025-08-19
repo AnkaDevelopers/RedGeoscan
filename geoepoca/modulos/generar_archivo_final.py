@@ -95,7 +95,7 @@ def procesar_y_calcular(ruta_base_proyecto):
         agregar_log("✅ Carpeta eliminada correctamente.\n")
 
         agregar_log("🎉 Proceso finalizado sin errores.\n")
-        return True
+        return resultado_path
 
     except Exception as e:
         agregar_log(f"❌ Error al procesar y calcular: {e}")

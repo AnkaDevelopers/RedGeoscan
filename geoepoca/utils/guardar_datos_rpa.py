@@ -1,34 +1,55 @@
-# Importar módulos monitor
-from monitor.log.log import agregar_log
+# ===========================
+# Guardar Excel como CSV para RPA
+# - Recibe la ruta a un Excel (.xlsx/.xls/.xlsm)
+# - Crea la carpetación en C:\0 - GEOEPOCA\
+# - En "0 - {AÑO}" guarda el contenido del Excel como CSV: "{AÑO}.csv"
+# - Logs cortos, retorna True si todo ok, None en error
+# ===========================
 
-# Importaciones adicionales
+from monitor.log.log import agregar_log
 import os
 from datetime import datetime
 import pandas as pd
 
-def guardar_datos_para_rpa(datos_rpa):
 
+def guardar_excel_para_rpa(ruta_excel: str):
     try:
-        agregar_log("🟡 Iniciando proceso de guardado de datos para RPA...")
+        agregar_log("🟡 Inicio RPA")
 
-        # Verificación mínima
-        if not isinstance(datos_rpa, list) or len(datos_rpa) < 2:
-            agregar_log("❌ Error: Los datos no tienen suficiente información o no son una lista válida.")
+        # 1) Validaciones de entrada
+        if not isinstance(ruta_excel, str) or not ruta_excel.strip():
+            agregar_log("❌ Ruta inválida")
             return None
 
-        # Convertir a DataFrame
-        encabezados = datos_rpa[0]
-        datos = datos_rpa[1:]
-        df = pd.DataFrame(datos, columns=encabezados)
-        agregar_log("✅ Datos convertidos correctamente a DataFrame.")
+        ruta_excel = ruta_excel.strip()
 
-        # Año actual
+        if not os.path.isfile(ruta_excel):
+            agregar_log("❌ No existe archivo")
+            return None
+
+        ext = os.path.splitext(ruta_excel)[1].lower()
+        if ext not in (".xlsx", ".xls", ".xlsm"):
+            agregar_log("❌ No es Excel")
+            return None
+
+        # 2) Leer Excel
+        try:
+            # Lee primera hoja por defecto, usa primera fila como encabezado
+            df = pd.read_excel(ruta_excel, header=0)
+        except Exception as e:
+            agregar_log(f"❌ Error lectura: {e}")
+            return None
+
+        if df is None or df.empty:
+            agregar_log("❌ Excel vacío")
+            return None
+
+        agregar_log(f"✅ Leído {df.shape[0]}x{df.shape[1]}")
+
+        # 3) Crear carpetación destino
         anio_actual = datetime.now().year
-
-        # Ruta base
         ruta_base = r"C:\0 - GEOEPOCA"
 
-        # Crear carpetas requeridas
         carpetas = [
             f"0 - {anio_actual}",
             "1 - 2018",
@@ -39,20 +60,29 @@ def guardar_datos_para_rpa(datos_rpa):
             "6 - COORD-FINALES-2018"
         ]
 
-        for carpeta in carpetas:
-            ruta = os.path.join(ruta_base, carpeta)
-            os.makedirs(ruta, exist_ok=True)
-            agregar_log(f"📁 Carpeta verificada/creada: {ruta}")
+        for nombre in carpetas:
+            ruta = os.path.join(ruta_base, nombre)
+            try:
+                os.makedirs(ruta, exist_ok=True)
+            except Exception as e:
+                agregar_log(f"❌ Carpeta err: {e}")
+                return None
+            agregar_log(f"📁 OK {ruta}")
 
-        # Ruta final del archivo CSV
-        archivo_csv = os.path.join(ruta_base, f"0 - {anio_actual}", f"{anio_actual}.csv")
+        # 4) Guardar CSV en la primera carpeta ("0 - {AÑO}")
+        carpeta_csv = os.path.join(ruta_base, f"0 - {anio_actual}")
+        archivo_csv = os.path.join(carpeta_csv, f"{anio_actual}.csv")
 
-        # Guardar el CSV
-        df.to_csv(archivo_csv, index=False, encoding='utf-8-sig')
-        agregar_log(f"✅ Archivo CSV guardado correctamente en: {archivo_csv}")
+        try:
+            # Guarda con encabezados y sin índice
+            df.to_csv(archivo_csv, index=False, encoding="utf-8-sig")
+        except Exception as e:
+            agregar_log(f"❌ Guardar err: {e}")
+            return None
 
+        agregar_log(f"✅ CSV: {archivo_csv}")
         return True
 
     except Exception as e:
-        agregar_log(f"❌ Error inesperado al guardar el archivo: {e}")
+        agregar_log(f"❌ Error inesperado: {e}")
         return None

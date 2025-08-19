@@ -2,12 +2,18 @@
 from redgeoscan.redgeoscan import redGeoscan
 
 # Importar módulos monitor
-from monitor.log.log import agregar_log, guardar_log_en_archivo, enviar_log_por_correo
+from monitor.log.log import agregar_log, guardar_log_en_archivo, enviar_log_por_correo, enviar_correo_personalizado
+
+# Importar configuraciones globales
+from config import config
+
+# Importar modulo de consumo y actualizacion de proyecto
+from services.actualizarProyecto import actualizarProyecto
 
 # Importar módulos adicionales
 import pandas as pd
-import time
 import datetime
+import time
 import os
 
 # Importar módulos adicionales
@@ -31,29 +37,42 @@ def enviar_respuesta_equipo_de_soporte(msj_depuracion, rpta):
 # ***********************************************************************************************************
 # Programa principal
 
-def control_redgeoscan(ruta_archivos_excel, nombre_archivo_excel):
-    agregar_log("Inicio Programa director\n")
-
-    ruta_completa_cola_rutas_proyectos = os.path.join(ruta_archivos_excel[0], nombre_archivo_excel[0])
-
+def control_redgeoscan():
+    
     try:
-        df = pd.read_excel(ruta_completa_cola_rutas_proyectos)
-        fecha_actual = datetime.date.today().strftime("%d-%m-%Y")
+        df = pd.read_excel(config.ruta_excel)
+        fecha_actual = datetime.date.today().strftime("%Y-%m-%d")
         cambios_realizados = False  # <== Agregado
-
         for index, row in df.iterrows():
-            ruta_proyecto = row.get("ruta")
-            estado = str(row.get("estado", "")).strip().lower()
+            
+            # Extraer el ID del proyecto
+            id_proyecto = row.get("ID_PROYECTO")
+            
+            # Extraer la ruta del proyecto
+            ruta_proyecto = row.get("RUTA_PROYECTO")
+            
+            # Extraer el estado del proyecto en redgeoscan
+            estado = row.get("ESTADO_RED")
 
             # Extraer nombre del proyecto desde la ruta
             nombre_proyecto = os.path.basename(ruta_proyecto.strip())
             
             # Extraer el radio de busqueda
-            radio = row.get("radio", None)
+            radio = row.get("RADIO_BUSQUEDA")
 
 
-            if estado == "completo":
+            if estado == "Finalizado":
                 continue
+
+            if estado == "Completo":
+                continue
+            
+            if estado == "Sin Dias Rastreos":
+                continue
+            
+            if estado == "Sin GPS":
+                continue
+
 
             if estado == fecha_actual:
                 agregar_log(f"Proyecto {nombre_proyecto} ya fue procesado hoy ({fecha_actual}).")
@@ -62,7 +81,7 @@ def control_redgeoscan(ruta_archivos_excel, nombre_archivo_excel):
             agregar_log(f"Procesando proyecto: {nombre_proyecto}")
             agregar_log("RedGeoScan iniciado...")
 
-            respuesta_red_geoscan, codigo_estado = redGeoscan(ruta_archivos_excel[1], ruta_proyecto, nombre_proyecto, radio)
+            respuesta_red_geoscan, codigo_estado = redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio)
 
             # Manejo de errores por código de estado
             mensajes_error = {
@@ -97,17 +116,24 @@ def control_redgeoscan(ruta_archivos_excel, nombre_archivo_excel):
 
             if str(codigo_estado).lower() == "completo":
                 agregar_log(f"Proyecto {nombre_proyecto} completado con éxito.")
-                df.at[index, "estado"] = "Completo"
+                df.at[index, "ESTADO_RED"] = "Completo"
                 cambios_realizados = True  # <== Agregado
-                enviar_respuesta_equipo_de_soporte(f"Proyecto: {nombre_proyecto} completo", respuesta_red_geoscan)
+                print(id_proyecto)
+                actualizarProyecto(id_proyecto, ESTADO_RED = "Completo")
+                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
+                time.sleep(1)
+                enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Finalizado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
 
             else:
                 agregar_log(f"Proyecto {nombre_proyecto} incompleto. Registrando revisión de hoy.")
-                df.at[index, "estado"] = fecha_actual
+                actualizarProyecto(id_proyecto, ESTADO_RED = fecha_actual)
+                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Revisado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
+                time.sleep(1)
+                enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Revisado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
                 cambios_realizados = True  # <== Agregado
 
         if cambios_realizados:  # <== Agregado
-            df.to_excel(ruta_completa_cola_rutas_proyectos, index=False)
+            df.to_excel(config.ruta_excel, index=False)
             agregar_log("Excel actualizado con los nuevos estados.")
         else:  # <== Agregado
             agregar_log("No se realizaron cambios en el Excel. No se actualizó el archivo.")

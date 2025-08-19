@@ -1,4 +1,0 @@
-2025-02-14 07:41:33 - Inicio Monitoreo
-2025-02-14 07:41:35 - Inicio recorrido mensajes
-2025-02-14 07:41:37 - Validando que el mensaje cumpla con la estructura
-2025-02-14 07:43:33 - Error al monitorear correos: (-2147467259, 'Error no especificado', None, None)

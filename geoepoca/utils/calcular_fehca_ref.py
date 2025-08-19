@@ -1,43 +1,37 @@
-# Importar módulos monitor
 from monitor.log.log import agregar_log
-
-# Importaciones adicionales
 import pandas as pd
 from datetime import datetime
+import time
 
 def calculo_fehca_ref(ruta_navegado):
     try:
-        agregar_log("Iniciando lectura del archivo Excel.")
+        agregar_log("📄 Iniciando lectura del archivo Excel...")
 
-        # Leer el archivo Excel, solo hasta la columna N (índice 13)
-        df = pd.read_excel(ruta_navegado, usecols="A:N")
-        agregar_log(f"Archivo leído correctamente con {len(df)} filas.")
+        df = pd.read_excel(ruta_navegado, header=None)
+        agregar_log(f"✅ Excel cargado correctamente con {len(df)} filas y {len(df.columns)} columnas.")
 
-        # Extraer la columna N (última columna)
-        fechas_con_hora = df.iloc[:, -1].dropna()
-        agregar_log(f"Se extrajeron {len(fechas_con_hora)} fechas con hora.")
+        fechas_raw = df.iloc[:, -2]  # Antepenúltima columna
+        agregar_log(f"📦 Se leerán {len(fechas_raw)} valores desde la antepenúltima columna.")
 
-        # Convertir a datetime (manejo de errores con 'coerce')
-        fechas = pd.to_datetime(fechas_con_hora, errors='coerce', dayfirst=True).dropna()
-        agregar_log(f"{len(fechas)} fechas convertidas exitosamente a formato datetime.")
+        fechas_final = []
 
-        # Eliminar la hora, dejando solo la fecha
-        fechas_sin_hora = fechas.dt.normalize().drop_duplicates()
-        agregar_log(f"{len(fechas_sin_hora)} fechas únicas sin hora obtenidas.")
+        for i, f in enumerate(fechas_raw):
+            try:
+                valor_original = repr(f)
+                agregar_log(f"🔍 Fila {i}: valor crudo = {valor_original}")
 
-        # Ordenar las fechas
-        fechas_ordenadas = sorted(fechas_sin_hora)
-        agregar_log(f"Fechas ordenadas: {[f.strftime('%d/%m/%Y') for f in fechas_ordenadas]}")
+                fecha = pd.to_datetime(str(f).strip(), dayfirst=True)
+                fecha_formateada = fecha.strftime("%d/%m/%Y")
+                fechas_final.append(fecha_formateada)
 
-        # Calcular el índice central
-        medio_idx = len(fechas_ordenadas) // 2
-        fecha_ref = fechas_ordenadas[medio_idx - 1 if len(fechas_ordenadas) % 2 == 0 else medio_idx]
+                agregar_log(f"✅ Fila {i}: fecha válida → {fecha_formateada}")
+            except Exception as e:
+                agregar_log(f"⚠️ Fila {i}: error al convertir '{f}' → {e}")
 
-        resultado = fecha_ref.strftime("%d/%m/%Y")
-        agregar_log(f"Fecha de referencia calculada: {resultado}")
-
-        return resultado
+        agregar_log(f"📋 Total fechas válidas extraídas: {len(fechas_final)}")
+        #time.sleep(500)
+        return fechas_final
 
     except Exception as e:
-        agregar_log(f"Error al calcular la fecha de referencia: {str(e)}")
+        agregar_log(f"❌ Error general al extraer fechas del Excel: {e}")
         return None

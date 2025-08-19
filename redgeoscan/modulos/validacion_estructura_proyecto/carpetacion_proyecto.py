@@ -18,10 +18,6 @@ def validar_carpetacion(ruta_carpeta_proyecto):
         
         for carpeta in lista_carpetacion:
             
-            # Validar la estructura de carpetas del proyecto
-            #print(ruta_full) 
-            #print(carpeta) 
-
             ruta = ruta_full
             ruta_full = buscar_carpeta_en_estructura(ruta_full, carpeta) 
         

@@ -1,125 +1,178 @@
-# Importar modulos monitor
-from monitor.log.log import agregar_log
+# ===========================
+# Consolidado único NAV+FIX (join por DÍA + NOMBRE)
+# Salida (con encabezados): PUNTO | X | Y | Z | F_RASTREO | F_REFERENCIA
+# Reglas:
+#   - Recorrer Reportes/ddmmaa
+#   - Exigir subcarpetas NAVEGADO y FIX con NAV.xlsx y FIX.xlsx (nombres exactos)
+#   - Emparejar por (ddmmaa, NOMBRE)  -> inner join
+#   - Columnas de salida y orden:
+#       1) PUNTO         -> "ddmmaa-NOMBRE" (usar NOMBRE de NAV)
+#       2) X, 3) Y, 4) Z -> últimas 3 columnas de FIX (en ese orden)
+#       5) F_RASTREO     -> segunda columna de NAV (col 1)
+#       6) F_REFERENCIA  -> "01/01/2018" (constante)
+#   - Logs cortos
+#   - Si falta ruta/archivo o no hay filas finales -> False
+# ===========================
 
-# Importaciones adicionales
+from monitor.log.log import agregar_log
 import os
 import pandas as pd
 
 
-# *********************************************************************
-# Función para validar la existencia del archivo NAVEGADO
-def buscar_archivo_navegado(ruta_proyecto):
+def consolidado_nav_fix_unico(ruta_proyecto: str):
+    # ----- Rutas base -----
+    carpeta_reportes = os.path.join(ruta_proyecto, "Procesamiento", "1. Topografia", "Reportes")
+    carpeta_salida   = os.path.join(ruta_proyecto, "Procesamiento", "1. Topografia", "Cambio de Epoca")
 
-    agregar_log("Iniciando búsqueda del archivo NAVEGADO...")
+    # ----- Validaciones iniciales -----
+    if not os.path.isdir(carpeta_reportes):
+        agregar_log("No 'Reportes'")
+        return False
+    try:
+        os.makedirs(carpeta_salida, exist_ok=True)
+    except Exception as e:
+        agregar_log(f"No 'Cambio de Epoca': {e}")
+        return False
 
-    subruta_navegado = os.path.join(ruta_proyecto, "Procesamiento", "1. Topografia", "Reportes", "NAVEGADO")
+    filas_total = []
+    agregar_log("Scan ddmmaa...")
 
-    if not os.path.exists(subruta_navegado):
-        agregar_log("Ruta NAVEGADO no existe.")
+    # ----- Helper: archivo exacto (case-insensitive) -----
+    def _buscar_archivo_exact(carpeta, nombre_objetivo):
+        try:
+            for f in os.listdir(carpeta):
+                if f.lower() == nombre_objetivo.lower():
+                    return os.path.join(carpeta, f)
+        except Exception as e:
+            agregar_log(f"List err: {e}")
         return None
 
-    ruta_excel = os.path.join(subruta_navegado, "Puntos Navegados.xlsx")
-    if os.path.exists(ruta_excel):
-        agregar_log("Archivo 'Puntos Navegados.xlsx' encontrado.")
-        return ruta_excel
+    # ----- Recorrer días (carpetas ddmmaa) -----
+    for nombre_carpeta in sorted(os.listdir(carpeta_reportes)):
+        ruta_dia = os.path.join(carpeta_reportes, nombre_carpeta)
+        # Solo carpetas con 6 dígitos (ddmmaa)
+        if not (os.path.isdir(ruta_dia) and nombre_carpeta.isdigit() and len(nombre_carpeta) == 6):
+            continue
 
-    agregar_log("Archivo 'Puntos Navegados.xlsx' no encontrado. Buscando CSV para convertir...")
+        agregar_log(f"Día {nombre_carpeta}")
 
-    for archivo in os.listdir(subruta_navegado):
-        archivo_path = os.path.join(subruta_navegado, archivo)
-        nombre, extension = os.path.splitext(archivo.lower())
+        # Subcarpetas requeridas
+        ruta_nav = os.path.join(ruta_dia, "NAVEGADO")
+        ruta_fix = os.path.join(ruta_dia, "FIX")
+        if not os.path.isdir(ruta_nav):
+            agregar_log(f"Sin NAVEGADO {nombre_carpeta}")
+            return False
+        if not os.path.isdir(ruta_fix):
+            agregar_log(f"Sin FIX {nombre_carpeta}")
+            return False
 
-        if extension == ".csv":
-            agregar_log(f"Archivo CSV encontrado: {archivo}")
-            try:
-                try:
-                    df = pd.read_csv(archivo_path, encoding="utf-8", sep=";", header=None)
-                    agregar_log("CSV leído con separador ';'")
-                except Exception:
-                    try:
-                        df = pd.read_csv(archivo_path, encoding="utf-8", sep=",", header=None)
-                        agregar_log("CSV leído con separador ','")
-                    except Exception:
-                        df = pd.read_csv(archivo_path, encoding="latin-1", sep=",", header=None)
-                        agregar_log("CSV leído con codificación 'latin-1' y separador ','")
+        # Archivos requeridos
+        nav_xlsx = _buscar_archivo_exact(ruta_nav, "NAV.xlsx")
+        fix_xlsx = _buscar_archivo_exact(ruta_fix, "FIX.xlsx")
+        if not (nav_xlsx and os.path.isfile(nav_xlsx)):
+            agregar_log(f"Sin NAV.xlsx {nombre_carpeta}")
+            return False
+        if not (fix_xlsx and os.path.isfile(fix_xlsx)):
+            agregar_log(f"Sin FIX.xlsx {nombre_carpeta}")
+            return False
 
-                columnas_eliminar_letras = ['N', 'O', 'P', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA']
-                columnas_eliminar = []
+        # ----- Leer NAV.xlsx -----
+        try:
+            df_nav_raw = pd.read_excel(nav_xlsx, header=None)
+            if df_nav_raw.empty:
+                agregar_log(f"NAV vacío {nombre_carpeta}")
+                return False
+            if df_nav_raw.shape[1] < 2:
+                agregar_log(f"NAV < 2 cols {nombre_carpeta}")
+                return False
 
-                for letra in columnas_eliminar_letras:
-                    if len(letra) == 1:
-                        idx = ord(letra) - ord('A')
-                    else:
-                        idx = (ord(letra[0]) - ord('A') + 1) * 26 + (ord(letra[1]) - ord('A'))
-                    columnas_eliminar.append(idx)
+            # Claves para emparejar
+            nombre_nav = df_nav_raw.iloc[:, 0].astype(str).fillna("").str.strip()
+            # Para salida (F_RASTREO)
+            nav_segunda = df_nav_raw.iloc[:, 1]
 
-                columnas_existentes = [i for i in columnas_eliminar if i < df.shape[1]]
-                df.drop(columns=columnas_existentes, inplace=True)
-                agregar_log(f"Columnas eliminadas: {columnas_existentes}")
+            # Data mínima para merge
+            nav_merge = pd.DataFrame({
+                "__DIA__": nombre_carpeta,
+                "__NOMBRE__": nombre_nav,
+                "__NAV2__": nav_segunda
+            })
 
-                nueva_ruta = os.path.join(subruta_navegado, "Puntos Navegados.xlsx")
-                df.to_excel(nueva_ruta, index=False, header=False)
-                agregar_log(f"CSV convertido y guardado como Excel: {nueva_ruta}")
-                return nueva_ruta
+            agregar_log(f"NAV ok {df_nav_raw.shape[0]}")
+        except Exception as e:
+            agregar_log(f"NAV err {nombre_carpeta}: {e}")
+            return False
 
-            except Exception as e:
-                agregar_log(f"Error al convertir CSV a Excel en NAVEGADO: {e}")
-                return None
+        # ----- Leer FIX.xlsx -----
+        try:
+            df_fix_raw = pd.read_excel(fix_xlsx, header=None)
+            if df_fix_raw.empty:
+                agregar_log(f"FIX vacío {nombre_carpeta}")
+                return False
+            if df_fix_raw.shape[1] < 3:
+                agregar_log(f"FIX < 3 cols {nombre_carpeta}")
+                return False
 
-    agregar_log("No se encontró archivo válido en la carpeta NAVEGADO.")
-    return False
+            # Claves para emparejar
+            nombre_fix = df_fix_raw.iloc[:, 0].astype(str).fillna("").str.strip()
 
-# *********************************************************************
-# Función para validar la existencia del archivo FIX (CSV o Excel)
-def buscar_archivo_fix(ruta_proyecto):
-    agregar_log("Iniciando búsqueda del archivo FIX...")
+            # Tomar las últimas 3 columnas como X,Y,Z
+            fix_last3 = df_fix_raw.iloc[:, -3:].copy()
+            if fix_last3.shape[1] != 3:
+                agregar_log("FIX != 3 cols fin")
+                return False
+            fix_last3.columns = ["__X__", "__Y__", "__Z__"]
 
-    subruta_fix = os.path.join(ruta_proyecto, "Procesamiento", "1. Topografia", "Reportes", "FIX")
+            # Data mínima para merge
+            fix_merge = fix_last3.copy()
+            fix_merge.insert(0, "__NOMBRE__", nombre_fix)
+            fix_merge.insert(0, "__DIA__", nombre_carpeta)
 
-    if not os.path.exists(subruta_fix):
-        agregar_log("Ruta FIX no existe.")
-        return None
+            agregar_log(f"FIX ok {df_fix_raw.shape[0]}")
+        except Exception as e:
+            agregar_log(f"FIX err {nombre_carpeta}: {e}")
+            return False
 
-    ruta_excel = os.path.join(subruta_fix, "Cartera Fix.xlsx")
-    if os.path.exists(ruta_excel):
-        agregar_log("Archivo 'Cartera Fix.xlsx' encontrado.")
-        return ruta_excel
+        # ----- Emparejar por (DÍA, NOMBRE) -> inner -----
+        try:
+            joined = pd.merge(nav_merge, fix_merge, on=["__DIA__", "__NOMBRE__"], how="inner")
+            if joined.empty:
+                agregar_log(f"Sin match {nombre_carpeta}")
+                # No es error: se omite este día
+                continue
 
-    agregar_log("Archivo 'Cartera Fix.xlsx' no encontrado. Buscando CSV para convertir...")
+            # PUNTO debe ser "ddmmaa-NOMBRE"
+            punto = (joined["__DIA__"] + "-" + joined["__NOMBRE__"]).astype(str)
 
-    for archivo in os.listdir(subruta_fix):
-        archivo_path = os.path.join(subruta_fix, archivo)
-        nombre, extension = os.path.splitext(archivo.lower())
+            # Orden de salida:
+            # PUNTO, X, Y, Z, F_RASTREO, F_REFERENCIA
+            out_day = pd.DataFrame({
+                "PUNTO": punto,
+                "X": joined["__X__"],
+                "Y": joined["__Y__"],
+                "Z": joined["__Z__"],
+                "F_RASTREO": joined["__NAV2__"],
+                "F_REFERENCIA": "01/01/2018"
+            })
 
-        if extension == ".csv":
-            agregar_log(f"Archivo CSV encontrado: {archivo}")
-            try:
-                try:
-                    df = pd.read_csv(archivo_path, encoding="utf-8", sep=",", header=None, engine='python')
-                    agregar_log("CSV leído correctamente con utf-8 y separador ',' (engine=python)")
-                    if df.shape[1] == 1:
-                        raise ValueError("Archivo no separado correctamente, intentando con latin-1...")
-                except Exception:
-                    df = pd.read_csv(archivo_path, encoding="latin-1", sep=",", header=None, engine='python')
-                    agregar_log("CSV leído correctamente con latin-1 y separador ',' (engine=python)")
+            filas_total.append(out_day)
+            agregar_log(f"Join ok {out_day.shape[0]}")
+        except Exception as e:
+            agregar_log(f"Join err {nombre_carpeta}: {e}")
+            return False
 
-                df.reset_index(drop=True, inplace=True)
+    # ----- Guardar único consolidado -----
+    if not filas_total:
+        agregar_log("Sin filas finales")
+        return False
 
-                # Eliminar columnas de la O (índice 14) a la T (índice 19)
-                columnas_a_eliminar = list(range(14, 20))
-                columnas_existentes = [i for i in columnas_a_eliminar if i < df.shape[1]]
-                df.drop(columns=columnas_existentes, inplace=True)
-                agregar_log(f"Columnas eliminadas: {columnas_existentes}")
+    try:
+        df_out = pd.concat(filas_total, ignore_index=True)
+        ruta_out = os.path.join(carpeta_salida, "consolidado.xlsx")
+        df_out.to_excel(ruta_out, index=False, header=True)  # con encabezados
+        agregar_log("Consolidado guardado")
+    except Exception as e:
+        agregar_log(f"Save err: {e}")
+        return False
 
-                nueva_ruta = os.path.join(subruta_fix, "Cartera Fix.xlsx")
-                df.to_excel(nueva_ruta, index=False, header=False)
-                agregar_log(f"CSV convertido y guardado como Excel: {nueva_ruta}")
-                return nueva_ruta
-
-            except Exception as e:
-                agregar_log(f"Error al convertir CSV a Excel en FIX: {e}")
-                return None
-
-    agregar_log("No se encontró archivo válido en la carpeta FIX.")
-    return False
-
+    return ruta_out

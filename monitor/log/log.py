@@ -1,3 +1,5 @@
+#log.py
+
 # Importaciones de módulos
 from monitor.firma.firma import construir_firma_html 
 
@@ -105,3 +107,57 @@ def enviar_log_por_correo(motivo):
     except Exception as e:
         mensaje_error = f"Error al enviar el log por correo: {e}"
         print(mensaje_error)
+
+
+# ************************************************************************************************************
+# Función para enviar un correo personalizado
+def enviar_correo_personalizado(destinatario, asunto, cuerpo_html, incluir_firma=True):
+    """
+    Envía un correo usando Outlook.
+    - destinatario: str (uno o varios separados por ';')
+    - asunto: str
+    - cuerpo_html: str (HTML)
+    - incluir_firma: bool (adjunta la firma HTML del proyecto)
+    Retorna True si se envía, None si falla.
+    """
+    try:
+        remitente = "red-geo-scan@hotmail.com"
+
+        # Construir firma si se requiere
+        firma_html = ""
+        ruta_imagen_local = None
+        if incluir_firma:
+            try:
+                firma_html, ruta_imagen_local = construir_firma_html()
+            except Exception as ef:
+                print(f"No se pudo construir la firma: {ef}")
+
+        # Crear correo en Outlook
+        outlook = Dispatch("Outlook.Application")
+        mail = outlook.CreateItem(0)
+        mail.SentOnBehalfOfName = remitente
+        mail.To = destinatario
+        mail.Subject = asunto
+
+        # Cuerpo del correo (HTML)
+        mail.HTMLBody = f"{cuerpo_html}<br><br>{firma_html}" + mail.HTMLBody
+
+        # Adjuntar imagen de la firma (si existe)
+        if incluir_firma and ruta_imagen_local:
+            try:
+                adjunto = mail.Attachments.Add(ruta_imagen_local)
+                property_accessor = adjunto.PropertyAccessor
+                property_accessor.SetProperty(
+                    "http://schemas.microsoft.com/mapi/proptag/0x3712001F", "logo_anka"
+                )
+            except Exception as ea:
+                print(f"No se pudo adjuntar la imagen de la firma: {ea}")
+
+        # Enviar
+        mail.Send()
+        print(f"***********************************Correo enviado correctamente a '{destinatario}'. ***********************************")
+        return True
+
+    except Exception as e:
+        print(f"Error al enviar correo personalizado: {e}")
+        return None

@@ -2,7 +2,13 @@
 from geoepoca.geoEpoca import geoEpoca                                            
 
 # Importar modulos monitor
-from monitor.log.log import agregar_log, guardar_log_en_archivo, enviar_log_por_correo
+from monitor.log.log import agregar_log, guardar_log_en_archivo, enviar_log_por_correo, enviar_correo_personalizado
+
+# Importar modulo de consumo y actualizacion de proyecto
+from services.actualizarProyecto import actualizarProyecto
+
+# Importar configuraciones globales
+from config import config
 
 # Importar modulos Adicionales
 import pandas as pd
@@ -26,48 +32,44 @@ def enviar_respuesta_equipo_de_soporte(msj_depuracion, rpta):
 # ***********************************************************************************************************
 # Función principal de verificación
 
-def control_verificacion_proyectos(ruta_archivos_excel, nombre_archivo_excel):
-    agregar_log("Inicio verificación complementaria de proyectos\n")
-
-    # Construcción de ruta completa del archivo Excel
-    ruta_excel = os.path.join(ruta_archivos_excel[0], nombre_archivo_excel[0])
+def control_verificacion_proyectos():
 
     try:
         # Carga el Excel en un DataFrame
-        df = pd.read_excel(ruta_excel)
-        cambios_realizados = False  # <== Agregado
+        df = pd.read_excel(config.ruta_excel)
+        cambios_realizados = False# <== Agregado
 
         # Recorre cada proyecto listado en el Excel
-        for indice_fila, datos_proyecto in df.iterrows():
+        for idex, row in df.iterrows():
             
-            # Tiempod e refresco
-            time.sleep(2)
+            # Extraer el ID del proyecto
+            id_proyecto = row.get("ID_PROYECTO")
             
-            # Obtiene la ruta completa donde está el proyecto
-            ruta_completa_proyecto = datos_proyecto.get("ruta", "").strip()
+            # Extraer la ruta del proyecto
+            ruta_proyecto = row.get("RUTA_PROYECTO")
             
-            # Lee el estado actual del proyecto (por ejemplo: "Completo", "En Proceso", etc.)
-            estado_proyecto = str(datos_proyecto.get("estado", "")).strip().lower()
+            # Extraer el estado del proyecto en redgeoscan
+            estado = row.get("ESTADO_GEO")
+
+            # Extraer nombre del proyecto desde la ruta
+            nombre_proyecto = os.path.basename(ruta_proyecto.strip())
             
-            # Verifica si ya se hizo el cambio de época
-            estado_cambio_epoca = str(datos_proyecto.get("cambio epoca", "")).strip().lower()
-            
-            # Extrae el nombre del proyecto desde la ruta (última parte del camino)
-            nombre_carpeta_proyecto = os.path.basename(ruta_completa_proyecto)
-            
-            agregar_log(f"Analizando proyecto: {nombre_carpeta_proyecto}")
+            agregar_log(f"Analizando proyecto: {nombre_proyecto}")
                         
-            if estado_proyecto == "en proceso":
-                agregar_log("Proceso RedGeoscan en Proceso saltar...")
+            if estado == "Finalizado":
+                continue
+
+            if estado == "Completo":
                 continue
             
-            # Si ya está completo el cambio de época, no se necesita procesar
-            if estado_cambio_epoca == "completo":
-                agregar_log("Cambio de epoca completo saltar...")
+            if estado == "Sin Dias Rastreos":
+                continue
+            
+            if estado == "Sin Carteras":
                 continue
 
             # *************************Inicio de programa GeoEpoca***********************************
-            respuesta_geoepoca, codigo_estado = geoEpoca(ruta_completa_proyecto)
+            respuesta_geoepoca, codigo_estado = geoEpoca(ruta_proyecto)
             
             mensajes_error = {
                 0: "FALLA EN ASIGNACION DE INDICE",
@@ -86,26 +88,19 @@ def control_verificacion_proyectos(ruta_archivos_excel, nombre_archivo_excel):
                 enviar_respuesta_equipo_de_soporte(mensajes_error[codigo_estado], respuesta_geoepoca)
                 continue
             if codigo_estado is None:
+                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", 
+                                            cuerpo_html=f"<p> Corrdenadas Finales creadas en:{respuesta_geoepoca}</p>")
+                enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Finalizado", 
+                                            cuerpo_html=f"<p> Corrdenadas Finales creadas en:{respuesta_geoepoca}</p>")
+                actualizarProyecto(id_proyecto, ESTADO_GEO= "Completo")
                 
-                # Actualizar columna navegado cuando aun no se ha cargado un archivo navegado
-                if respuesta_geoepoca == "sin navegado":
-                    agregar_log(f"Aun no se ha cargado el archivo navegado en el proyecto {nombre_carpeta_proyecto}.")
-                    df.at[indice_fila, "navegado"] = "Sin Archivo"
-                    cambios_realizados = True 
-                
-                # Actualizar columna fix cuando aun no se ha cargado un archivo fix
-                if respuesta_geoepoca == "sin fix":
-                    agregar_log(f"Aun no se ha cargado el archivo navegado en el proyecto {nombre_carpeta_proyecto}.")
-                    df.at[indice_fila, "fix"] = "Sin Archivo"
-                    cambios_realizados = True 
-                    
         # *************************
-        if cambios_realizados:  # <== Agregado
-            df.to_excel(ruta_excel, index=False)
+        if cambios_realizados:
+            df.to_excel(config.ruta_excel, index=False)
             agregar_log("Excel actualizado con los nuevos estados.")
-        else:  # <== Agregado
+        else:
             agregar_log("No se realizaron cambios en el Excel. No se actualizó el archivo.")  
             
     except Exception as e:
         agregar_log(f"⚠ Error en: {e}")
-        # enviar_log_por_correo(f"Error crítico al verificar proyectos: {e}")  # Se puede activar si se desea
+        enviar_respuesta_equipo_de_soporte(f"Error crítico: {e}", None)

@@ -25,8 +25,6 @@ def buscar_carpeta_en_estructura(origen, nombre_carpeta):
 
             # Verificamos similitud usando difflib
             similitud = difflib.SequenceMatcher(None, nombre_carpeta_normalizado, nombre_actual).ratio()
-            # Registrar la comparación para debug (opcional)
-            # agregar_log(f"Comparando: {nombre_carpeta_normalizado} con {nombre_actual} = {similitud}")
 
             # Si la similitud es mayor o igual al umbral, consideramos que es la carpeta buscada
             if similitud >= umbral_similitud:

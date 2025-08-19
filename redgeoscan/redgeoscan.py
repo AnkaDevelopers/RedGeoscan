@@ -32,32 +32,17 @@ from config import config
 import pandas as pd
 import time
 
-nombre_archivo_kml = config.nombre_archivo_excel[1]
 
 # ***************************************************************************************************************
 # Funcion de control RedGEoScan
-def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
-    
-    agregar_log(f"ruta archivo excel ingresada como parametro {ruta_archivos_excel}")
-    agregar_log(f"ruta proyecto ingresada como parametro {ruta_proyecto}")
-    agregar_log(f"nombre_proyecto ingresada como parametro {nombre_proyecto}")
-    
-    
-    # Si la ruta empieza con cualquier letra seguida de ":", se reemplaza por la ruta UNC
-    if len(ruta_proyecto) > 2 and ruta_proyecto[1] == ":":
-        # Se reemplaza la letra de unidad por la ruta UNC correspondiente
-        ruta_proyecto = r"F:" + ruta_proyecto[2:]
-    
+def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
 
     # Modulo que carga el archivo excel de las antenas
-    respuesta_kml = cargar_kml(ruta_archivos_excel, nombre_archivo_kml)
+    respuesta_kml = cargar_kml(config.ruta_kml)
+    
     # Validación de la carga del archivo KML
     if respuesta_kml is None or respuesta_kml.empty:
         return None, 0
-    
-    
-    print("ruta proyecto corregida: ", ruta_proyecto)
-    time.sleep(2)
     
     # Modulo que se encarga de validar la estructura del proyecto
     msj_depuracion, respuesta_estructura = validar_carpetacion(ruta_proyecto)
@@ -73,6 +58,7 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     if not respuesta_dias_rastreos:
         return msj_depuracion, "completo"
 
+    
     # Modulo que se encarga de crear el diccionario conlos dias rastreos
     msj_depuracion, diccionario_proyecto_uno = proyecto_info(ruta_proyecto,respuesta_estructura, respuesta_dias_rastreos, nombre_proyecto)
 
@@ -99,13 +85,9 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     # Validación de diccionario de subcarpetas dias rastreos
     if not diccionario_archivos_carpetas_gps:
         return msj_depuracion, 6        
-
+    
     # Modulo que se encarga de la automatizacion con el progrma RTKLIB
     msj_depuracion, resultado_rpa_rtklib = ejecutar_rtk_para_gps(diccionario_archivos_carpetas_gps)
-    
-    print("mensaje de depuracion: ",msj_depuracion)
-    print("resultado rpa rtklib ",resultado_rpa_rtklib)
-    time.sleep(1)
     
     # Validar funcionamiento de rtklib
     if resultado_rpa_rtklib == False:
@@ -221,6 +203,9 @@ def redGeoscan(ruta_archivos_excel, ruta_proyecto, nombre_proyecto, radio):
     if not respuesta_final:
         return msj_depuracion, 21
 
+    
+    #print('*'*100)
+    #time.sleep(20000)
 
     return respuesta_final, estado
 

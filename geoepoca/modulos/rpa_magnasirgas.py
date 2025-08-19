@@ -46,7 +46,7 @@ def rpa_magnasirgas():
         agregar_log(f"❌ Error al cargar la imagen de fondo: {e}")
         ventana.destroy()
         return None
-
+    time.sleep(3)
     agregar_log("▶️ Iniciando MagnaSirgas...")
     if not ejecutar_magna_sirgas():
         agregar_log("❌ Error al ejecutar MagnaSirgas.")

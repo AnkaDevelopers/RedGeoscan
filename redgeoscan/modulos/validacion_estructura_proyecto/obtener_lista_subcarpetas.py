@@ -13,7 +13,7 @@ def obtener_lista_sub_carpetas(ruta_carpeta, carpeta):
         # Obtenemos todos los elementos en la ruta_carpeta y filtramos las carpetas
         carpetas = [
             d for d in os.listdir(ruta_carpeta)
-            if os.path.isdir(os.path.join(ruta_carpeta, d)) and not d.endswith("-completo")
+            if os.path.isdir(os.path.join(ruta_carpeta, d))
         ]
         
         # Verificar si se encontraron carpetas

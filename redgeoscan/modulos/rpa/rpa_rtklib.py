@@ -131,7 +131,7 @@ def ejecutar_rtk_para_gps(diccionario_proyecto):
 
                 # Esperar 120 segundos para que RTKLIB procese
                 agregar_log("⏳ Esperando 120 segundos para que RTKLIB termine...")
-                time.sleep(500)
+                time.sleep(60)
         
         agregar_log('nueva carpeta días rastreos')
         agregar_log("Procesamiento completado para todas las carpetas GPS.")

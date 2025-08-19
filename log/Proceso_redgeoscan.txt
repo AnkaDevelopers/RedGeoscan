@@ -1,92 +1,949 @@
-2025-06-25 16:15:44 - Verificando EdgeDriver...
-2025-06-25 16:15:44 - EdgeDriver se encuentra actualizado en la (versión 137.0.3296).
-2025-06-25 16:15:44 - Inicio Redgeoscan
-2025-06-25 16:15:44 - Inicio Programa director
+2025-08-15 08:46:06 - Verificando EdgeDriver...
 
-2025-06-25 16:15:44 - Procesando proyecto: 2501-CAMPANO
-2025-06-25 16:15:44 - RedGeoScan iniciado...
-2025-06-25 16:15:44 - Cargando Base informacion antenas KML...
-2025-06-25 16:15:44 - Carga de la base de antenas KML fue exitosa.
-2025-06-25 16:15:46 - Inicio Validación de estructura proyecto....
-2025-06-25 16:15:46 - Ruta encontrada: F:\DISAIN\2501-CAMPANO\Procesamiento
-2025-06-25 16:15:46 - Ruta encontrada: F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia
-2025-06-25 16:15:46 - Ruta encontrada: F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-06-25 16:15:46 - Ruta completa: F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos
-2025-06-25 16:15:46 - Obteniendo listado de subcarpetas de carpeta: Rastreos
-2025-06-25 16:15:46 - Listado de subcarpetas obtenido exitosamente
-2025-06-25 16:15:46 - Generando diccionario 1...
-2025-06-25 16:15:46 - Diccionario generado exitosamente.
-2025-06-25 16:15:46 - Inicio de procesamiento de días de rastreos...
-2025-06-25 16:15:46 - Obteniendo listado de subcarpetas de carpeta: 020325
-2025-06-25 16:15:47 - Listado de subcarpetas obtenido exitosamente
-2025-06-25 16:15:47 - Obteniendo listado de subcarpetas de carpeta: 110225
-2025-06-25 16:15:47 - Listado de subcarpetas obtenido exitosamente
-2025-06-25 16:15:47 - Procesamiento completado exitosamente.
-2025-06-25 16:15:47 - Inicio de procesamiento de subcarpetas en la carpeta 'Base'...
-2025-06-25 16:15:47 - Obteniendo listado de subcarpetas de carpeta: 020325
-2025-06-25 16:15:47 - Listado de subcarpetas obtenido exitosamente
-2025-06-25 16:15:47 - Subcarpetas de 'Base' actualizadas para el día 020325
-2025-06-25 16:15:47 - Obteniendo listado de subcarpetas de carpeta: 110225
-2025-06-25 16:15:47 - Listado de subcarpetas obtenido exitosamente
-2025-06-25 16:15:47 - Subcarpetas de 'Base' actualizadas para el día 110225
-2025-06-25 16:15:47 - Procesamiento de subcarpetas en 'Base' completado exitosamente.
-2025-06-25 16:15:47 - Inicio de procesamiento de archivos GPS en las carpetas 'Base'...
-2025-06-25 16:15:47 - Procesando carpeta GPS: GPS_PRUEBA-vacio en F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos\020325\Base\GPS_PRUEBA-vacio
-2025-06-25 16:15:47 - Carpeta renombrada físicamente a: F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos\020325\Base\GPS_PRUEBA-vacio-vacio
-2025-06-25 16:15:47 - Subcarpeta lógica renombrada como GPS_PRUEBA-vacio-vacio y marcada para eliminación.
-2025-06-25 16:15:47 - Subcarpeta GPS_PRUEBA-vacio-vacio eliminada del diccionario.
-2025-06-25 16:15:47 - Procesando carpeta GPS: GPS-vacio en F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos\110225\Base\GPS-vacio
-2025-06-25 16:15:47 - Carpeta renombrada físicamente a: F:\DISAIN\2501-CAMPANO\Procesamiento\1. Topografia\Rastreos\110225\Base\GPS-vacio-vacio
-2025-06-25 16:15:47 - Subcarpeta lógica renombrada como GPS-vacio-vacio y marcada para eliminación.
-2025-06-25 16:15:47 - Subcarpeta GPS-vacio-vacio eliminada del diccionario.
-2025-06-25 16:15:47 - Procesamiento de archivos GPS completado exitosamente.
-2025-06-25 16:15:47 - Todos los archivos .pos ya existen. No se requiere ejecutar RTKLIB.
-2025-06-25 16:15:48 - Iniciando actualización del diccionario con archivos .pos...
-2025-06-25 16:15:48 - Procesando día de rastreo: 020325
-2025-06-25 16:15:48 - Procesando día de rastreo: 110225
-2025-06-25 16:15:48 - Actualización completada exitosamente.
-2025-06-25 16:15:48 - Buscando token en base...
-2025-06-25 16:15:48 - El archivo C:\\bot-auto\\docs\\09-49-25-06-25-token-principal.txt tiene 386.48 minutos de antigüedad.
-2025-06-25 16:15:48 - El archivo C:\\bot-auto\\docs\\09-49-25-06-25-token-principal.txt tiene más de 20 minutos de antigüedad.
-2025-06-25 16:15:48 - Se cerraron todas las instancias de Microsoft Edge y EdgeDriver.
-2025-06-25 16:15:49 - Archivo DevToolsActivePort eliminado manualmente.
-2025-06-25 16:15:52 - Iniciando el navegador y abriendo la página.
-2025-06-25 16:16:10 - La página ha cargado completamente.
-2025-06-25 16:16:13 - Página recargada.
-2025-06-25 16:16:25 - idToken capturado correctamente.
-2025-06-25 16:16:32 - Archivo existente eliminado: C:\\bot-auto\\docs\\09-49-25-06-25-token-principal.txt
-2025-06-25 16:16:32 - Nuevo archivo de token creado: C:\\bot-auto\\docs\\16-16-25-06-25-token-principal.txt
-2025-06-25 16:16:32 - Iniciando el procesamiento del diccionario para antenas más cercanas......
-2025-06-25 16:16:32 - Procesando día de rastreo: 020325
-2025-06-25 16:16:32 - Procesando día de rastreo: 110225
-2025-06-25 16:16:32 - Procesamiento del diccionario completado con éxito.
-2025-06-25 16:16:32 - Archivo existente para la fecha actual encontrado: C:\bot-auto\docs\antenas-25-June-2025.json. No se realiza la solicitud al servicio.
-2025-06-25 16:16:32 - Inicio del proceso: Consulta de administradores de antenas.
-2025-06-25 16:16:32 - Proceso completado: Actualización de administradores de antenas finalizada.
-2025-06-25 16:16:32 - Inicio actualización del diccionario con nombres e IDs de archivos RINEX.
-2025-06-25 16:16:32 - Finalizada la actualización del diccionario con datos RINEX.
-2025-06-25 16:16:32 - Inicio actualización del diccionario con Token de descarga de archivos RINEX.
-2025-06-25 16:16:32 - Finalizada la actualización del diccionario con Token de descarga de archivos RINEX.
-2025-06-25 16:16:32 - Procesando día: 020325
-2025-06-25 16:16:32 - Procesando día: 110225
-2025-06-25 16:16:32 - Actualización del diccionario completada.
-2025-06-25 16:16:32 - Inicio actualización del diccionario con la coordenada SIRGAS.
-2025-06-25 16:16:32 - Finalizada la actualización del diccionario con coordenadas SIRGAS.
-2025-06-25 16:16:32 - Ruta_principal: F:\DISAIN\2501-CAMPANO
-2025-06-25 16:16:32 - Nombre_proyecto: 2501-CAMPANO
-2025-06-25 16:16:32 - Ruta_archivo: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:32 - El archivo está oculto: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:32 - Archivo desocultado temporalmente: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:32 - Archivo JSON guardado correctamente: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:32 - Archivo marcado como oculto: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:32 - Archivo JSON oculto guardado exitosamente como: F:\DISAIN\2501-CAMPANO\.2501-CAMPANO.json
-2025-06-25 16:16:33 - Procesando proyecto: 2501-CAMPANO
-2025-06-25 16:16:33 - Procesando día de rastreo: 020325
-2025-06-25 16:16:33 - Procesando día de rastreo: 110225
-2025-06-25 16:16:33 - Resumen del proyecto generado correctamente.
-2025-06-25 16:16:33 - Proyecto 2501-CAMPANO completado con éxito.
-2025-06-25 16:16:33 - Proyecto 2501-CAMPANO
-Días rastreos: 020325
-Días rastreos: 110225
+2025-08-15 08:46:06 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:46:06 - Inicio actualizacion listado de proyectos
 
-2025-06-25 16:16:33 - Proyecto: 2501-CAMPANO completo
+2025-08-15 08:46:06 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:46:06 - Consumo API finalizado
+2025-08-15 08:46:06 - Proyectos obtenidos: 1
+2025-08-15 08:46:06 - Iniciando listarProyectos
+2025-08-15 08:46:06 - Proyectos recibidos: 1
+2025-08-15 08:46:06 - Proyectos tras deduplicar: 1
+2025-08-15 08:46:06 - Datos limpiados
+2025-08-15 08:46:06 - Excel existente, actualizando
+2025-08-15 08:46:06 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:46:06 - Filas existentes actualizadas
+2025-08-15 08:46:06 - Ajuste de anchos aplicado
+2025-08-15 08:46:06 - Excel actualizado correctamente
+2025-08-15 08:46:06 - Proceso de listado finalizado
+2025-08-15 08:46:06 - rutaList ejecutada correctamente
+2025-08-15 08:46:06 - Inicio Redgeoscan
+2025-08-15 08:46:06 - Proyecto 0825-SURIA ya fue procesado hoy (2025-08-15).
+2025-08-15 08:46:06 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:46:06 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:46:06 - Inicio GeoEpoca
+2025-08-15 08:46:06 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:47:06 - Verificando EdgeDriver...
+
+2025-08-15 08:47:06 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:47:06 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:47:06 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:47:06 - Consumo API finalizado
+2025-08-15 08:47:06 - Proyectos obtenidos: 1
+2025-08-15 08:47:06 - Iniciando listarProyectos
+2025-08-15 08:47:06 - Proyectos recibidos: 1
+2025-08-15 08:47:06 - Proyectos tras deduplicar: 1
+2025-08-15 08:47:06 - Datos limpiados
+2025-08-15 08:47:06 - Excel existente, actualizando
+2025-08-15 08:47:06 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:47:06 - Filas existentes actualizadas
+2025-08-15 08:47:06 - Ajuste de anchos aplicado
+2025-08-15 08:47:06 - Excel actualizado correctamente
+2025-08-15 08:47:06 - Proceso de listado finalizado
+2025-08-15 08:47:06 - rutaList ejecutada correctamente
+2025-08-15 08:47:06 - Inicio Redgeoscan
+2025-08-15 08:47:06 - Procesando proyecto: 0825-SURIA
+2025-08-15 08:47:06 - RedGeoScan iniciado...
+2025-08-15 08:47:06 - Cargando Base informacion antenas KML...
+2025-08-15 08:47:06 - Carga de la base de antenas KML fue exitosa.
+2025-08-15 08:47:06 - Inicio Validación de estructura proyecto....
+2025-08-15 08:47:06 - Ruta encontrada: F:\OPTIMA\0825-SURIA\Procesamiento
+2025-08-15 08:47:06 - Ruta encontrada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia
+2025-08-15 08:47:06 - Ruta encontrada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos
+2025-08-15 08:47:06 - Ruta completa: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos
+2025-08-15 08:47:06 - Obteniendo listado de subcarpetas de carpeta: Rastreos
+2025-08-15 08:47:06 - Listado de subcarpetas obtenido exitosamente
+2025-08-15 08:47:06 - Generando diccionario 1...
+2025-08-15 08:47:06 - Diccionario generado exitosamente.
+2025-08-15 08:47:06 - Inicio de procesamiento de días de rastreos...
+2025-08-15 08:47:06 - Obteniendo listado de subcarpetas de carpeta: 120825
+2025-08-15 08:47:06 - Listado de subcarpetas obtenido exitosamente
+2025-08-15 08:47:06 - Procesamiento completado exitosamente.
+2025-08-15 08:47:06 - Inicio de procesamiento de subcarpetas en la carpeta 'Base'...
+2025-08-15 08:47:06 - Obteniendo listado de subcarpetas de carpeta: 120825
+2025-08-15 08:47:06 - Listado de subcarpetas obtenido exitosamente
+2025-08-15 08:47:06 - Subcarpetas de 'Base' actualizadas para el día 120825
+2025-08-15 08:47:06 - Procesamiento de subcarpetas en 'Base' completado exitosamente.
+2025-08-15 08:47:06 - Inicio de procesamiento de archivos GPS en las carpetas 'Base'...
+2025-08-15 08:47:06 - Procesando carpeta GPS: BASE2-completo en F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Base\BASE2-completo
+2025-08-15 08:47:06 - Archivo .pos encontrado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Base\BASE2-completo\Rover1_raw_20250812155315.pos para BASE2-completo
+2025-08-15 08:47:06 - Procesamiento de archivos GPS completado exitosamente.
+2025-08-15 08:47:06 - Todos los archivos .pos ya existen. No se requiere ejecutar RTKLIB.
+2025-08-15 08:47:06 - Iniciando actualización del diccionario con archivos .pos...
+2025-08-15 08:47:06 - Procesando día de rastreo: 120825
+2025-08-15 08:47:06 - Procesando subcarpeta: BASE2-completo
+2025-08-15 08:47:06 - Archivo .pos válido encontrado en BASE2-completo: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Base\BASE2-completo\Rover1_raw_20250812155315.pos
+2025-08-15 08:47:06 - Actualización completada exitosamente.
+2025-08-15 08:47:06 - Buscando token en base...
+2025-08-15 08:47:06 - El archivo C:\\bot-auto\\docs\\00-01-15-08-25-token-principal.txt tiene 525.64 minutos de antigüedad.
+2025-08-15 08:47:06 - El archivo C:\\bot-auto\\docs\\00-01-15-08-25-token-principal.txt tiene más de 20 minutos de antigüedad.
+2025-08-15 08:47:06 - Se cerraron todas las instancias de Microsoft Edge y EdgeDriver.
+2025-08-15 08:47:07 - Archivo DevToolsActivePort eliminado manualmente.
+2025-08-15 08:47:09 - Iniciando el navegador y abriendo la página.
+2025-08-15 08:47:26 - La página ha cargado completamente.
+2025-08-15 08:47:29 - Página recargada.
+2025-08-15 08:47:41 - idToken capturado correctamente.
+2025-08-15 08:47:48 - Archivo existente eliminado: C:\\bot-auto\\docs\\08-47-15-08-25-token-principal.txt
+2025-08-15 08:47:48 - Nuevo archivo de token creado: C:\\bot-auto\\docs\\08-47-15-08-25-token-principal.txt
+2025-08-15 08:47:48 - Procesando archivo POS para BASE2-completo en el día 120825: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Base\BASE2-completo\Rover1_raw_20250812155315.pos
+2025-08-15 08:47:48 - coordenada media: {'latitud': '4 3 35.61', 'longitud': '-73 26 10.86', 'fecha': '2025/08/12 18:27:13.007000', 'semana': 2379, 'dia': 224}
+2025-08-15 08:47:48 - Información media POS agregada para BASE2-completo en el día 120825.
+2025-08-15 08:47:48 - Iniciando el procesamiento del diccionario para antenas más cercanas......
+2025-08-15 08:47:48 - Procesando día de rastreo: 120825
+2025-08-15 08:47:48 - Antenas cercanas para BASE2-completo:
+ 		      [{'NAME': 'VPOM', 'Latitud (Decimal)': 4.067727638888889, 'Longitud (Decimal)': -73.38224208333332, 'Distancia': 6.064320734114542, 'Tiempo de Rastreo (h)': 0.9}, {'NAME': 'BAAP', 'Latitud (Decimal)': 4.071802916666666, 'Longitud (Decimal)': -73.55401277777777, 'Distancia': 13.1176121018769, 'Tiempo de Rastreo (h)': 1.2}, {'NAME': 'VIVI', 'Latitud (Decimal)': 4.074662722222222, 'Longitud (Decimal)': -73.58399402777778, 'Distancia': 16.45808078841086, 'Tiempo de Rastreo (h)': 1.4}, {'NAME': 'MEDN', 'Latitud (Decimal)': 4.510002694444444, 'Longitud (Decimal)': -73.35054666666666, 'Distancia': 50.94633267068422, 'Tiempo de Rastreo (h)': 3.1}, {'NAME': 'SLCB', 'Latitud (Decimal)': 3.795101861111111, 'Longitud (Decimal)': -73.83395663888888, 'Distancia': 53.03225395905492, 'Tiempo de Rastreo (h)': 3.2}, {'NAME': 'ABCH', 'Latitud (Decimal)': 4.637965805555555, 'Longitud (Decimal)': -73.72233083333333, 'Distancia': 71.67405904935522, 'Tiempo de Rastreo (h)': 4.1}, {'NAME': 'CBYR', 'Latitud (Decimal)': 4.284558055555555, 'Longitud (Decimal)': -72.79298991666667, 'Distancia': 75.59584316917683, 'Tiempo de Rastreo (h)': 4.3}, {'NAME': 'ABPD', 'Latitud (Decimal)': 4.47656775, 'Longitud (Decimal)': -74.09886813888889, 'Distancia': 86.85426671425783, 'Tiempo de Rastreo (h)': 4.9}, {'NAME': 'PULL', 'Latitud (Decimal)': 3.269162805555556, 'Longitud (Decimal)': -73.37478772222221, 'Distancia': 88.1900207504893, 'Tiempo de Rastreo (h)': 5.0}, {'NAME': 'PULE', 'Latitud (Decimal)': 3.253734972222222, 'Longitud (Decimal)': -73.39537505555556, 'Distancia': 89.75577779522476, 'Tiempo de Rastreo (h)': 5.0}, {'NAME': 'ABPW', 'Latitud (Decimal)': 4.689570638888889, 'Longitud (Decimal)': -73.9951146388889, 'Distancia': 93.48932500327072, 'Tiempo de Rastreo (h)': 5.2}, {'NAME': 'UDAP', 'Latitud (Decimal)': 4.614556944444444, 'Longitud (Decimal)': -74.09390524999999, 'Distancia': 95.49541078414681, 'Tiempo de Rastreo (h)': 5.3}, {'NAME': 'BOGA', 'Latitud (Decimal)': 4.638683083333333, 'Longitud (Decimal)': -74.07994955555556, 'Distancia': 96.09416730232438, 'Tiempo de Rastreo (h)': 5.4}, {'NAME': 'BOGT', 'Latitud (Decimal)': 4.640075194444444, 'Longitud (Decimal)': -74.08093966666667, 'Distancia': 96.27931980097152, 'Tiempo de Rastreo (h)': 5.4}, {'NAME': 'BTAG', 'Latitud (Decimal)': 4.661268277777778, 'Longitud (Decimal)': -74.0619938611111, 'Distancia': 96.35010206724768, 'Tiempo de Rastreo (h)': 5.4}, {'NAME': 'ABCC', 'Latitud (Decimal)': 4.661235555555556, 'Longitud (Decimal)': -74.12692224999999, 'Distancia': 101.65327763132868, 'Tiempo de Rastreo (h)': 5.6}, {'NAME': 'MSET', 'Latitud (Decimal)': 3.378053416666666, 'Longitud (Decimal)': -74.0483725, 'Distancia': 101.78403485537446, 'Tiempo de Rastreo (h)': 5.6}, {'NAME': 'SBOG', 'Latitud (Decimal)': 4.591192388888889, 'Longitud (Decimal)': -74.19017491666668, 'Distancia': 102.3534472258263, 'Tiempo de Rastreo (h)': 5.7}, {'NAME': 'AEDO', 'Latitud (Decimal)': 4.688431416666667, 'Longitud (Decimal)': -74.13878666666668, 'Distancia': 104.64170649672718, 'Tiempo de Rastreo (h)': 5.8}, {'NAME': 'AEGU', 'Latitud (Decimal)': 4.809657388888889, 'Longitud (Decimal)': -74.05757655555556, 'Distancia': 108.13716827843493, 'Tiempo de Rastreo (h)': 6.0}, {'NAME': 'VSOA', 'Latitud (Decimal)': 4.602577388888888, 'Longitud (Decimal)': -74.27287944444444, 'Distancia': 110.65390664350205, 'Tiempo de Rastreo (h)': 6.1}, {'NAME': 'GARA', 'Latitud (Decimal)': 5.081334527777778, 'Longitud (Decimal)': -73.36003755555555, 'Distancia': 113.89378699297882, 'Tiempo de Rastreo (h)': 6.2}, {'NAME': 'VZPQ', 'Latitud (Decimal)': 5.0190225, 'Longitud (Decimal)': -73.98697316666667, 'Distancia': 122.87977617660957, 'Tiempo de Rastreo (h)': 6.7}, {'NAME': 'BAME', 'Latitud (Decimal)': 4.23559725, 'Longitud (Decimal)': -74.56508519444444, 'Distancia': 126.69632638854164, 'Tiempo de Rastreo (h)': 6.9}, {'NAME': 'VROS', 'Latitud (Decimal)': 4.847048222222222, 'Longitud (Decimal)': -74.32332869444444, 'Distancia': 131.64232448280177, 'Tiempo de Rastreo (h)': 7.1}]
+2025-08-15 08:47:48 - Procesamiento del diccionario completado con éxito.
+2025-08-15 08:47:48 - Archivo existente para la fecha actual encontrado: C:\bot-auto\docs\antenas-15-August-2025.json. No se realiza la solicitud al servicio.
+2025-08-15 08:47:48 - Inicio del proceso: Consulta de administradores de antenas.
+2025-08-15 08:47:48 - Administrador agregado para la antena VPOM.
+2025-08-15 08:47:48 - Administrador agregado para la antena BAAP.
+2025-08-15 08:47:48 - Administrador agregado para la antena VIVI.
+2025-08-15 08:47:48 - Administrador agregado para la antena MEDN.
+2025-08-15 08:47:48 - Administrador agregado para la antena SLCB.
+2025-08-15 08:47:48 - Administrador agregado para la antena ABCH.
+2025-08-15 08:47:48 - Administrador agregado para la antena CBYR.
+2025-08-15 08:47:48 - Administrador agregado para la antena ABPD.
+2025-08-15 08:47:48 - Administrador agregado para la antena PULL.
+2025-08-15 08:47:48 - Administrador agregado para la antena PULE.
+2025-08-15 08:47:48 - Administrador agregado para la antena ABPW.
+2025-08-15 08:47:48 - Administrador agregado para la antena UDAP.
+2025-08-15 08:47:48 - Administrador agregado para la antena BOGA.
+2025-08-15 08:47:48 - Administrador agregado para la antena BOGT.
+2025-08-15 08:47:48 - Administrador no encontrado para la antena BTAG.
+2025-08-15 08:47:48 - Administrador agregado para la antena ABCC.
+2025-08-15 08:47:48 - Administrador agregado para la antena MSET.
+2025-08-15 08:47:48 - Administrador agregado para la antena SBOG.
+2025-08-15 08:47:48 - Administrador agregado para la antena AEDO.
+2025-08-15 08:47:48 - Administrador agregado para la antena AEGU.
+2025-08-15 08:47:48 - Administrador agregado para la antena VSOA.
+2025-08-15 08:47:48 - Administrador agregado para la antena GARA.
+2025-08-15 08:47:48 - Administrador agregado para la antena VZPQ.
+2025-08-15 08:47:48 - Administrador agregado para la antena BAME.
+2025-08-15 08:47:48 - Administrador agregado para la antena VROS.
+2025-08-15 08:47:48 - Proceso completado: Actualización de administradores de antenas finalizada.
+2025-08-15 08:47:48 - Inicio actualización del diccionario con nombres e IDs de archivos RINEX.
+2025-08-15 08:47:48 - Actualizados datos RINEX para la antena VPOM.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena BAAP.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena VIVI.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena MEDN.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena SLCB.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena ABCH.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena CBYR.
+2025-08-15 08:47:48 - Actualizados datos RINEX para la antena ABPD.
+2025-08-15 08:47:48 - Actualizados datos RINEX para la antena PULL.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena PULE.
+2025-08-15 08:47:48 - No se encontraron datos RINEX para la antena ABPW.
+2025-08-15 08:47:48 - Actualizados datos RINEX para la antena UDAP.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena BOGA.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena BOGT.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena BTAG.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena ABCC.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena MSET.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena SBOG.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena AEDO.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena AEGU.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena VSOA.
+2025-08-15 08:47:49 - Actualizados datos RINEX para la antena GARA.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena VZPQ.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena BAME.
+2025-08-15 08:47:49 - No se encontraron datos RINEX para la antena VROS.
+2025-08-15 08:47:49 - Finalizada la actualización del diccionario con datos RINEX.
+2025-08-15 08:47:49 - Inicio actualización del diccionario con Token de descarga de archivos RINEX.
+2025-08-15 08:47:49 - buscando token de Antena: VPOM, archivo vpom2240.25d.gz con Id: 1169774
+2025-08-15 08:47:50 - Token asignado al archivo RINEX vpom2240.25d.gz de la antena VPOM.
+2025-08-15 08:47:50 - buscando token de Antena: VPOM, archivo VPOM00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169805
+2025-08-15 08:47:51 - Token asignado al archivo RINEX VPOM00COL_R_20252240000_01D_MN.rnx.gz de la antena VPOM.
+2025-08-15 08:47:51 - buscando token de Antena: VPOM, archivo vpom2240.25n.gz con Id: 1169986
+2025-08-15 08:47:52 - Token asignado al archivo RINEX vpom2240.25n.gz de la antena VPOM.
+2025-08-15 08:47:52 - buscando token de Antena: VPOM, archivo vpom2240.25g.gz con Id: 1170137
+2025-08-15 08:47:53 - Token asignado al archivo RINEX vpom2240.25g.gz de la antena VPOM.
+2025-08-15 08:47:53 - buscando token de Antena: VPOM, archivo VPOM00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170207
+2025-08-15 08:47:54 - Token asignado al archivo RINEX VPOM00COL_R_20252240000_01D_15S_MO.crx.gz de la antena VPOM.
+2025-08-15 08:47:54 - buscando token de Antena: ABPD, archivo abpd2240.25g.gz con Id: 1170303
+2025-08-15 08:47:55 - Token asignado al archivo RINEX abpd2240.25g.gz de la antena ABPD.
+2025-08-15 08:47:55 - buscando token de Antena: ABPD, archivo abpd2240.25n.gz con Id: 1170305
+2025-08-15 08:47:56 - Token asignado al archivo RINEX abpd2240.25n.gz de la antena ABPD.
+2025-08-15 08:47:56 - buscando token de Antena: ABPD, archivo abpd2240.25d.gz con Id: 1170307
+2025-08-15 08:47:57 - Token asignado al archivo RINEX abpd2240.25d.gz de la antena ABPD.
+2025-08-15 08:47:57 - buscando token de Antena: PULL, archivo pull2240.25d.gz con Id: 1169686
+2025-08-15 08:47:58 - Token asignado al archivo RINEX pull2240.25d.gz de la antena PULL.
+2025-08-15 08:47:58 - buscando token de Antena: PULL, archivo PULL00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169851
+2025-08-15 08:47:59 - Token asignado al archivo RINEX PULL00COL_R_20252240000_01D_MN.rnx.gz de la antena PULL.
+2025-08-15 08:47:59 - buscando token de Antena: PULL, archivo pull2240.25n.gz con Id: 1169949
+2025-08-15 08:48:00 - Token asignado al archivo RINEX pull2240.25n.gz de la antena PULL.
+2025-08-15 08:48:00 - buscando token de Antena: PULL, archivo pull2240.25g.gz con Id: 1170088
+2025-08-15 08:48:01 - Token asignado al archivo RINEX pull2240.25g.gz de la antena PULL.
+2025-08-15 08:48:01 - buscando token de Antena: PULL, archivo PULL00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170271
+2025-08-15 08:48:02 - Token asignado al archivo RINEX PULL00COL_R_20252240000_01D_15S_MO.crx.gz de la antena PULL.
+2025-08-15 08:48:02 - buscando token de Antena: UDAP, archivo udap2240.25d.gz con Id: 1169698
+2025-08-15 08:48:04 - Token asignado al archivo RINEX udap2240.25d.gz de la antena UDAP.
+2025-08-15 08:48:04 - buscando token de Antena: UDAP, archivo UDAP00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169833
+2025-08-15 08:48:05 - Token asignado al archivo RINEX UDAP00COL_R_20252240000_01D_MN.rnx.gz de la antena UDAP.
+2025-08-15 08:48:05 - buscando token de Antena: UDAP, archivo udap2240.25n.gz con Id: 1169938
+2025-08-15 08:48:06 - Token asignado al archivo RINEX udap2240.25n.gz de la antena UDAP.
+2025-08-15 08:48:06 - buscando token de Antena: UDAP, archivo udap2240.25g.gz con Id: 1170074
+2025-08-15 08:48:07 - Token asignado al archivo RINEX udap2240.25g.gz de la antena UDAP.
+2025-08-15 08:48:07 - buscando token de Antena: UDAP, archivo UDAP00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170255
+2025-08-15 08:48:08 - Token asignado al archivo RINEX UDAP00COL_R_20252240000_01D_15S_MO.crx.gz de la antena UDAP.
+2025-08-15 08:48:08 - buscando token de Antena: BOGA, archivo boga2240.25d.gz con Id: 1169796
+2025-08-15 08:48:09 - Token asignado al archivo RINEX boga2240.25d.gz de la antena BOGA.
+2025-08-15 08:48:09 - buscando token de Antena: BOGA, archivo BOGA00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169904
+2025-08-15 08:48:10 - Token asignado al archivo RINEX BOGA00COL_R_20252240000_01D_MN.rnx.gz de la antena BOGA.
+2025-08-15 08:48:10 - buscando token de Antena: BOGA, archivo boga2240.25n.gz con Id: 1170015
+2025-08-15 08:48:11 - Token asignado al archivo RINEX boga2240.25n.gz de la antena BOGA.
+2025-08-15 08:48:11 - buscando token de Antena: BOGA, archivo boga2240.25g.gz con Id: 1170109
+2025-08-15 08:48:12 - Token asignado al archivo RINEX boga2240.25g.gz de la antena BOGA.
+2025-08-15 08:48:12 - buscando token de Antena: BOGA, archivo BOGA00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170267
+2025-08-15 08:48:13 - Token asignado al archivo RINEX BOGA00COL_R_20252240000_01D_15S_MO.crx.gz de la antena BOGA.
+2025-08-15 08:48:13 - buscando token de Antena: BOGT, archivo BOGT00COL_R_20252240000_01D_30S_MO.crx.gz con Id: 1170301
+2025-08-15 08:48:14 - Token asignado al archivo RINEX BOGT00COL_R_20252240000_01D_30S_MO.crx.gz de la antena BOGT.
+2025-08-15 08:48:14 - buscando token de Antena: BOGT, archivo BOGT00COL_R_20252240000_01D_GN.rnx.gz con Id: 1170306
+2025-08-15 08:48:15 - Token asignado al archivo RINEX BOGT00COL_R_20252240000_01D_GN.rnx.gz de la antena BOGT.
+2025-08-15 08:48:15 - buscando token de Antena: ABCC, archivo abcc2240.25g.gz con Id: 1170302
+2025-08-15 08:48:16 - Token asignado al archivo RINEX abcc2240.25g.gz de la antena ABCC.
+2025-08-15 08:48:16 - buscando token de Antena: ABCC, archivo abcc2240.25n.gz con Id: 1170304
+2025-08-15 08:48:17 - Token asignado al archivo RINEX abcc2240.25n.gz de la antena ABCC.
+2025-08-15 08:48:17 - buscando token de Antena: ABCC, archivo abcc2240.25d.gz con Id: 1170308
+2025-08-15 08:48:18 - Token asignado al archivo RINEX abcc2240.25d.gz de la antena ABCC.
+2025-08-15 08:48:18 - buscando token de Antena: MSET, archivo mset2240.25d.gz con Id: 1169800
+2025-08-15 08:48:19 - Token asignado al archivo RINEX mset2240.25d.gz de la antena MSET.
+2025-08-15 08:48:19 - buscando token de Antena: MSET, archivo MSET00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169838
+2025-08-15 08:48:20 - Token asignado al archivo RINEX MSET00COL_R_20252240000_01D_MN.rnx.gz de la antena MSET.
+2025-08-15 08:48:20 - buscando token de Antena: MSET, archivo mset2240.25n.gz con Id: 1170022
+2025-08-15 08:48:21 - Token asignado al archivo RINEX mset2240.25n.gz de la antena MSET.
+2025-08-15 08:48:21 - buscando token de Antena: MSET, archivo mset2240.25g.gz con Id: 1170103
+2025-08-15 08:48:22 - Token asignado al archivo RINEX mset2240.25g.gz de la antena MSET.
+2025-08-15 08:48:22 - buscando token de Antena: MSET, archivo MSET00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170175
+2025-08-15 08:48:23 - Token asignado al archivo RINEX MSET00COL_R_20252240000_01D_15S_MO.crx.gz de la antena MSET.
+2025-08-15 08:48:23 - buscando token de Antena: AEDO, archivo aedo2240.25d.gz con Id: 1169751
+2025-08-15 08:48:25 - Token asignado al archivo RINEX aedo2240.25d.gz de la antena AEDO.
+2025-08-15 08:48:25 - buscando token de Antena: AEDO, archivo AEDO00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169888
+2025-08-15 08:48:26 - Token asignado al archivo RINEX AEDO00COL_R_20252240000_01D_MN.rnx.gz de la antena AEDO.
+2025-08-15 08:48:26 - buscando token de Antena: AEDO, archivo aedo2240.25n.gz con Id: 1170003
+2025-08-15 08:48:27 - Token asignado al archivo RINEX aedo2240.25n.gz de la antena AEDO.
+2025-08-15 08:48:27 - buscando token de Antena: AEDO, archivo aedo2240.25g.gz con Id: 1170156
+2025-08-15 08:48:28 - Token asignado al archivo RINEX aedo2240.25g.gz de la antena AEDO.
+2025-08-15 08:48:28 - buscando token de Antena: AEDO, archivo AEDO00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170259
+2025-08-15 08:48:29 - Token asignado al archivo RINEX AEDO00COL_R_20252240000_01D_15S_MO.crx.gz de la antena AEDO.
+2025-08-15 08:48:29 - buscando token de Antena: AEGU, archivo aegu2240.25d.gz con Id: 1169735
+2025-08-15 08:48:30 - Token asignado al archivo RINEX aegu2240.25d.gz de la antena AEGU.
+2025-08-15 08:48:30 - buscando token de Antena: AEGU, archivo AEGU00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169913
+2025-08-15 08:48:31 - Token asignado al archivo RINEX AEGU00COL_R_20252240000_01D_MN.rnx.gz de la antena AEGU.
+2025-08-15 08:48:31 - buscando token de Antena: AEGU, archivo aegu2240.25n.gz con Id: 1169954
+2025-08-15 08:48:32 - Token asignado al archivo RINEX aegu2240.25n.gz de la antena AEGU.
+2025-08-15 08:48:32 - buscando token de Antena: AEGU, archivo aegu2240.25g.gz con Id: 1170055
+2025-08-15 08:48:33 - Token asignado al archivo RINEX aegu2240.25g.gz de la antena AEGU.
+2025-08-15 08:48:33 - buscando token de Antena: AEGU, archivo AEGU00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170188
+2025-08-15 08:48:34 - Token asignado al archivo RINEX AEGU00COL_R_20252240000_01D_15S_MO.crx.gz de la antena AEGU.
+2025-08-15 08:48:34 - buscando token de Antena: GARA, archivo gara2240.25d.gz con Id: 1169793
+2025-08-15 08:48:35 - Token asignado al archivo RINEX gara2240.25d.gz de la antena GARA.
+2025-08-15 08:48:35 - buscando token de Antena: GARA, archivo GARA00COL_R_20252240000_01D_MN.rnx.gz con Id: 1169868
+2025-08-15 08:48:36 - Token asignado al archivo RINEX GARA00COL_R_20252240000_01D_MN.rnx.gz de la antena GARA.
+2025-08-15 08:48:36 - buscando token de Antena: GARA, archivo gara2240.25n.gz con Id: 1170017
+2025-08-15 08:48:37 - Token asignado al archivo RINEX gara2240.25n.gz de la antena GARA.
+2025-08-15 08:48:37 - buscando token de Antena: GARA, archivo gara2240.25g.gz con Id: 1170111
+2025-08-15 08:48:38 - Token asignado al archivo RINEX gara2240.25g.gz de la antena GARA.
+2025-08-15 08:48:38 - buscando token de Antena: GARA, archivo GARA00COL_R_20252240000_01D_15S_MO.crx.gz con Id: 1170248
+2025-08-15 08:48:39 - Token asignado al archivo RINEX GARA00COL_R_20252240000_01D_15S_MO.crx.gz de la antena GARA.
+2025-08-15 08:48:39 - Finalizada la actualización del diccionario con Token de descarga de archivos RINEX.
+2025-08-15 08:48:39 - Procesando día: 120825
+2025-08-15 08:48:39 - Procesando carpeta GPS: BASE2-completo
+2025-08-15 08:48:39 - Procesando antena: VPOM, Materializada: SGC
+2025-08-15 08:48:39 - Intentando descargar archivo: vpom2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:39 - Iniciando proceso para el archivo vpom2240.25d.gz en la subcarpeta VPOM...
+2025-08-15 08:48:40 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM
+2025-08-15 08:48:40 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25d.gz
+2025-08-15 08:48:40 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:40 - Intentando descargar archivo: VPOM00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:40 - Iniciando proceso para el archivo VPOM00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta VPOM...
+2025-08-15 08:48:40 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM
+2025-08-15 08:48:40 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\VPOM00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:40 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\VPOM00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:40 - Intentando descargar archivo: vpom2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:40 - Iniciando proceso para el archivo vpom2240.25n.gz en la subcarpeta VPOM...
+2025-08-15 08:48:41 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM
+2025-08-15 08:48:41 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25n.gz
+2025-08-15 08:48:41 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:41 - Intentando descargar archivo: vpom2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:41 - Iniciando proceso para el archivo vpom2240.25g.gz en la subcarpeta VPOM...
+2025-08-15 08:48:41 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM
+2025-08-15 08:48:41 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25g.gz
+2025-08-15 08:48:41 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\vpom2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:41 - Intentando descargar archivo: VPOM00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:41 - Iniciando proceso para el archivo VPOM00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta VPOM...
+2025-08-15 08:48:42 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM
+2025-08-15 08:48:42 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\VPOM00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:42 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\VPOM\VPOM00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:42 - Procesando antena: BAAP, Materializada: SGC
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: BAAP
+2025-08-15 08:48:42 - Procesando antena: VIVI, Materializada: IGAC
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: VIVI
+2025-08-15 08:48:42 - Procesando antena: MEDN, Materializada: IGAC-SGC
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: MEDN
+2025-08-15 08:48:42 - Procesando antena: SLCB, Materializada: IGAC-SGC
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: SLCB
+2025-08-15 08:48:42 - Procesando antena: ABCH, Materializada: EAAB
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: ABCH
+2025-08-15 08:48:42 - Procesando antena: CBYR, Materializada: IGAC
+2025-08-15 08:48:42 - No se encontraron archivos RINEX para la antena: CBYR
+2025-08-15 08:48:42 - Procesando antena: ABPD, Materializada: EAAB
+2025-08-15 08:48:42 - Intentando descargar archivo: abpd2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:42 - Iniciando proceso para el archivo abpd2240.25g.gz en la subcarpeta ABPD...
+2025-08-15 08:48:42 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD
+2025-08-15 08:48:42 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25g.gz
+2025-08-15 08:48:42 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:42 - Intentando descargar archivo: abpd2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:42 - Iniciando proceso para el archivo abpd2240.25n.gz en la subcarpeta ABPD...
+2025-08-15 08:48:43 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD
+2025-08-15 08:48:43 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25n.gz
+2025-08-15 08:48:43 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:43 - Intentando descargar archivo: abpd2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:43 - Iniciando proceso para el archivo abpd2240.25d.gz en la subcarpeta ABPD...
+2025-08-15 08:48:43 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD
+2025-08-15 08:48:43 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25d.gz
+2025-08-15 08:48:43 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABPD\abpd2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:43 - Procesando antena: PULL, Materializada: IGAC-SGC
+2025-08-15 08:48:43 - Intentando descargar archivo: pull2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:43 - Iniciando proceso para el archivo pull2240.25d.gz en la subcarpeta PULL...
+2025-08-15 08:48:44 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL
+2025-08-15 08:48:44 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25d.gz
+2025-08-15 08:48:44 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:44 - Intentando descargar archivo: PULL00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:44 - Iniciando proceso para el archivo PULL00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta PULL...
+2025-08-15 08:48:44 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL
+2025-08-15 08:48:44 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\PULL00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:44 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\PULL00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:44 - Intentando descargar archivo: pull2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:44 - Iniciando proceso para el archivo pull2240.25n.gz en la subcarpeta PULL...
+2025-08-15 08:48:45 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL
+2025-08-15 08:48:45 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25n.gz
+2025-08-15 08:48:45 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:45 - Intentando descargar archivo: pull2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:45 - Iniciando proceso para el archivo pull2240.25g.gz en la subcarpeta PULL...
+2025-08-15 08:48:45 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL
+2025-08-15 08:48:45 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25g.gz
+2025-08-15 08:48:45 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\pull2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:45 - Intentando descargar archivo: PULL00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:45 - Iniciando proceso para el archivo PULL00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta PULL...
+2025-08-15 08:48:46 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL
+2025-08-15 08:48:46 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\PULL00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:46 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\PULL\PULL00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:46 - Procesando antena: PULE, Materializada: IGAC-SGC
+2025-08-15 08:48:46 - No se encontraron archivos RINEX para la antena: PULE
+2025-08-15 08:48:46 - Procesando antena: ABPW, Materializada: EAAB
+2025-08-15 08:48:46 - No se encontraron archivos RINEX para la antena: ABPW
+2025-08-15 08:48:46 - Procesando antena: UDAP, Materializada: SGC
+2025-08-15 08:48:46 - Intentando descargar archivo: udap2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:46 - Iniciando proceso para el archivo udap2240.25d.gz en la subcarpeta UDAP...
+2025-08-15 08:48:46 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP
+2025-08-15 08:48:46 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25d.gz
+2025-08-15 08:48:46 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:46 - Intentando descargar archivo: UDAP00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:46 - Iniciando proceso para el archivo UDAP00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta UDAP...
+2025-08-15 08:48:47 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP
+2025-08-15 08:48:47 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\UDAP00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:47 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\UDAP00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:47 - Intentando descargar archivo: udap2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:47 - Iniciando proceso para el archivo udap2240.25n.gz en la subcarpeta UDAP...
+2025-08-15 08:48:47 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP
+2025-08-15 08:48:47 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25n.gz
+2025-08-15 08:48:47 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:47 - Intentando descargar archivo: udap2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:47 - Iniciando proceso para el archivo udap2240.25g.gz en la subcarpeta UDAP...
+2025-08-15 08:48:48 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP
+2025-08-15 08:48:48 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25g.gz
+2025-08-15 08:48:48 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\udap2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:48 - Intentando descargar archivo: UDAP00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:48 - Iniciando proceso para el archivo UDAP00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta UDAP...
+2025-08-15 08:48:48 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP
+2025-08-15 08:48:48 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\UDAP00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:48 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\UDAP\UDAP00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:48 - Procesando antena: BOGA, Materializada: IGAC
+2025-08-15 08:48:48 - Intentando descargar archivo: boga2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:48 - Iniciando proceso para el archivo boga2240.25d.gz en la subcarpeta BOGA...
+2025-08-15 08:48:49 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA
+2025-08-15 08:48:49 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25d.gz
+2025-08-15 08:48:49 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:49 - Intentando descargar archivo: BOGA00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:49 - Iniciando proceso para el archivo BOGA00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta BOGA...
+2025-08-15 08:48:49 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA
+2025-08-15 08:48:49 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\BOGA00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:49 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\BOGA00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:49 - Intentando descargar archivo: boga2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:49 - Iniciando proceso para el archivo boga2240.25n.gz en la subcarpeta BOGA...
+2025-08-15 08:48:50 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA
+2025-08-15 08:48:50 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25n.gz
+2025-08-15 08:48:50 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:50 - Intentando descargar archivo: boga2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:50 - Iniciando proceso para el archivo boga2240.25g.gz en la subcarpeta BOGA...
+2025-08-15 08:48:50 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA
+2025-08-15 08:48:50 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25g.gz
+2025-08-15 08:48:50 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\boga2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:50 - Intentando descargar archivo: BOGA00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:50 - Iniciando proceso para el archivo BOGA00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta BOGA...
+2025-08-15 08:48:51 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA
+2025-08-15 08:48:51 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\BOGA00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:51 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\BOGA\BOGA00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:51 - Procesando antena: BOGT, Materializada: SGC
+2025-08-15 08:48:51 - Intentando descargar archivo: BOGT00COL_R_20252240000_01D_30S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:51 - Iniciando proceso para el archivo BOGT00COL_R_20252240000_01D_30S_MO.crx.gz en la subcarpeta BOGT...
+2025-08-15 08:48:51 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT
+2025-08-15 08:48:51 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT\BOGT00COL_R_20252240000_01D_30S_MO.crx.gz
+2025-08-15 08:48:51 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT\BOGT00COL_R_20252240000_01D_30S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:51 - Intentando descargar archivo: BOGT00COL_R_20252240000_01D_GN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:51 - Iniciando proceso para el archivo BOGT00COL_R_20252240000_01D_GN.rnx.gz en la subcarpeta BOGT...
+2025-08-15 08:48:52 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT
+2025-08-15 08:48:52 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT\BOGT00COL_R_20252240000_01D_GN.rnx.gz
+2025-08-15 08:48:52 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\BOGT\BOGT00COL_R_20252240000_01D_GN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:52 - Procesando antena: BTAG, Materializada: None
+2025-08-15 08:48:52 - No se encontraron archivos RINEX para la antena: BTAG
+2025-08-15 08:48:52 - Procesando antena: ABCC, Materializada: EAAB
+2025-08-15 08:48:52 - Intentando descargar archivo: abcc2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:52 - Iniciando proceso para el archivo abcc2240.25g.gz en la subcarpeta ABCC...
+2025-08-15 08:48:52 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC
+2025-08-15 08:48:52 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25g.gz
+2025-08-15 08:48:52 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:52 - Intentando descargar archivo: abcc2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:52 - Iniciando proceso para el archivo abcc2240.25n.gz en la subcarpeta ABCC...
+2025-08-15 08:48:53 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC
+2025-08-15 08:48:53 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25n.gz
+2025-08-15 08:48:53 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:53 - Intentando descargar archivo: abcc2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:53 - Iniciando proceso para el archivo abcc2240.25d.gz en la subcarpeta ABCC...
+2025-08-15 08:48:53 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC
+2025-08-15 08:48:53 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25d.gz
+2025-08-15 08:48:53 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\EAAB\ABCC\abcc2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:53 - Procesando antena: MSET, Materializada: IGAC-SGC
+2025-08-15 08:48:53 - Intentando descargar archivo: mset2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:53 - Iniciando proceso para el archivo mset2240.25d.gz en la subcarpeta MSET...
+2025-08-15 08:48:54 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET
+2025-08-15 08:48:54 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25d.gz
+2025-08-15 08:48:54 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:54 - Intentando descargar archivo: MSET00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:54 - Iniciando proceso para el archivo MSET00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta MSET...
+2025-08-15 08:48:54 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET
+2025-08-15 08:48:54 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\MSET00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:54 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\MSET00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:54 - Intentando descargar archivo: mset2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:54 - Iniciando proceso para el archivo mset2240.25n.gz en la subcarpeta MSET...
+2025-08-15 08:48:55 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET
+2025-08-15 08:48:55 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25n.gz
+2025-08-15 08:48:55 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:55 - Intentando descargar archivo: mset2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:55 - Iniciando proceso para el archivo mset2240.25g.gz en la subcarpeta MSET...
+2025-08-15 08:48:55 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET
+2025-08-15 08:48:55 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25g.gz
+2025-08-15 08:48:55 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\mset2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:55 - Intentando descargar archivo: MSET00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:55 - Iniciando proceso para el archivo MSET00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta MSET...
+2025-08-15 08:48:56 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET
+2025-08-15 08:48:56 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\MSET00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:56 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\MSET\MSET00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:56 - Procesando antena: SBOG, Materializada: SENA
+2025-08-15 08:48:56 - No se encontraron archivos RINEX para la antena: SBOG
+2025-08-15 08:48:56 - Procesando antena: AEDO, Materializada: SGC
+2025-08-15 08:48:56 - Intentando descargar archivo: aedo2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:56 - Iniciando proceso para el archivo aedo2240.25d.gz en la subcarpeta AEDO...
+2025-08-15 08:48:56 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO
+2025-08-15 08:48:56 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25d.gz
+2025-08-15 08:48:56 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:56 - Intentando descargar archivo: AEDO00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:56 - Iniciando proceso para el archivo AEDO00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta AEDO...
+2025-08-15 08:48:57 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO
+2025-08-15 08:48:57 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\AEDO00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:57 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\AEDO00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:57 - Intentando descargar archivo: aedo2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:57 - Iniciando proceso para el archivo aedo2240.25n.gz en la subcarpeta AEDO...
+2025-08-15 08:48:57 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO
+2025-08-15 08:48:57 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25n.gz
+2025-08-15 08:48:57 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25n.gz. Descarga omitida.
+2025-08-15 08:48:57 - Intentando descargar archivo: aedo2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:57 - Iniciando proceso para el archivo aedo2240.25g.gz en la subcarpeta AEDO...
+2025-08-15 08:48:58 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO
+2025-08-15 08:48:58 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25g.gz
+2025-08-15 08:48:58 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\aedo2240.25g.gz. Descarga omitida.
+2025-08-15 08:48:58 - Intentando descargar archivo: AEDO00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:58 - Iniciando proceso para el archivo AEDO00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta AEDO...
+2025-08-15 08:48:58 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO
+2025-08-15 08:48:58 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\AEDO00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:48:58 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\SGC\AEDO\AEDO00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:48:58 - Procesando antena: AEGU, Materializada: IGAC-SGC
+2025-08-15 08:48:58 - Intentando descargar archivo: aegu2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:58 - Iniciando proceso para el archivo aegu2240.25d.gz en la subcarpeta AEGU...
+2025-08-15 08:48:59 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU
+2025-08-15 08:48:59 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25d.gz
+2025-08-15 08:48:59 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25d.gz. Descarga omitida.
+2025-08-15 08:48:59 - Intentando descargar archivo: AEGU00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:59 - Iniciando proceso para el archivo AEGU00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta AEGU...
+2025-08-15 08:48:59 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU
+2025-08-15 08:48:59 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\AEGU00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:48:59 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\AEGU00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:48:59 - Intentando descargar archivo: aegu2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:48:59 - Iniciando proceso para el archivo aegu2240.25n.gz en la subcarpeta AEGU...
+2025-08-15 08:49:00 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU
+2025-08-15 08:49:00 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25n.gz
+2025-08-15 08:49:00 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25n.gz. Descarga omitida.
+2025-08-15 08:49:00 - Intentando descargar archivo: aegu2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:00 - Iniciando proceso para el archivo aegu2240.25g.gz en la subcarpeta AEGU...
+2025-08-15 08:49:00 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU
+2025-08-15 08:49:00 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25g.gz
+2025-08-15 08:49:00 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\aegu2240.25g.gz. Descarga omitida.
+2025-08-15 08:49:00 - Intentando descargar archivo: AEGU00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:00 - Iniciando proceso para el archivo AEGU00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta AEGU...
+2025-08-15 08:49:01 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU
+2025-08-15 08:49:01 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\AEGU00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:49:01 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC-SGC\AEGU\AEGU00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:49:01 - Procesando antena: VSOA, Materializada: SGC
+2025-08-15 08:49:01 - No se encontraron archivos RINEX para la antena: VSOA
+2025-08-15 08:49:01 - Procesando antena: GARA, Materializada: IGAC
+2025-08-15 08:49:01 - Intentando descargar archivo: gara2240.25d.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:01 - Iniciando proceso para el archivo gara2240.25d.gz en la subcarpeta GARA...
+2025-08-15 08:49:01 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA
+2025-08-15 08:49:01 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25d.gz
+2025-08-15 08:49:01 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25d.gz. Descarga omitida.
+2025-08-15 08:49:01 - Intentando descargar archivo: GARA00COL_R_20252240000_01D_MN.rnx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:01 - Iniciando proceso para el archivo GARA00COL_R_20252240000_01D_MN.rnx.gz en la subcarpeta GARA...
+2025-08-15 08:49:02 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA
+2025-08-15 08:49:02 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\GARA00COL_R_20252240000_01D_MN.rnx.gz
+2025-08-15 08:49:02 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\GARA00COL_R_20252240000_01D_MN.rnx.gz. Descarga omitida.
+2025-08-15 08:49:02 - Intentando descargar archivo: gara2240.25n.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:02 - Iniciando proceso para el archivo gara2240.25n.gz en la subcarpeta GARA...
+2025-08-15 08:49:02 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA
+2025-08-15 08:49:02 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25n.gz
+2025-08-15 08:49:02 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25n.gz. Descarga omitida.
+2025-08-15 08:49:02 - Intentando descargar archivo: gara2240.25g.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:02 - Iniciando proceso para el archivo gara2240.25g.gz en la subcarpeta GARA...
+2025-08-15 08:49:03 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA
+2025-08-15 08:49:03 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25g.gz
+2025-08-15 08:49:03 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\gara2240.25g.gz. Descarga omitida.
+2025-08-15 08:49:03 - Intentando descargar archivo: GARA00COL_R_20252240000_01D_15S_MO.crx.gz en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:03 - Iniciando proceso para el archivo GARA00COL_R_20252240000_01D_15S_MO.crx.gz en la subcarpeta GARA...
+2025-08-15 08:49:03 - Carpeta creada/verificada: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA
+2025-08-15 08:49:03 - Ruta destino del archivo descargado: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\GARA00COL_R_20252240000_01D_15S_MO.crx.gz
+2025-08-15 08:49:03 - El archivo ya existe en la ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo\IGAC\GARA\GARA00COL_R_20252240000_01D_15S_MO.crx.gz. Descarga omitida.
+2025-08-15 08:49:03 - Procesando antena: VZPQ, Materializada: SGC
+2025-08-15 08:49:03 - No se encontraron archivos RINEX para la antena: VZPQ
+2025-08-15 08:49:03 - Procesando antena: BAME, Materializada: SGC
+2025-08-15 08:49:03 - No se encontraron archivos RINEX para la antena: BAME
+2025-08-15 08:49:03 - Procesando antena: VROS, Materializada: SGC
+2025-08-15 08:49:03 - No se encontraron archivos RINEX para la antena: VROS
+2025-08-15 08:49:03 - Actualización del diccionario completada.
+2025-08-15 08:49:03 - Inicio actualización del diccionario con la coordenada SIRGAS.
+2025-08-15 08:49:03 - Solicitando coordenada SIRGAS para antena VPOM en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:05 - No se encontró coordenada SIRGAS para la antena VPOM.
+2025-08-15 08:49:05 - Se omite la antena BAAP porque la descarga no es completa.
+2025-08-15 08:49:05 - Se omite la antena VIVI porque la descarga no es completa.
+2025-08-15 08:49:05 - Se omite la antena MEDN porque la descarga no es completa.
+2025-08-15 08:49:05 - Se omite la antena SLCB porque la descarga no es completa.
+2025-08-15 08:49:05 - Se omite la antena ABCH porque la descarga no es completa.
+2025-08-15 08:49:05 - Se omite la antena CBYR porque la descarga no es completa.
+2025-08-15 08:49:05 - Solicitando coordenada SIRGAS para antena ABPD en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:08 - Coordenadas SIRGAS actualizadas para la antena ABPD: X=1742983.24598, Y=-6118331.47630, Z=494730.82186.
+2025-08-15 08:49:08 - Solicitando coordenada SIRGAS para antena PULL en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:09 - No se encontró coordenada SIRGAS para la antena PULL.
+2025-08-15 08:49:09 - Se omite la antena PULE porque la descarga no es completa.
+2025-08-15 08:49:09 - Se omite la antena ABPW porque la descarga no es completa.
+2025-08-15 08:49:09 - Solicitando coordenada SIRGAS para antena UDAP en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:11 - No se encontró coordenada SIRGAS para la antena UDAP.
+2025-08-15 08:49:11 - Solicitando coordenada SIRGAS para antena BOGA en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:14 - Coordenadas SIRGAS actualizadas para la antena BOGA: X=1744517.11227, Y=-6116050.89419, Z=512581.20769.
+2025-08-15 08:49:14 - Solicitando coordenada SIRGAS para antena BOGT en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:17 - Coordenadas SIRGAS actualizadas para la antena BOGT: X=1744398.86386, Y=-6116036.94435, Z=512731.97306.
+2025-08-15 08:49:17 - Se omite la antena BTAG porque la descarga no es completa.
+2025-08-15 08:49:17 - Solicitando coordenada SIRGAS para antena ABCC en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:19 - Coordenadas SIRGAS actualizadas para la antena ABCC: X=1739437.96798, Y=-6117252.36930, Z=515065.17759.
+2025-08-15 08:49:19 - Solicitando coordenada SIRGAS para antena MSET en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:21 - No se encontró coordenada SIRGAS para la antena MSET.
+2025-08-15 08:49:21 - Se omite la antena SBOG porque la descarga no es completa.
+2025-08-15 08:49:21 - Solicitando coordenada SIRGAS para antena AEDO en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:22 - No se encontró coordenada SIRGAS para la antena AEDO.
+2025-08-15 08:49:22 - Solicitando coordenada SIRGAS para antena AEGU en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:24 - No se encontró coordenada SIRGAS para la antena AEGU.
+2025-08-15 08:49:24 - Se omite la antena VSOA porque la descarga no es completa.
+2025-08-15 08:49:24 - Solicitando coordenada SIRGAS para antena GARA en ruta: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\BASE2-completo
+2025-08-15 08:49:26 - Coordenadas SIRGAS actualizadas para la antena GARA: X=1819791.59364, Y=-6088854.54871, Z=561298.50256.
+2025-08-15 08:49:26 - Se omite la antena VZPQ porque la descarga no es completa.
+2025-08-15 08:49:26 - Se omite la antena BAME porque la descarga no es completa.
+2025-08-15 08:49:26 - Se omite la antena VROS porque la descarga no es completa.
+2025-08-15 08:49:26 - Finalizada la actualización del diccionario con coordenadas SIRGAS.
+2025-08-15 08:49:26 - Ruta_principal: F:\OPTIMA\0825-SURIA
+2025-08-15 08:49:26 - Nombre_proyecto: 0825-SURIA
+2025-08-15 08:49:26 - Ruta_archivo: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - El archivo está oculto: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - Archivo desocultado temporalmente: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - Archivo JSON guardado correctamente: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - Archivo marcado como oculto: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - Archivo JSON oculto guardado exitosamente como: F:\OPTIMA\0825-SURIA\.0825-SURIA.json
+2025-08-15 08:49:27 - Informe PDF generado y guardado en: F:\OPTIMA\0825-SURIA\Procesamiento\1. Topografia\Rastreos\120825\Red activa\INFORME-BASE2-completo.pdf
+2025-08-15 08:49:28 - Procesando proyecto: 0825-SURIA
+2025-08-15 08:49:28 - Procesando día de rastreo: 120825
+2025-08-15 08:49:28 - Procesando carpeta GPS: BASE2-completo
+2025-08-15 08:49:28 - Total antenas procesadas: 25, Descargas completas: 11, Orden 0 completas: 5, Estado: COMPLETO
+2025-08-15 08:49:28 - Resumen del proyecto generado correctamente.
+2025-08-15 08:49:28 - Proyecto 0825-SURIA completado con éxito.
+2025-08-15 08:49:28 - Excel actualizado con los nuevos estados.
+2025-08-15 08:49:28 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:49:28 - Inicio GeoEpoca
+2025-08-15 08:49:28 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:50:28 - Verificando EdgeDriver...
+
+2025-08-15 08:50:28 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:50:28 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:50:28 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:50:28 - Consumo API finalizado
+2025-08-15 08:50:28 - Proyectos obtenidos: 1
+2025-08-15 08:50:28 - Iniciando listarProyectos
+2025-08-15 08:50:28 - Proyectos recibidos: 1
+2025-08-15 08:50:28 - Proyectos tras deduplicar: 1
+2025-08-15 08:50:28 - Datos limpiados
+2025-08-15 08:50:28 - Excel existente, actualizando
+2025-08-15 08:50:28 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:50:28 - Filas existentes actualizadas
+2025-08-15 08:50:28 - Ajuste de anchos aplicado
+2025-08-15 08:50:28 - Excel actualizado correctamente
+2025-08-15 08:50:28 - Proceso de listado finalizado
+2025-08-15 08:50:28 - rutaList ejecutada correctamente
+2025-08-15 08:50:28 - Inicio Redgeoscan
+2025-08-15 08:50:28 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:50:28 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:50:28 - Inicio GeoEpoca
+2025-08-15 08:50:28 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:51:28 - Verificando EdgeDriver...
+
+2025-08-15 08:51:28 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:51:28 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:51:28 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:51:28 - Consumo API finalizado
+2025-08-15 08:51:28 - Proyectos obtenidos: 1
+2025-08-15 08:51:28 - Iniciando listarProyectos
+2025-08-15 08:51:28 - Proyectos recibidos: 1
+2025-08-15 08:51:28 - Proyectos tras deduplicar: 1
+2025-08-15 08:51:28 - Datos limpiados
+2025-08-15 08:51:28 - Excel existente, actualizando
+2025-08-15 08:51:28 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:51:28 - Filas existentes actualizadas
+2025-08-15 08:51:28 - Ajuste de anchos aplicado
+2025-08-15 08:51:28 - Excel actualizado correctamente
+2025-08-15 08:51:28 - Proceso de listado finalizado
+2025-08-15 08:51:28 - rutaList ejecutada correctamente
+2025-08-15 08:51:28 - Inicio Redgeoscan
+2025-08-15 08:51:28 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:51:28 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:51:28 - Inicio GeoEpoca
+2025-08-15 08:51:28 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:52:28 - Verificando EdgeDriver...
+
+2025-08-15 08:52:28 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:52:28 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:52:28 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:52:29 - Consumo API finalizado
+2025-08-15 08:52:29 - Proyectos obtenidos: 1
+2025-08-15 08:52:29 - Iniciando listarProyectos
+2025-08-15 08:52:29 - Proyectos recibidos: 1
+2025-08-15 08:52:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:52:29 - Datos limpiados
+2025-08-15 08:52:29 - Excel existente, actualizando
+2025-08-15 08:52:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:52:29 - Filas existentes actualizadas
+2025-08-15 08:52:29 - Ajuste de anchos aplicado
+2025-08-15 08:52:29 - Excel actualizado correctamente
+2025-08-15 08:52:29 - Proceso de listado finalizado
+2025-08-15 08:52:29 - rutaList ejecutada correctamente
+2025-08-15 08:52:29 - Inicio Redgeoscan
+2025-08-15 08:52:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:52:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:52:29 - Inicio GeoEpoca
+2025-08-15 08:52:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:53:29 - Verificando EdgeDriver...
+
+2025-08-15 08:53:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:53:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:53:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:53:29 - Consumo API finalizado
+2025-08-15 08:53:29 - Proyectos obtenidos: 1
+2025-08-15 08:53:29 - Iniciando listarProyectos
+2025-08-15 08:53:29 - Proyectos recibidos: 1
+2025-08-15 08:53:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:53:29 - Datos limpiados
+2025-08-15 08:53:29 - Excel existente, actualizando
+2025-08-15 08:53:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:53:29 - Filas existentes actualizadas
+2025-08-15 08:53:29 - Ajuste de anchos aplicado
+2025-08-15 08:53:29 - Excel actualizado correctamente
+2025-08-15 08:53:29 - Proceso de listado finalizado
+2025-08-15 08:53:29 - rutaList ejecutada correctamente
+2025-08-15 08:53:29 - Inicio Redgeoscan
+2025-08-15 08:53:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:53:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:53:29 - Inicio GeoEpoca
+2025-08-15 08:53:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:54:29 - Verificando EdgeDriver...
+
+2025-08-15 08:54:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:54:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:54:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:54:29 - Consumo API finalizado
+2025-08-15 08:54:29 - Proyectos obtenidos: 1
+2025-08-15 08:54:29 - Iniciando listarProyectos
+2025-08-15 08:54:29 - Proyectos recibidos: 1
+2025-08-15 08:54:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:54:29 - Datos limpiados
+2025-08-15 08:54:29 - Excel existente, actualizando
+2025-08-15 08:54:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:54:29 - Filas existentes actualizadas
+2025-08-15 08:54:29 - Ajuste de anchos aplicado
+2025-08-15 08:54:29 - Excel actualizado correctamente
+2025-08-15 08:54:29 - Proceso de listado finalizado
+2025-08-15 08:54:29 - rutaList ejecutada correctamente
+2025-08-15 08:54:29 - Inicio Redgeoscan
+2025-08-15 08:54:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:54:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:54:29 - Inicio GeoEpoca
+2025-08-15 08:54:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:55:29 - Verificando EdgeDriver...
+
+2025-08-15 08:55:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:55:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:55:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:55:29 - Consumo API finalizado
+2025-08-15 08:55:29 - Proyectos obtenidos: 1
+2025-08-15 08:55:29 - Iniciando listarProyectos
+2025-08-15 08:55:29 - Proyectos recibidos: 1
+2025-08-15 08:55:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:55:29 - Datos limpiados
+2025-08-15 08:55:29 - Excel existente, actualizando
+2025-08-15 08:55:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:55:29 - Filas existentes actualizadas
+2025-08-15 08:55:29 - Ajuste de anchos aplicado
+2025-08-15 08:55:29 - Excel actualizado correctamente
+2025-08-15 08:55:29 - Proceso de listado finalizado
+2025-08-15 08:55:29 - rutaList ejecutada correctamente
+2025-08-15 08:55:29 - Inicio Redgeoscan
+2025-08-15 08:55:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:55:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:55:29 - Inicio GeoEpoca
+2025-08-15 08:55:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:56:29 - Verificando EdgeDriver...
+
+2025-08-15 08:56:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:56:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:56:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:56:29 - Consumo API finalizado
+2025-08-15 08:56:29 - Proyectos obtenidos: 1
+2025-08-15 08:56:29 - Iniciando listarProyectos
+2025-08-15 08:56:29 - Proyectos recibidos: 1
+2025-08-15 08:56:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:56:29 - Datos limpiados
+2025-08-15 08:56:29 - Excel existente, actualizando
+2025-08-15 08:56:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:56:29 - Filas existentes actualizadas
+2025-08-15 08:56:29 - Ajuste de anchos aplicado
+2025-08-15 08:56:29 - Excel actualizado correctamente
+2025-08-15 08:56:29 - Proceso de listado finalizado
+2025-08-15 08:56:29 - rutaList ejecutada correctamente
+2025-08-15 08:56:29 - Inicio Redgeoscan
+2025-08-15 08:56:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:56:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:56:29 - Inicio GeoEpoca
+2025-08-15 08:56:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:57:29 - Verificando EdgeDriver...
+
+2025-08-15 08:57:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:57:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:57:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:57:29 - Consumo API finalizado
+2025-08-15 08:57:29 - Proyectos obtenidos: 1
+2025-08-15 08:57:29 - Iniciando listarProyectos
+2025-08-15 08:57:29 - Proyectos recibidos: 1
+2025-08-15 08:57:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:57:29 - Datos limpiados
+2025-08-15 08:57:29 - Excel existente, actualizando
+2025-08-15 08:57:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:57:29 - Filas existentes actualizadas
+2025-08-15 08:57:29 - Error en listarProyectos: [WinError 5] Acceso denegado: 'C:\\bot-auto\\docs\\~Cola_proyectos.xlsx' -> 'C:\\bot-auto\\docs\\Cola_proyectos.xlsx'
+2025-08-15 08:57:29 - Proceso de listado finalizado
+2025-08-15 08:57:29 - Fallo en el listado de proyectos
+2025-08-15 08:57:29 - Inicio Redgeoscan
+2025-08-15 08:57:29 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:57:29 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:57:29 - Inicio GeoEpoca
+2025-08-15 08:57:29 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:58:29 - Verificando EdgeDriver...
+
+2025-08-15 08:58:29 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:58:29 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:58:29 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:58:29 - Consumo API finalizado
+2025-08-15 08:58:29 - Proyectos obtenidos: 1
+2025-08-15 08:58:29 - Iniciando listarProyectos
+2025-08-15 08:58:29 - Proyectos recibidos: 1
+2025-08-15 08:58:29 - Proyectos tras deduplicar: 1
+2025-08-15 08:58:29 - Datos limpiados
+2025-08-15 08:58:29 - Excel existente, actualizando
+2025-08-15 08:58:29 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:58:29 - Filas existentes actualizadas
+2025-08-15 08:58:30 - Ajuste de anchos aplicado
+2025-08-15 08:58:30 - Excel actualizado correctamente
+2025-08-15 08:58:30 - Proceso de listado finalizado
+2025-08-15 08:58:30 - rutaList ejecutada correctamente
+2025-08-15 08:58:30 - Inicio Redgeoscan
+2025-08-15 08:58:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:58:30 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:58:30 - Inicio GeoEpoca
+2025-08-15 08:58:30 - GeoEpoca finalizado correctamente
+
+2025-08-15 08:59:30 - Verificando EdgeDriver...
+
+2025-08-15 08:59:30 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 08:59:30 - Inicio actualizacion listado de proyectos
+
+2025-08-15 08:59:30 - Iniciando rutaList - consumo API proyectos
+2025-08-15 08:59:30 - Consumo API finalizado
+2025-08-15 08:59:30 - Proyectos obtenidos: 1
+2025-08-15 08:59:30 - Iniciando listarProyectos
+2025-08-15 08:59:30 - Proyectos recibidos: 1
+2025-08-15 08:59:30 - Proyectos tras deduplicar: 1
+2025-08-15 08:59:30 - Datos limpiados
+2025-08-15 08:59:30 - Excel existente, actualizando
+2025-08-15 08:59:30 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 08:59:30 - Filas existentes actualizadas
+2025-08-15 08:59:30 - Ajuste de anchos aplicado
+2025-08-15 08:59:30 - Excel actualizado correctamente
+2025-08-15 08:59:30 - Proceso de listado finalizado
+2025-08-15 08:59:30 - rutaList ejecutada correctamente
+2025-08-15 08:59:30 - Inicio Redgeoscan
+2025-08-15 08:59:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 08:59:30 - Redgeoscan finalizado correctamente
+
+2025-08-15 08:59:30 - Inicio GeoEpoca
+2025-08-15 08:59:30 - GeoEpoca finalizado correctamente
+
+2025-08-15 09:00:30 - Verificando EdgeDriver...
+
+2025-08-15 09:00:30 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 09:00:30 - Inicio actualizacion listado de proyectos
+
+2025-08-15 09:00:30 - Iniciando rutaList - consumo API proyectos
+2025-08-15 09:00:30 - Consumo API finalizado
+2025-08-15 09:00:30 - Proyectos obtenidos: 1
+2025-08-15 09:00:30 - Iniciando listarProyectos
+2025-08-15 09:00:30 - Proyectos recibidos: 1
+2025-08-15 09:00:30 - Proyectos tras deduplicar: 1
+2025-08-15 09:00:30 - Datos limpiados
+2025-08-15 09:00:30 - Excel existente, actualizando
+2025-08-15 09:00:30 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 09:00:30 - Filas existentes actualizadas
+2025-08-15 09:00:30 - Ajuste de anchos aplicado
+2025-08-15 09:00:30 - Excel actualizado correctamente
+2025-08-15 09:00:30 - Proceso de listado finalizado
+2025-08-15 09:00:30 - rutaList ejecutada correctamente
+2025-08-15 09:00:30 - Inicio Redgeoscan
+2025-08-15 09:00:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 09:00:30 - Redgeoscan finalizado correctamente
+
+2025-08-15 09:00:30 - Inicio GeoEpoca
+2025-08-15 09:00:30 - GeoEpoca finalizado correctamente
+
+2025-08-15 09:01:30 - Verificando EdgeDriver...
+
+2025-08-15 09:01:30 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 09:01:30 - Inicio actualizacion listado de proyectos
+
+2025-08-15 09:01:30 - Iniciando rutaList - consumo API proyectos
+2025-08-15 09:01:30 - Consumo API finalizado
+2025-08-15 09:01:30 - Proyectos obtenidos: 1
+2025-08-15 09:01:30 - Iniciando listarProyectos
+2025-08-15 09:01:30 - Proyectos recibidos: 1
+2025-08-15 09:01:30 - Proyectos tras deduplicar: 1
+2025-08-15 09:01:30 - Datos limpiados
+2025-08-15 09:01:30 - Excel existente, actualizando
+2025-08-15 09:01:30 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 09:01:30 - Filas existentes actualizadas
+2025-08-15 09:01:30 - Ajuste de anchos aplicado
+2025-08-15 09:01:30 - Excel actualizado correctamente
+2025-08-15 09:01:30 - Proceso de listado finalizado
+2025-08-15 09:01:30 - rutaList ejecutada correctamente
+2025-08-15 09:01:30 - Inicio Redgeoscan
+2025-08-15 09:01:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 09:01:30 - Redgeoscan finalizado correctamente
+
+2025-08-15 09:01:30 - Inicio GeoEpoca
+2025-08-15 09:01:30 - GeoEpoca finalizado correctamente
+
+2025-08-15 09:02:30 - Verificando EdgeDriver...
+
+2025-08-15 09:02:30 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 09:02:30 - Inicio actualizacion listado de proyectos
+
+2025-08-15 09:02:30 - Iniciando rutaList - consumo API proyectos
+2025-08-15 09:02:30 - Consumo API finalizado
+2025-08-15 09:02:30 - Proyectos obtenidos: 1
+2025-08-15 09:02:30 - Iniciando listarProyectos
+2025-08-15 09:02:30 - Proyectos recibidos: 1
+2025-08-15 09:02:30 - Proyectos tras deduplicar: 1
+2025-08-15 09:02:30 - Datos limpiados
+2025-08-15 09:02:30 - Excel existente, actualizando
+2025-08-15 09:02:30 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 09:02:30 - Filas existentes actualizadas
+2025-08-15 09:02:30 - Error en listarProyectos: [WinError 5] Acceso denegado: 'C:\\bot-auto\\docs\\~Cola_proyectos.xlsx' -> 'C:\\bot-auto\\docs\\Cola_proyectos.xlsx'
+2025-08-15 09:02:30 - Proceso de listado finalizado
+2025-08-15 09:02:30 - Fallo en el listado de proyectos
+2025-08-15 09:02:30 - Inicio Redgeoscan
+2025-08-15 09:02:30 - No se realizaron cambios en el Excel. No se actualizó el archivo.
+2025-08-15 09:02:30 - Redgeoscan finalizado correctamente
+
+2025-08-15 09:02:30 - Inicio GeoEpoca
+2025-08-15 09:02:30 - GeoEpoca finalizado correctamente
+
+2025-08-15 09:03:30 - Verificando EdgeDriver...
+
+2025-08-15 09:03:30 - EdgeDriver se encuentra actualizado en la (versión 139.0.3405).
+2025-08-15 09:03:30 - Inicio actualizacion listado de proyectos
+
+2025-08-15 09:03:30 - Iniciando rutaList - consumo API proyectos
+2025-08-15 09:03:30 - Consumo API finalizado
+2025-08-15 09:03:30 - Proyectos obtenidos: 1
+2025-08-15 09:03:30 - Iniciando listarProyectos
+2025-08-15 09:03:30 - Proyectos recibidos: 1
+2025-08-15 09:03:30 - Proyectos tras deduplicar: 1
+2025-08-15 09:03:30 - Datos limpiados
+2025-08-15 09:03:30 - Excel existente, actualizando
+2025-08-15 09:03:30 - IDs comunes: 1, IDs nuevos: 0
+2025-08-15 09:03:30 - Filas existentes actualizadas
+2025-08-15 09:03:30 - Error en listarProyectos: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'C:\\bot-auto\\docs\\~Cola_proyectos.xlsx' -> 'C:\\bot-auto\\docs\\Cola_proyectos.xlsx'
+2025-08-15 09:03:30 - Proceso de listado finalizado
+2025-08-15 09:03:30 - Fallo en el listado de proyectos
+2025-08-15 09:03:30 - Inicio Redgeoscan
+2025-08-15 09:03:30 - Error al procesar el archivo Excel: [Errno 13] Permission denied: 'C:\\bot-auto\\docs\\Cola_proyectos.xlsx'
+2025-08-15 09:03:30 - Error crítico: [Errno 13] Permission denied: 'C:\\bot-auto\\docs\\Cola_proyectos.xlsx'

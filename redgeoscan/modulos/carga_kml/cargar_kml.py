@@ -7,12 +7,10 @@ import os
 
 # ***************************************************************************************************************
 # Funcion para cargar el archivo excel con las antenas
-def cargar_kml(ruta_archivos_excel, nombre_archivo_kml):
+def cargar_kml(ruta_archivo_excel_kml):
     
     try:
-        # Ruta al archivo Excel que contiene la información de las antenas
-        ruta_archivo_excel_kml = os.path.join(ruta_archivos_excel, nombre_archivo_kml)
-    
+
         # Mensaje de depuracion carga de base KML
         agregar_log("Cargando Base informacion antenas KML...")
     
