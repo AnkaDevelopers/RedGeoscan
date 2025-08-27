@@ -23,7 +23,7 @@ def rpa_magnasirgas():
     ventana.attributes('-fullscreen', True)
     ventana.configure(background='black')
 
-    ruta_imagen = r"C:\bot-auto\geoepoca\Anka.png"
+    ruta_imagen = r"C:\RedGeoscan\geoepoca\Anka.png"
     if not os.path.isfile(ruta_imagen):
         agregar_log(f"❌ Imagen Anka.png no encontrada en {ruta_imagen}.")
         ventana.destroy()
@@ -54,7 +54,8 @@ def rpa_magnasirgas():
         return None
 
     def ejecutar_proceso():
-        imagen_ref = r"C:\bot-auto\geoepoca\Imagenes\CargaInterfaz.png"
+        imagen_ref = r"C:\RedGeoscan\geoepoca\Imagenes\CargaInterfaz.png"
+        time.sleep(5)
         if not esperar_carga_interfaz(imagen_ref):
             agregar_log("❌ No se detectó la interfaz de MagnaSirgas.")
             cerrar_magna_sirgas()

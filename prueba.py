@@ -1,25 +1,31 @@
-import subprocess
-import os
+import win32com.client
 
-def ejecutar_crx2rnx_desde_consola(ruta_archivo_crx):
-    ruta_exe = r"C:\bot-auto\docs\crx2rnx.exe"
+olFolderInbox = 6
 
-    if not os.path.exists(ruta_archivo_crx):
-        print("El archivo .crx no existe.")
-        return
+outlook = win32com.client.Dispatch("Outlook.Application")
+ns = outlook.GetNamespace("MAPI")
 
-    if not os.path.exists(ruta_exe):
-        print("El ejecutable crx2rnx.exe no se encontró.")
-        return
-
+print("=== LISTA DE ALMACENES (STORES) ===")
+for i in range(1, ns.Stores.Count + 1):
+    store = ns.Stores.Item(i)
+    print(f"\n[{i}] Store: {store.DisplayName}")
     try:
-        # Ejecuta como si arrastraras el archivo al .exe desde consola
-        subprocess.run(f'"{ruta_exe}" "{ruta_archivo_crx}"', shell=True, check=True)
-        print("✅ Conversión completada correctamente.")
-        return True
-    except subprocess.CalledProcessError as e:
-        print("❌ Error al ejecutar la conversión:", e)
-        return None
+        inbox = store.GetDefaultFolder(olFolderInbox)
+        print(f"   - Inbox path: {inbox.FolderPath}")
+        print(f"   - Inbox items: {inbox.Items.Count}")
+    except Exception as e:
+        print(f"   - No pude leer Inbox en este store: {e}")
 
-# Ejemplo de uso
-# ejecutar_crx2rnx_desde_consola(r"F:\MAAT\2503-AVR_GUADUAS\Procesamiento\1. Topografia\Rastreos\070325\Red activa\GPS1\IGAC\CALI\CALI00COL_R_20250770000_01D_15S_MO.crx")
+print("\n=== LISTA DE CUENTAS (SESSIONS/FOLDERS TOP-LEVEL) ===")
+for i in range(1, ns.Folders.Count + 1):
+    root = ns.Folders.Item(i)
+    print(f"\n[{i}] Root: {root.Name}")
+    try:
+        inbox = root.Folders("Bandeja de entrada")  # nombre en español
+        print(f"   - {inbox.FolderPath} -> {inbox.Items.Count} items")
+    except Exception as e:
+        try:
+            inbox = root.Folders("Inbox")  # por si viene en inglés
+            print(f"   - {inbox.FolderPath} -> {inbox.Items.Count} items")
+        except Exception as e2:
+            print("   - No encontré 'Bandeja de entrada' ni 'Inbox' en este root.")

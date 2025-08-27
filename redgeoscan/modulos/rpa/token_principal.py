@@ -90,7 +90,7 @@ def rpa_igac():
 
         driver.refresh()
         agregar_log("Página recargada.")
-        time.sleep(5)
+        time.sleep(2)
 
         # Capturar solicitudes
         for request in driver.requests:

@@ -2,7 +2,7 @@ import subprocess
 import os
 
 def ejecutar_crx2rnx_desde_consola(ruta_archivo_crx):
-    ruta_exe = r"C:\bot-auto\docs\crx2rnx.exe"
+    ruta_exe = r"C:\RedGeoscan\docs\crx2rnx.exe"
 
     if not os.path.exists(ruta_archivo_crx):
         print("El archivo .crx no existe.")

@@ -1,6 +1,9 @@
 # Importaciones modulos
 from monitor.log.log import agregar_log
 
+# Importar configuracion
+from config import config
+
 # Importaciones adicionales
 from fpdf import FPDF
 import time
@@ -10,7 +13,7 @@ def generar_informe_pdf_por_gps(datos_proyecto, radio):
 
     class PDF(FPDF):
         def header(self):
-            self.image('C:\\bot-auto\\data\\logo_anka.jpg', 10, 8, 33)
+            self.image(r'C:\RedGeoscan\data\logo_anka.jpg' , 10, 8, 33)
             self.set_font('Arial', 'B', 12)
             self.cell(0, 10, self.title, align='C', ln=True)
             self.ln(10)

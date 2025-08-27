@@ -7,13 +7,13 @@ def ondulacion_geoidal():
     #***************************************************************************************
     # Data set de icono de conversion a ondulacion geoidal
     imagenes_conversion_ondulacion_geoidal = {
-    r"C:\GeoEpoca\Imagenes\ondulacion-geoidal\1.PNG",
-    r"C:\GeoEpoca\Imagenes\ondulacion-geoidal\2.PNG",
-    r"C:\GeoEpoca\Imagenes\ondulacion-geoidal\3.PNG",
-    r"C:\GeoEpoca\Imagenes\ondulacion-geoidal\4.PNG",
-    r"C:\GeoEpoca\Imagenes\ondulacion-geoidal\5.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\ondulacion-geoidal\1.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\ondulacion-geoidal\2.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\ondulacion-geoidal\3.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\ondulacion-geoidal\4.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\ondulacion-geoidal\5.PNG",
     }
-        
+
     ancho, alto = pyautogui.size()  # Obtiene el tamaño de la pantalla
     pyautogui.moveTo(ancho / 2, alto / 2, duration=0.1)  # Mueve al centro en 0.1s
     time.sleep(0.5)
@@ -37,11 +37,11 @@ def ondulacion_geoidal():
     #***************************************************************************************
     # Data set de icono de carga archivo ondulacion geoidal.
     imagenes_archivo_conversion_elipsoidal_decimal = {
-    r"C:\GeoEpoca\Imagenes\archivo-ondulacion-geoidal\1.PNG",
-    r"C:\GeoEpoca\Imagenes\archivo-ondulacion-geoidal\2.PNG",
-    r"C:\GeoEpoca\Imagenes\archivo-ondulacion-geoidal\3.PNG",
-    r"C:\GeoEpoca\Imagenes\archivo-ondulacion-geoidal\4.PNG",
-    r"C:\GeoEpoca\Imagenes\archivo-ondulacion-geoidal\5.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\archivo-ondulacion-geoidal\1.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\archivo-ondulacion-geoidal\2.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\archivo-ondulacion-geoidal\3.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\archivo-ondulacion-geoidal\4.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\archivo-ondulacion-geoidal\5.PNG",
     }
         
     # Buscar Boton para desplegar el formulario de carga archivo ondulacion geoidal.
@@ -62,11 +62,11 @@ def ondulacion_geoidal():
     #***************************************************************************************
     # Data set de icono de abrir
     imagen_btn_archivo ={
-    r"C:\GeoEpoca\Imagenes\abrir\1.PNG",
-    r"C:\GeoEpoca\Imagenes\abrir\2.PNG",
-    r"C:\GeoEpoca\Imagenes\abrir\3.PNG",
-    r"C:\GeoEpoca\Imagenes\abrir\4.PNG",
-    r"C:\GeoEpoca\Imagenes\abrir\5.PNG",        
+    r"C:\RedGeoscan\geoepoca\Imagenes\abrir\1.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\abrir\2.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\abrir\3.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\abrir\4.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\abrir\5.PNG",        
     }
     time.sleep(1)
     # Buscar boton abrir
@@ -91,14 +91,14 @@ def ondulacion_geoidal():
     # Seleccionar Cargar equipo:
     # Data set de imagenes icno este equipo
     imagenes_equipo = {
-    r"C:\GeoEpoca\Imagenes\este_equipo\1.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\2.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\3.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\4.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\5.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\6.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\7.png",
-    r"C:\GeoEpoca\Imagenes\este_equipo\8.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\1.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\2.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\3.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\4.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\5.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\6.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\7.png",
+    r"C:\RedGeoscan\geoepoca\Imagenes\este_equipo\8.png",
     }
     time.sleep(1)
     # Buscar icono de este equipo
@@ -124,14 +124,14 @@ def ondulacion_geoidal():
     # Busqueda de icono disco local C
     time.sleep(1)
     imagenes_disco_local_c = {
-    r"C:\GeoEpoca\Imagenes\disco_local_c\1.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\2.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\3.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\4.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\5.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\6.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\7.PNG",
-    r"C:\GeoEpoca\Imagenes\disco_local_c\8.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\1.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\2.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\3.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\4.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\5.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\6.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\7.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\disco_local_c\8.PNG",
     }
 
     # Buscar Icono disco local C
@@ -263,13 +263,13 @@ def ondulacion_geoidal():
     # Data set de icono de aceptar
     time.sleep(1)
     imagenes_acptar = {
-    r"C:\GeoEpoca\Imagenes\aceptar\1.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\2.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\3.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\4.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\5.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\6.PNG",
-    r"C:\GeoEpoca\Imagenes\aceptar\7.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\1.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\2.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\3.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\4.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\5.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\6.PNG",
+    r"C:\RedGeoscan\geoepoca\Imagenes\aceptar\7.PNG",
     }
 
     # Buscar Icono boton aceptar

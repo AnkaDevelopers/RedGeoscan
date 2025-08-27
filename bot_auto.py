@@ -1,6 +1,6 @@
 # IMPORTACIONES MODULOS
 #from monitor.guardar_excel.gestion_excel import inicializar_excel
-from monitor.log.log import agregar_log, guardar_log_en_archivo, enviar_log_por_correo
+from monitor.log.log import agregar_log
 from director_redgeoscan import control_redgeoscan
 from director_geoEpoca import control_verificacion_proyectos
 from RutaList.rutaList import rutaList
@@ -26,7 +26,7 @@ def programa_principal():
                     agregar_log("Inicio actualizacion listado de proyectos\n")
                     rutaList()
                     
-                    agregar_log("Inicio Redgeoscan")                                                                        
+                    agregar_log("Inicio Redgeoscan")                                                                      
                     control_redgeoscan()
                     agregar_log("Redgeoscan finalizado correctamente\n")
 

@@ -8,15 +8,17 @@ import os
 # Importar módulos de monitor
 from monitor.log.log import agregar_log
 
+
+
 #********************************************************************************************************************************
-# Función para realizar la solicitud al servicio y almacenar los datos en `C:\bot-auto\docs`
+# Función para realizar la solicitud al servicio y almacenar los datos en `C:\RedGeoscan\docs`
 def servicio_administrador_antenas():
     
     try:
         # Define el directorio y nombre base del archivo según la fecha actual
         fecha_actual = datetime.now()
         nombre_base = f"antenas-{fecha_actual.strftime('%d-%B-%Y')}"
-        ruta_antenas = os.path.join('C:\\bot-auto\\docs')
+        ruta_antenas = os.path.join( r"C:\RedGeoscan\docs" )
         os.makedirs(ruta_antenas, exist_ok=True)  # Asegúrate de que la carpeta exista
 
         # Buscar archivo existente con la fecha actual

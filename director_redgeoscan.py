@@ -38,7 +38,7 @@ def enviar_respuesta_equipo_de_soporte(msj_depuracion, rpta):
 # Programa principal
 
 def control_redgeoscan():
-    
+
     try:
         df = pd.read_excel(config.ruta_excel)
         fecha_actual = datetime.date.today().strftime("%Y-%m-%d")
@@ -120,14 +120,14 @@ def control_redgeoscan():
                 cambios_realizados = True  # <== Agregado
                 print(id_proyecto)
                 actualizarProyecto(id_proyecto, ESTADO_RED = "Completo")
-                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
+                #enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
                 time.sleep(1)
                 enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Finalizado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
 
             else:
                 agregar_log(f"Proyecto {nombre_proyecto} incompleto. Registrando revisión de hoy.")
                 actualizarProyecto(id_proyecto, ESTADO_RED = fecha_actual)
-                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Revisado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
+                #enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Revisado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
                 time.sleep(1)
                 enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Revisado", cuerpo_html=f"<p> {respuesta_red_geoscan}</p>")
                 cambios_realizados = True  # <== Agregado

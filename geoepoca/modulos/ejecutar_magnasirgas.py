@@ -21,7 +21,7 @@ def ejecutar_magna_sirgas():
 
         subprocess.Popen(
             [java_path, "-jar", "MagnaSirgas5.jar"],
-            cwd=r"C:\bot-auto\geoepoca\MagnaSirgas5.1",
+            cwd=r"C:\RedGeoscan\geoepoca\MagnaSirgas5.1",
             shell=True
         )
         agregar_log("✅ MagnaSirgas ejecutado correctamente.")

@@ -4,8 +4,8 @@ import os
 
 # ************************************************************************************************************
 # Rutas locales de la imagen y el texto de la firma
-ruta_imagen_local = r"C:\bot-auto\data\logo_anka.jpg"
-ruta_texto = r"C:\bot-auto\data\firma.txt"
+ruta_imagen_local = r"C:\RedGeoscan\data\logo_anka.jpg"
+ruta_texto = r"C:\RedGeoscan\data\firma.txt"
 
 # ************************************************************************************************************
 # Función para cargar el texto de la firma desde un archivo

@@ -88,8 +88,8 @@ def control_verificacion_proyectos():
                 enviar_respuesta_equipo_de_soporte(mensajes_error[codigo_estado], respuesta_geoepoca)
                 continue
             if codigo_estado is None:
-                enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", 
-                                            cuerpo_html=f"<p> Corrdenadas Finales creadas en:{respuesta_geoepoca}</p>")
+                #enviar_correo_personalizado( destinatario=config.correoTopografos, asunto=f"Proyecto {nombre_proyecto} Finalizado", 
+                                            #cuerpo_html=f"<p> Corrdenadas Finales creadas en:{respuesta_geoepoca}</p>")
                 enviar_correo_personalizado( destinatario=config.correoDesarrollo, asunto=f"Proyecto {nombre_proyecto} Finalizado", 
                                             cuerpo_html=f"<p> Corrdenadas Finales creadas en:{respuesta_geoepoca}</p>")
                 actualizarProyecto(id_proyecto, ESTADO_GEO= "Completo")

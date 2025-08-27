@@ -5,6 +5,7 @@ from monitor.log.log import agregar_log
 def esperar_carga_interfaz(imagen_referencia):
     agregar_log('🔎 Inicio del proceso de espera para la carga de la interfaz...')
 
+    
     timeout = 60  # Tiempo máximo de espera en segundos
     intervalo = 2  # Tiempo entre cada intento de búsqueda
 

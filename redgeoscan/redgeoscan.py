@@ -54,6 +54,7 @@ def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
     # Modulo que se encarga de listar los dias de rastreos
     msj_depuracion, respuesta_dias_rastreos = obtener_lista_sub_carpetas(respuesta_estructura, "Rastreos" )
     
+    
     # Validación de subcarpetas dias-rastreos
     if not respuesta_dias_rastreos:
         return msj_depuracion, "completo"
@@ -73,11 +74,13 @@ def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
     if not diccionario_subcarpetas_dias_rastreos:
         return msj_depuracion, 4
     
+
     msj_depuracion, diccionario_sub_carpeta_gps = sub_carpetas_gps(diccionario_subcarpetas_dias_rastreos)
     
     # Validación de diccionario de subcarpetas dias rastreos
     if not diccionario_sub_carpeta_gps:
         return msj_depuracion, 5   
+    
       
     # Modulo que se encarga de capturar las extenciones le los archivos para el rpa en rtklib
     msj_depuracion, diccionario_archivos_carpetas_gps = procesar_archivos_gps(diccionario_sub_carpeta_gps)
@@ -85,28 +88,28 @@ def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
     # Validación de diccionario de subcarpetas dias rastreos
     if not diccionario_archivos_carpetas_gps:
         return msj_depuracion, 6        
-    
+
     # Modulo que se encarga de la automatizacion con el progrma RTKLIB
     msj_depuracion, resultado_rpa_rtklib = ejecutar_rtk_para_gps(diccionario_archivos_carpetas_gps)
     
     # Validar funcionamiento de rtklib
     if resultado_rpa_rtklib == False:
         return msj_depuracion, 7
-    
+
     # Modulo que se encarga de capturar las extenciones le los archivos para el rpa en rtklib
     msj_depuracion ,diccionario_archivos_carpetas_gps_V2 = actualizar_diccionario_con_pos(diccionario_sub_carpeta_gps)
     
     # Validación de diccionario de subcarpetas dias rastreos
     if not diccionario_archivos_carpetas_gps_V2:
         return msj_depuracion ,8
-    
+
     # Modulo que se encarga de buscar y reutilizar el token principal en un archivo .txt en casioq ue siga siendo valido
     msj_depuracion, token_principal = buscar_y_leer_archivo_token()
 
     # validacion en caso de no encontrar el token principalo que ya se halla vencido
     if token_principal == 0:
         return msj_depuracion, 9
-    
+
     # Validacion enc aso de que el token principla ya se halla vencido
     if token_principal == 1:
         
@@ -129,8 +132,8 @@ def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
     
     # Validación de extracción de la coordenada media del archivo .pos
     if not diccionario_con_coordenada_media:
-        return msj_depuracion, 12
-    
+        return msj_depuracion, 12    
+   
     # Modulo para calcular las antenas mas cercanas
     msj_depuracion, diccionario_con_antenas_mas_cercanas = crear_diccionario_con_antenas_mas_cercanas(diccionario_con_coordenada_media, respuesta_kml, radio) 
     
@@ -139,13 +142,13 @@ def redGeoscan(id_proyecto, ruta_proyecto, nombre_proyecto, radio):
     if not diccionario_con_antenas_mas_cercanas:
         return msj_depuracion, 13
     
-    # Modulo que se encarga de bajar la información de las antenas del serviciogeovisor del IGAC  y lo almacena en un JSON en esta ruta C:\bot-auto\docs
+    # Modulo que se encarga de bajar la información de las antenas del serviciogeovisor del IGAC  y lo almacena en un JSON en esta ruta C:\RedGeoscan\docs
     msj_depuracion, consulta_base_administradores_antenas = servicio_administrador_antenas()
      
     # Mensaje de validación consumo serviciogeovisor
     if consulta_base_administradores_antenas == False:
         agregar_log(msj_depuracion)
-    
+
     # Modulo que se encarga de actualizar el diccionario con los administradores de cada antena
     msj_depuracion, diccionario_antenas_con_administrador = actualizar_diccionario_con_administradores_antenas(diccionario_con_antenas_mas_cercanas, msj_depuracion)
      

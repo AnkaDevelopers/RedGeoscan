@@ -2,10 +2,10 @@
 # RUTAS DOCS NECESARIOS
 
 # Ruta Cola proyectos
-ruta_excel = r"C:\bot-auto\docs\Cola_proyectos.xlsx"
+ruta_excel = r"C:\RedGeoscan\docs\Cola_proyectos.xlsx"
 
 # Ruta Cola antenas
-ruta_kml = r"C:\bot-auto\docs\kml_antenas.xlsx"
+ruta_kml = r"C:\RedGeoscan\docs\kml_antenas.xlsx"
 
 #************************************************************************************************************
 # RPA RTKLIB
@@ -29,16 +29,16 @@ webdriver_path = r"C:\Webdriver\msedgedriver.exe"
 target_url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo"
 
 # Ruta archivo .txt donde alamacenamos el token principal
-ruta_token = r"C:\\bot-auto\\docs\\"
+ruta_token = r"C:\RedGeoscan\docs"
 
 #************************************************************************************************************
 # SERVICIOS ANKAPLANNER
 
 # CONSULTAR TODOS LOS PROYECTOS
-api_allProyects = "http://192.168.1.11:3000/api/proyectos"
+api_allProyects = "http://192.168.1.12:3000/api/proyectos"
 
 # ACTUALIZAR ESTADOS PROYECTOS
-api_putProyects = "http://192.168.1.11:3000/api/proyectos"
+api_putProyects = "http://192.168.1.12:3000/api/proyectos"
 
 #************************************************************************************************************
 # CORREOS EQUIPO DE SOPORTE
@@ -46,3 +46,14 @@ api_putProyects = "http://192.168.1.11:3000/api/proyectos"
 # CORREO1
 correoDesarrollo = "cristian.c.castillo1707@gmail.com"
 correoTopografos = "ankalidarcol@gmail.com"
+
+#************************************************************************************************************
+# REPORTES REDGEOSCAN:
+ruta_img_para_reporte: r'C:\RedGeoscan\data\logo_anka.jpg' 
+
+#************************************************************************************************************
+# RUTA A LOG GLOBAL:
+ruta_a_log: r'C:\RedGeoscan'
+
+# RUTA A DOCS
+ruta_a_docs : r"C:\RedGeoscan\docs" 

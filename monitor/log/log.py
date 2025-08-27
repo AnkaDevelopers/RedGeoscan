@@ -8,6 +8,7 @@ from win32com.client import Dispatch
 from datetime import datetime
 import os
 
+
 # ************************************************************************************************************
 # Variable global para almacenar los logs
 log_info = []
@@ -32,7 +33,7 @@ def guardar_log_en_archivo(name_log):
 
     try:
         # Establecer la ruta absoluta del directorio de logs
-        log_dir = os.path.join("C:\\bot-auto", "log")
+        log_dir = r"C:\RedGeoscan\log"
 
         # Crear el directorio si no existe
         print(f"Intentando crear el directorio de log en: {log_dir}")
