@@ -20,12 +20,12 @@ def rutaList():
         agregar_log("Consumo API finalizado")
 
         # 2) Validación de los datos
+        if len(response) == 0:  # Lista vacía
+            agregar_log("Sin proyectos disponibles")
+            return None
         if response is None:  # Error inesperado en el consumo
             agregar_log("Fallo el consumo de la API de proyectos")
             enviar_correo_personalizado(destinatario="camiloAnka@hotmail.com",  asunto="Falla consumo API", cuerpo_html="<p>Fallo el consumo de la API de proyectos.</p>")
-            return None
-        elif len(response) == 0:  # Lista vacía
-            agregar_log("Sin proyectos disponibles")
             return None
 
         agregar_log(f"Proyectos obtenidos: {len(response)}")

@@ -35,10 +35,17 @@ ruta_token = r"C:\RedGeoscan\docs"
 # SERVICIOS ANKAPLANNER
 
 # CONSULTAR TODOS LOS PROYECTOS
-api_allProyects = "http://192.168.1.12:3000/api/proyectos"
+api_allProyects = "http://192.168.1.11:3000/api/proyectos/red"
 
 # ACTUALIZAR ESTADOS PROYECTOS
-api_putProyects = "http://192.168.1.12:3000/api/proyectos"
+api_putProyects = "http://192.168.1.11:3000/api/proyectos"
+
+# ELIMINAR
+api_delete = "http://192.168.1.11:3000/api/proyectos/{id_proyecto}"
+
+# Numero de GPS por proyecto
+api_allGps_proyect = "http://192.168.1.11:3000/api/gps/num/{id_proyecto}"
+
 
 #************************************************************************************************************
 # CORREOS EQUIPO DE SOPORTE
